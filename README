@@ -1,0 +1,42 @@
+What is it?
+===========
+
+xfce4-cddrive-plugin puts a button in the XFCE panel which allow to open
+or close a CD-ROM drive tray.
+Additionally, the button icon reports the content of the drive.
+The icon indicates if there is a disc in the drive, if it is mounted,
+and the type of the disc (regular CD-ROM, audio or DVD).
+You can also mount or unmount the disc via the plugin's menu (the action appears
+when a disc is in the drive).
+
+
+Requirements & limitations
+==========================
+
+- This plugin is based on HAL, and will not work if 'hald' is not running.
+
+- This release only works correctly with Linux.
+
+- The icons used to reports the content of the drive are the one of the theme
+  currently in use (it becomes a limitation if your theme does not provide icons
+  for cdrom drive and disc).
+  
+- The plugin can query the freedb.org servers for audio CD titles. To compile
+  with this feature enabled, you need libcdio and libcddb. The gthread-2.0
+  library is also recommanded in this case, but it is not mandatory.
+
+
+Installation
+============
+
+The file 'INSTALL' contains generic installation instructions. For more
+detailed information, visit the CD drive plugin website at
+http://goodies.xfce.org/projects/panel-plugins/xfce4-cddrive-plugin
+
+
+How to report bugs?
+===================
+
+Bugs should be reported to the Xfce bug tracking system
+(http://bugzilla.xfce.org, product 'Xfce Panel Plugins', Component
+'CD drive plugin'). You will need to create an account for yourself.

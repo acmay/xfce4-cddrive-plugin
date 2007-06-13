@@ -1,0 +1,137 @@
+dnl $Id$
+dnl
+dnl xfce4-cddrive-plugin - CD-ROM drive plugin for the Xfce panel
+dnl
+dnl 2007 Sylvain Reynal <sreynal@nerim.net>
+dnl
+
+dnl ***************************
+dnl *** Version information ***
+dnl ***************************
+m4_define([cddrive_version], [0.0.1])
+
+dnl ***************************
+dnl *** Initialize autoconf ***
+dnl ***************************
+AC_COPYRIGHT([Copyright (c) 2006-2007
+        The Xfce development team. All rights reserved.])
+AC_INIT([xfce4-cddrive-plugin], [cddrive_version()], [http://bugzilla.xfce.org/], [xfce4-cddrive-plugin])
+AC_PREREQ([2.50])
+AC_CANONICAL_TARGET()
+AC_REVISION([$Id])
+
+dnl ***************************
+dnl *** Initialize automake ***
+dnl ***************************
+AM_INIT_AUTOMAKE([1.8 dist-bzip2 tar-ustar])
+AM_CONFIG_HEADER([config.h])
+AM_MAINTAINER_MODE()
+
+dnl ********************************
+dnl *** Check for basic programs ***
+dnl ********************************
+AC_PROG_CC()
+AC_PROG_LD()
+AC_PROG_INSTALL()
+AC_PROG_INTLTOOL()
+
+dnl **********************************
+dnl *** Check for standard headers ***
+dnl **********************************
+AC_CHECK_HEADERS([math.h memory.h stdlib.h string.h sys/stat.h \
+                  sys/time.h time.h])
+
+dnl ************************************
+dnl *** Check for standard functions ***
+dnl ************************************
+AC_CHECK_FUNCS([])
+
+dnl ******************************
+dnl *** Check for i18n support ***
+dnl ******************************
+XDT_I18N([@LINGUAS@])
+
+dnl *******************************
+dnl *** Check for X11 installed ***
+dnl *******************************
+XDT_CHECK_LIBX11_REQUIRE()
+
+dnl ***********************************
+dnl *** Check for required packages ***
+dnl ***********************************
+XDT_CHECK_PACKAGE([LIBXFCEGUI4], [libxfcegui4-1.0], [4.3.99.2])
+XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
+XDT_CHECK_PACKAGE([EXO], [exo-0.3], [0.3.1.12rc2])
+XDT_CHECK_PACKAGE([HALSTORAGE], [hal-storage], [0.5.8.1])
+XDT_CHECK_PACKAGE([DBUSGLIB], [dbus-glib-1], [0.71])
+XDT_CHECK_OPTIONAL_PACKAGE([LIBCDIO], [libcdio], [0.76])
+XDT_CHECK_OPTIONAL_PACKAGE([LIBCDDB], [libcddb], [1.2.1])
+XDT_CHECK_OPTIONAL_PACKAGE([GTHREAD], [gthread-2.0], [2.12.4])
+
+dnl ************************************************
+dnl *** Check for required headers and libraries ***
+dnl ************************************************
+AC_CHECK_HEADERS(stdarg.h unistd.h fcntl.h sys/ioctl.h linux/cdrom.h errno.h, ,
+                 [AC_MSG_ERROR(Required header file is missing or unusable.)])
+
+dnl ***********************************
+dnl *** Check for debugging support ***
+dnl ***********************************
+XDT_FEATURE_DEBUG()
+
+dnl ***********************************
+dnl *** Check for optimisations     ***
+dnl ***********************************
+dnl BM_DEBUG_SUPPORT()
+dnl # --enable-final (Disable assertions, as their purpose is debug only)
+AC_ARG_ENABLE([final], AC_HELP_STRING([--enable-final], [Build final version]),
+    [enable_final=yes], [])
+AC_MSG_CHECKING([whether to build final version])
+if test x"$enable_final" = x"yes"; then
+  AC_MSG_RESULT([yes])
+  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CHECKS -DG_DISABLE_ASSERT"
+  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CAST_CHECKS"
+  if test x"$LD" = x""; then
+    AC_PROG_LD()
+  fi
+  AC_MSG_CHECKING([whether $LD accepts -O1])
+  case `$LD -O1 -v 2>&1 </dev/null` in
+  *GNU* | *'with BFD'*)
+    LDFLAGS="$LDFLAGS -Wl,-O1"
+    AC_MSG_RESULT([yes])
+    ;;
+  *)
+    AC_MSG_RESULT([no])
+    ;;
+  esac
+else
+  AC_MSG_RESULT([no])
+fi
+
+dnl *********************************
+dnl *** Substitute platform flags ***
+dnl *********************************
+AC_MSG_CHECKING([PLATFORM_CPPFLAGS])
+AC_MSG_RESULT([$PLATFORM_CPPFLAGS])
+AC_SUBST([PLATFORM_CPPFLAGS])
+AC_MSG_CHECKING([PLATFORM_CFLAGS])
+AC_MSG_RESULT([$PLATFORM_CFLAGS])
+AC_SUBST([PLATFORM_CFLAGS])
+AC_MSG_CHECKING([PLATFORM_LDFLAGS])
+AC_MSG_RESULT([$PLATFORM_LDFLAGS])
+AC_SUBST([PLATFORM_LDFLAGS])
+
+AC_OUTPUT([
+Makefile
+panel-plugin/Makefile
+po/Makefile.in
+])
+
+dnl ***************************
+dnl *** Print configuration ***
+dnl ***************************
+echo
+echo "Build Configuration:"
+echo
+echo "* Debug Support:    $enable_debug"
+echo

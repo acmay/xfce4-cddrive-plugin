@@ -1,0 +1,7 @@
+[Xfce Panel]
+Type=X-XFCE-PanelPlugin
+Encoding=UTF-8
+_Name=CD Drive Monitor
+_Comment=CD-ROM drive tray and content control
+Icon=gnome-dev-removable
+X-XFCE-Exec=@libexecdir@/xfce4/panel-plugins/xfce4-cddrive-plugin
