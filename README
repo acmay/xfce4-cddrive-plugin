@@ -23,7 +23,8 @@ Requirements & limitations
   
 - The plugin can query the freedb.org servers for audio CD titles. To compile
   with this feature enabled, you need libcdio and libcddb. The gthread-2.0
-  library is also recommanded in this case, but it is not mandatory.
+  library is also recommanded in this case to prevent the plugin from hanging
+  while waiting for freedb.org response, but is not mandatory.
 
 
 Installation
@@ -39,4 +40,4 @@ How to report bugs?
 
 Bugs should be reported to the Xfce bug tracking system
 (http://bugzilla.xfce.org, product 'Xfce Panel Plugins', Component
-'CD drive plugin'). You will need to create an account for yourself.
+'cddrive'). You will need to create an account for yourself.
