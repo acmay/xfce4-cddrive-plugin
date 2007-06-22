@@ -1054,7 +1054,7 @@ cddrive_new (XfcePanelPlugin *plugin)
   res = panel_slice_new0 (CddrivePlugin);
 
   res->plugin = plugin;
-  xfce_panel_plugin_set_expand (res->plugin, TRUE);
+  xfce_panel_plugin_set_expand (res->plugin, FALSE);
  
   /* create plugin widgets */
   res->ebox = gtk_event_box_new ();
