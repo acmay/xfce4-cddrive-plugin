@@ -2,8 +2,22 @@ dnl $Id$
 dnl
 dnl xfce4-cddrive-plugin - CD-ROM drive plugin for the Xfce panel
 dnl
-dnl 2007 Sylvain Reynal <sreynal@nerim.net>
+dnl Copyright (c) 2007
+dnl         The Xfce development team. All rights reserved.
 dnl
+dnl This program is free software; you can redistribute it and/or modify it
+dnl under the terms of the GNU General Public License as published by the Free
+dnl Software Foundation; either version 2 of the License, or (at your option)
+dnl any later version.
+dnl
+dnl This program is distributed in the hope that it will be useful, but WITHOUT
+dnl ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+dnl FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+dnl more details.
+dnl
+dnl You should have received a copy of the GNU General Public License along with
+dnl this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+dnl Place, Suite 330, Boston, MA  02111-1307  USA
 
 dnl ***************************
 dnl *** Version information ***
@@ -64,9 +78,39 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([EXO], [exo-0.3], [0.3.1.12rc2])
 XDT_CHECK_PACKAGE([HALSTORAGE], [hal-storage], [0.5.8.1])
 XDT_CHECK_PACKAGE([DBUSGLIB], [dbus-glib-1], [0.71])
-XDT_CHECK_OPTIONAL_PACKAGE([LIBCDIO], [libcdio], [0.76])
-XDT_CHECK_OPTIONAL_PACKAGE([LIBCDDB], [libcddb], [1.2.1])
-XDT_CHECK_OPTIONAL_PACKAGE([GTHREAD], [gthread-2.0], [2.12.4])
+
+dnl ***********************************
+dnl *** Check for optional packages ***
+dnl ***********************************
+XDT_CHECK_OPTIONAL_PACKAGE([LIBCDDB], [libcddb], [1.2.1], [cddb], [CD Data Base support])
+if test x"$LIBCDDB_FOUND" = x"yes"; then
+  SYL_CHECK_PACKAGE([LIBCDIO], [libcdio], [0.76], ,
+    [
+      if test x"$xdg_cv_version" = x; then
+        echo "*** The package $syl_pkg_name (required for CDDB support) was not found"
+        echo "*** on your system."
+        echo "*** To fix this, you can either:"
+        echo "***   - install $syl_pkg_name (at least version $syl_pkg_required_version)."
+        echo "***   - adjust the PKG_CONFIG_PATH environment variable"
+        echo "***     if you installed the new version of the package"
+        echo "***     in a nonstandard prefix so pkg-config is able to find it."
+        echo "***   - disable the CDDB support (with --disable-cddb switch)."
+        exit 1
+      else
+        echo "*** The package $syl_pkg_name (required for CDDB support)"
+        echo "*** was found on your system, but the installed version ($xdg_cv_version)"
+        echo "*** is too old."
+        echo "*** To fix this, you can either:"
+        echo "***   - upgrade $syl_pkg_name to at least version $syl_pkg_required_version."
+        echo "***   - adjust the PKG_CONFIG_PATH environment variable"
+        echo "***     if you installed the new version of the package"
+        echo "***     in a nonstandard prefix so pkg-config is able to find it."
+        echo "***   - disable the CDDB support (with --disable-cddb switch)."
+        exit 1
+      fi
+    ])
+fi
+XDT_CHECK_OPTIONAL_PACKAGE([GTHREAD], [gthread-2.0], [2.12.4], [thread], [threaded CDDB queries support])
 
 dnl ************************************************
 dnl *** Check for required headers and libraries ***
@@ -82,31 +126,7 @@ XDT_FEATURE_DEBUG()
 dnl ***********************************
 dnl *** Check for optimisations     ***
 dnl ***********************************
-dnl BM_DEBUG_SUPPORT()
-dnl # --enable-final (Disable assertions, as their purpose is debug only)
-AC_ARG_ENABLE([final], AC_HELP_STRING([--enable-final], [Build final version]),
-    [enable_final=yes], [])
-AC_MSG_CHECKING([whether to build final version])
-if test x"$enable_final" = x"yes"; then
-  AC_MSG_RESULT([yes])
-  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CHECKS -DG_DISABLE_ASSERT"
-  CPPFLAGS="$CPPFLAGS -DG_DISABLE_CAST_CHECKS"
-  if test x"$LD" = x""; then
-    AC_PROG_LD()
-  fi
-  AC_MSG_CHECKING([whether $LD accepts -O1])
-  case `$LD -O1 -v 2>&1 </dev/null` in
-  *GNU* | *'with BFD'*)
-    LDFLAGS="$LDFLAGS -Wl,-O1"
-    AC_MSG_RESULT([yes])
-    ;;
-  *)
-    AC_MSG_RESULT([no])
-    ;;
-  esac
-else
-  AC_MSG_RESULT([no])
-fi
+SYL_DEBUG_SUPPORT()
 
 dnl *********************************
 dnl *** Substitute platform flags ***
