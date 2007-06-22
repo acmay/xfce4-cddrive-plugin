@@ -565,6 +565,9 @@ cddrive_configure (XfcePanelPlugin  *plugin,
                         cddrive);
       /* to enable/disable the name entry when the toggle button is clicked */
       cddrive_toggle_button_set_widget (GTK_TOGGLE_BUTTON (button), entry);
+      
+      gtk_widget_set_sensitive (entry,
+                                cddrive->use_name_in_panel || cddrive->use_name_in_tip);
     
       /* -- mounted/unmounted disc icon config -- */
       table = gtk_table_new (2, 2, FALSE);
