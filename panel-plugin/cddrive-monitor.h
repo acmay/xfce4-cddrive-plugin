@@ -74,6 +74,7 @@ cddrive_monitor_new             (gchar                  *device,
                                  CddriveOnDiscModified   on_disc_modified_callback,
                                  const gchar*            mount_fallback,
                                  const gchar*            unmount_fallback,
+                                 gboolean                use_cddb,
                                  GError                **error);
 
 

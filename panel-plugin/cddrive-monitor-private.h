@@ -55,6 +55,8 @@ typedef struct
 
   /* audio disc title cache */
   gchar         *audio_title;
+  
+  gboolean       use_cddb; /* are freedb.org connections allowed ? */
 } _CddriveMonitor;
 
 

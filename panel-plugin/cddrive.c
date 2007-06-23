@@ -46,6 +46,7 @@
 #define CDDRIVE_CONF_ID_UNMOUNTED_COLOR     "unmounted_color"
 #define CDDRIVE_CONF_ID_USE_TRANSLUCENCY    "use_translucency"
 #define CDDRIVE_CONF_ID_TRANSLUCENCY        "translucency"
+#define CDDRIVE_CONF_ID_USE_CDDB            "use_cddb"
 
 #define CDDRIVE_DEFAULT_DEVICE              NULL
 #define CDDRIVE_DEFAULT_NAME                NULL
@@ -56,6 +57,7 @@
 #define CDDRIVE_DEFAULT_USE_UNMOUNTED_COLOR FALSE
 #define CDDRIVE_DEFAULT_USE_TRANSLUCENCY    TRUE
 #define CDDRIVE_DEFAULT_TRANSLUCENCY        50
+#define CDDRIVE_DEFAULT_USE_CDDB            TRUE
 
 #define CDDRIVE_LOCK_EMBLEM "stock_lock"
 
@@ -755,6 +757,9 @@ cddrive_save (XfcePanelPlugin *plugin,
       xfce_rc_write_int_entry (rc, CDDRIVE_CONF_ID_TRANSLUCENCY,
                                cddrive->translucency);
 
+      xfce_rc_write_bool_entry (rc, CDDRIVE_CONF_ID_USE_CDDB,
+                                cddrive->use_cddb);
+      
       /* close the rc file */
       xfce_rc_close (rc);
     }
@@ -837,6 +842,10 @@ cddrive_read (CddrivePlugin *cddrive)
             cddrive->translucency = 0;
           if (cddrive->translucency > 100)
             cddrive->translucency = 100;
+                                          
+          cddrive->use_cddb             = xfce_rc_read_bool_entry (rc,
+                                              CDDRIVE_CONF_ID_USE_CDDB,
+                                              CDDRIVE_DEFAULT_USE_CDDB);
 
           /* cleanup */
           xfce_rc_close (rc);
@@ -858,6 +867,7 @@ cddrive_read (CddrivePlugin *cddrive)
   cddrive->unmounted_color      = cddrive_rc_copy_fallback_color (CDDRIVE_DEFAULT_COLOR);
   cddrive->use_translucency     = CDDRIVE_DEFAULT_USE_TRANSLUCENCY;
   cddrive->translucency         = CDDRIVE_DEFAULT_TRANSLUCENCY;
+  cddrive->use_cddb             = CDDRIVE_DEFAULT_USE_CDDB;
   
   cddrive_set_mount_fallback (cddrive,
                               cddrive_get_default_fallback_command (CDDRIVE_MOUNT));
@@ -1029,6 +1039,7 @@ cddrive_update_monitor (CddrivePlugin *cddrive)
                                               cddrive_on_disc_modified,
                                               cddrive->mount_fallback,
                                               cddrive->unmount_fallback,
+                                              cddrive->use_cddb,
                                               &error);
       if (cddrive->monitor == NULL)
         {

@@ -285,7 +285,7 @@ cddrive_cddb_cache_title_from_server (gpointer data)
 
 
 gchar*
-cddrive_cddb_get_title (const gchar* device)
+cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 {
   gchar       *res = NULL;
   cddb_disc_t *cdda;
@@ -295,7 +295,7 @@ cddrive_cddb_get_title (const gchar* device)
     {
       res = cddrive_cddb_cache_read (cddb_disc_get_discid (cdda));
       
-      if (res == NULL)
+      if (res == NULL && connection_allowed)
         {
           /* the CDDB disc id was not found in cache. Try to fetch it on freedb.org */
         
@@ -346,7 +346,7 @@ cddrive_cddb_free_globals ()
 #else /* ---------- NO CDDB SUPPORT ---------- */
 
 gchar*
-cddrive_cddb_get_title (const gchar* device)
+cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 {
   return NULL;
 }

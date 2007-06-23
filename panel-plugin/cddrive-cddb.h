@@ -43,9 +43,11 @@ cddrive_cddb_free_globals ();
 
 /* Return the title of the audio CD in the drive of device path 'device',
    or NULL if the drive have no audio CD, or if the operation failed.
+   If 'connection_allowed' is FALSE, the function looks for the title in the
+   cache only.
    The result must be freed after use. */
 gchar*
-cddrive_cddb_get_title (const gchar* device);
+cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed);
 
 G_END_DECLS
 #endif

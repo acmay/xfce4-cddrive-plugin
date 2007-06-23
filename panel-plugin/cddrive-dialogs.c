@@ -293,15 +293,33 @@ cddrive_configure_change_translucency (GtkSpinButton *spin_button,
 
 
 
+#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
+static void
+cddrive_configure_toggle_cddb (GtkButton     *toggle,
+                               CddrivePlugin *cddrive)
+{
+  cddrive->use_cddb = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (toggle));
+  cddrive_update_tip (cddrive);
+}
+#endif
+
+
+
 static GtkBox*
 cddrive_create_section_vbox (CddrivePlugin *cddrive,
                              GtkDialog     *dialog,
-                             gchar         *title)
+                             gchar         *title,
+                             gboolean       add_separator)
 {
   GtkWidget *res, *frm;
 
   res = gtk_vbox_new (FALSE, CDDRIVE_SECTION_VBOX_SPACING);
   frm = xfce_create_framebox_with_content (title, res);
+
+  if (add_separator)
+    gtk_box_pack_start (GTK_BOX (dialog->vbox), gtk_hseparator_new (),
+                        FALSE, FALSE, 0);
+    
   gtk_box_pack_start (GTK_BOX (dialog->vbox), frm,
                       FALSE, FALSE, CDDRIVE_SECTION_PADDING);
   return GTK_BOX (res);
@@ -416,6 +434,9 @@ cddrive_configure (XfcePanelPlugin  *plugin,
                     *label, *entry, *button, *spin_button;
   GtkDialog         *dialog;
   GtkBox            *section_vbox, *vbox;
+#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
+  GtkTooltips       *tip;
+#endif
   CddriveDriveInfo* *drv_infos;
   gint               i;
   gchar             *combo_txt;
@@ -444,7 +465,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
   
 
   /* --- "Drive" section  --- */
-  section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Drive"));
+  section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Drive"), FALSE);
   
   /* get infos (device path and model) for all detected CD-ROM drives */
   drv_infos = cddrive_cdrom_drive_infos_new (&err);
@@ -504,7 +525,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
     
 
       /* --- "Commands" section --- */    
-      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Fallback Commands"));
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Fallback Commands"), TRUE);
       table = gtk_table_new (2, 2, FALSE);
       gtk_box_pack_start (section_vbox, table,
                           FALSE, FALSE, CDDRIVE_SECTION_VBOX_PADDING);
@@ -515,7 +536,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
       /* --- "Display" section --- */
     
       /* -- name config -- */
-      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Display"));
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Display"), TRUE);
     
       hbox = gtk_hbox_new (FALSE, 0);
       gtk_box_pack_start (section_vbox, hbox, FALSE, FALSE, 0);
@@ -598,7 +619,26 @@ cddrive_configure (XfcePanelPlugin  *plugin,
                         cddrive);
       /* to enable/disable the opacity spin button when the toggle button is clicked */
       cddrive_toggle_button_set_widget (GTK_TOGGLE_BUTTON (button), spin_button);
+      
+
+#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
+      /* --- Network section --- */
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Network"), TRUE);
+      
+      /* -- CDDB config -- */
+      button = gtk_check_button_new_with_label (_("Allow freedb.org connections"));
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (button), cddrive->use_cddb);
+      gtk_box_pack_start (section_vbox, button,
+                          FALSE, FALSE, CDDRIVE_SECTION_VBOX_PADDING);
+      tip = gtk_tooltips_new ();
+      gtk_tooltips_set_tip (tip, button, _("Enabling this option allows the plugin \
+to query the freedb.org servers in order to get the title of an audio CD."), NULL);
+      g_signal_connect (button,
+                        "clicked",
+                        G_CALLBACK (cddrive_configure_toggle_cddb),
+                        cddrive);
     }
+#endif
   
   gtk_widget_show_all (GTK_WIDGET (dialog));
   

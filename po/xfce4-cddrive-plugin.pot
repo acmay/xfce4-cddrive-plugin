@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-05-22 14:49+0200\n"
+"POT-Creation-Date: 2007-06-22 15:37+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,23 +203,23 @@ msgstr ""
 msgid "CD Drive Monitor"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:325
+#: ../panel-plugin/cddrive-dialogs.c:343
 msgid "Mounting"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:326
+#: ../panel-plugin/cddrive-dialogs.c:344
 msgid "Enter a command to use if HAL system fails to mount the disc."
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:333
+#: ../panel-plugin/cddrive-dialogs.c:351
 msgid "Unmounting"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:334
+#: ../panel-plugin/cddrive-dialogs.c:352
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:352
+#: ../panel-plugin/cddrive-dialogs.c:370
 #, c-format
 msgid ""
 "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
@@ -227,65 +227,81 @@ msgid ""
 "disc mount point and the disc UDI."
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:376
+#: ../panel-plugin/cddrive-dialogs.c:394
 msgid "Mounted disc icon color"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:385
+#: ../panel-plugin/cddrive-dialogs.c:403
 msgid "Unmounted disc icon color"
 msgstr ""
 
 #. --- "Drive" section  ---
-#: ../panel-plugin/cddrive-dialogs.c:447
+#: ../panel-plugin/cddrive-dialogs.c:468
 msgid "Drive"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:453
+#: ../panel-plugin/cddrive-dialogs.c:474
 msgid "CD-ROM drive detection failed !"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:458
+#: ../panel-plugin/cddrive-dialogs.c:479
 msgid "No CD-ROM drive detected"
 msgstr ""
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
-#: ../panel-plugin/cddrive-dialogs.c:507
+#: ../panel-plugin/cddrive-dialogs.c:528
 msgid "Fallback Commands"
 msgstr ""
 
 #. --- "Display" section ---
 #. -- name config --
-#: ../panel-plugin/cddrive-dialogs.c:518
+#: ../panel-plugin/cddrive-dialogs.c:539
 msgid "Display"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:523
+#: ../panel-plugin/cddrive-dialogs.c:544
 msgid "Name to display"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:547
+#: ../panel-plugin/cddrive-dialogs.c:568
 msgid "display in panel"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:558
+#: ../panel-plugin/cddrive-dialogs.c:579
 msgid "use in tooltip"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:577
+#: ../panel-plugin/cddrive-dialogs.c:601
 msgid "Unmounted disc icon opacity"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:619
+#. --- Network section ---
+#: ../panel-plugin/cddrive-dialogs.c:626
+msgid "Network"
+msgstr ""
+
+#. -- CDDB config --
+#: ../panel-plugin/cddrive-dialogs.c:629
+msgid "Allow freedb.org connections"
+msgstr ""
+
+#: ../panel-plugin/cddrive-dialogs.c:634
+msgid ""
+"Enabling this option allows the plugin to query the freedb.org servers in "
+"order to get the title of an audio CD."
+msgstr ""
+
+#: ../panel-plugin/cddrive-dialogs.c:662
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:642
+#: ../panel-plugin/cddrive-dialogs.c:685
 msgid "Error"
 msgstr ""
 
-#: ../panel-plugin/cddrive-dialogs.c:662
+#: ../panel-plugin/cddrive-dialogs.c:705
 msgid "No error description available."
 msgstr ""
 
@@ -399,6 +415,6 @@ msgstr ""
 msgid "Failed to unregister drive removal callback."
 msgstr ""
 
-#: ../panel-plugin/cddrive-monitor.c:690
+#: ../panel-plugin/cddrive-monitor.c:692
 msgid "Failed to store monitor in HAL context."
 msgstr ""

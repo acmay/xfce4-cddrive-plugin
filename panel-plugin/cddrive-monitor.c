@@ -641,6 +641,7 @@ cddrive_monitor_new (gchar                  *device,
                      CddriveOnDiscModified   on_disc_modified_callback,
                      const gchar            *mount_fallback,
                      const gchar            *unmount_fallback,
+                     gboolean                use_cddb,
                      GError                **error)
 {
   CddriveMonitor *res;
@@ -670,6 +671,7 @@ cddrive_monitor_new (gchar                  *device,
   res->udi                  = NULL;
   res->is_ejectable         = FALSE;
   res->audio_title          = NULL;
+  res->use_cddb             = use_cddb;
 
   res->mount                = NULL;
   res->mount_needs_update   = FALSE;
@@ -1108,7 +1110,7 @@ cddrive_monitor_get_audio_disc_title (CddriveMonitor *monitor)
     /* title has been previously cached */
       return monitor->audio_title;
 
-  monitor->audio_title = cddrive_cddb_get_title (monitor->dev);
+  monitor->audio_title = cddrive_cddb_get_title (monitor->dev, monitor->use_cddb);
   return monitor->audio_title;
 }
 

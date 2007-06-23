@@ -54,6 +54,7 @@ typedef struct
   GdkColor        *unmounted_color;
   gboolean         use_translucency;     /* fade the unmounted disc icons ? */
   gint             translucency;         /* in percent */
+  gboolean         use_cddb;             /* are freedb.org connections allowed ? */
 
   /* internals */
   CddriveMonitor  *monitor;
