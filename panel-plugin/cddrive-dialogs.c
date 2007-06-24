@@ -327,6 +327,24 @@ cddrive_create_section_vbox (CddrivePlugin *cddrive,
 
 
 
+static GtkWidget*
+cddrive_label_with_icon_new (const gchar *str, const gchar *stock_icon_id)
+{
+  GtkWidget *res;
+
+  res = gtk_hbox_new (FALSE, 0);
+  gtk_box_pack_start (GTK_BOX (res),
+                      gtk_image_new_from_stock (stock_icon_id,
+                                                GTK_ICON_SIZE_DIALOG),
+                      FALSE, FALSE, 5);
+  gtk_box_pack_start (GTK_BOX (res),
+                      gtk_label_new (str),
+                      FALSE, FALSE, 5);
+  return res;
+}
+
+
+
 static void
 cddrive_add_fallback_entry (CddrivePlugin      *cddrive,
                             GtkTable           *table,
@@ -470,13 +488,18 @@ cddrive_configure (XfcePanelPlugin  *plugin,
   /* get infos (device path and model) for all detected CD-ROM drives */
   drv_infos = cddrive_cdrom_drive_infos_new (&err);
   
-  if (drv_infos == NULL)
-    drv_wid = gtk_label_new (_("CD-ROM drive detection failed !"));
-    /* 'err' is displayed after the dialog is shown; see at the end of this function */
+  if (err != NULL)
+    {
+      g_assert (drv_infos == NULL);
+      drv_wid = cddrive_label_with_icon_new (_("CD-ROM drive detection failed !"),
+                                             GTK_STOCK_DIALOG_ERROR);
+      /* 'err' is displayed after the dialog is shown; see at the end of this function. */
+    }
   else
     {
       if (drv_infos [0] == NULL)
-        drv_wid = gtk_label_new (_("No CD-ROM drive detected"));
+        drv_wid = cddrive_label_with_icon_new (_("No CD-ROM drive detected"),
+                                               GTK_STOCK_DIALOG_WARNING);
       else
         {
           /* create the CD-ROM drivers combo box */
@@ -493,9 +516,9 @@ cddrive_configure (XfcePanelPlugin  *plugin,
           while (drv_infos [i] != NULL)
             {
               combo_txt = g_strconcat (drv_infos [i]->model,
-                                       " ( ",
+                                       " (",
                                        drv_infos [i]->device,
-                                       " )",
+                                       ")",
                                        NULL);
               gtk_combo_box_append_text (GTK_COMBO_BOX (drv_wid), combo_txt);
               if (cddrive->device != NULL &&

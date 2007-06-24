@@ -226,6 +226,7 @@ cddrive_get_new_hal_context (GError **error)
 
 
 
+/* Return a NULL terminated array of all detected CD drives */
 CddriveDriveInfo**
 cddrive_cdrom_drive_infos_new (GError **error)
 {
@@ -248,14 +249,14 @@ cddrive_cdrom_drive_infos_new (GError **error)
                                            "storage.cdrom",
                                            &count,
                                            &derr);
-  if (udis == NULL)
+  if (dbus_error_is_set (&derr))
     {
       cddrive_store_dbus_error (error, CDDRIVE_ERROR_FAILED, &derr);
       dbus_error_free (&derr);
       cddrive_close_hal_context (ctx);
       return NULL;
     }
-    
+  
   res = (CddriveDriveInfo**) g_malloc0 ((count + 1) * sizeof (CddriveDriveInfo*));
   
   for (i=0; i < count; i++)
