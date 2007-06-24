@@ -637,8 +637,8 @@ to query the freedb.org servers in order to get the title of an audio CD."), NUL
                         "clicked",
                         G_CALLBACK (cddrive_configure_toggle_cddb),
                         cddrive);
-    }
 #endif
+    }
   
   gtk_widget_show_all (GTK_WIDGET (dialog));
   
