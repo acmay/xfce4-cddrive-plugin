@@ -122,6 +122,45 @@ cddrive_cddb_cache_read (guint id)
 
 
 
+static CdIo_t*
+cddrive_cddb_new_cdio (const gchar* device)
+{
+  CdIo_t     *res;
+
+  res = cdio_open (device, DRIVER_DEVICE);
+  if (res == NULL)
+    g_warning ("unable to open CDDA in drive '%s'.", device);
+  
+  else
+    {
+      if (cdio_get_discmode (res) == CDIO_DISC_MODE_ERROR ||
+          cdio_get_discmode (res) == CDIO_DISC_MODE_NO_INFO)
+        {
+          cdio_destroy (res);
+          res = NULL;
+        }
+    }
+  
+  return res;
+}
+
+
+
+static gchar*
+cddrive_cddb_get_cdtext_title (CdIo_t *cdio)
+{
+  gchar    *res;
+  cdtext_t *cdtxt;
+
+  cdtxt = cdio_get_cdtext (cdio, 0);
+  res = cdtext_get (CDTEXT_TITLE, cdtxt);
+  cdtext_destroy (cdtxt);
+
+  return res;
+}
+
+
+
 /* Set the cddb id and the length of the audio CD in 'cdda', as well as each
    track and its frame offset.
    Return TRUE on success, FALSE otherwise. */
@@ -191,17 +230,9 @@ cddrive_cddb_fill_cdda (CdIo_t *cdio, cddb_disc_t *cdda)
 
 
 static cddb_disc_t*
-cddrive_cddb_new_cdda (const gchar* device)
+cddrive_cddb_new_cdda (CdIo_t *cdio)
 {
   cddb_disc_t *res;
-  CdIo_t      *cdio;
-
-  cdio = cdio_open_cd (device);
-  if (cdio == NULL)
-  {
-    g_warning ("unable to open CDDA in drive '%s'.", device);
-    return NULL;
-  }
 
   res = cddb_disc_new ();
   if (res == NULL)
@@ -215,7 +246,6 @@ cddrive_cddb_new_cdda (const gchar* device)
         }
     }
   
-  cdio_destroy (cdio);
   return res;
 }
 
@@ -289,34 +319,45 @@ cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 {
   gchar       *res = NULL;
   cddb_disc_t *cdda;
+  CdIo_t      *cdio;
 
-  cdda = cddrive_cddb_new_cdda (device);
-  if (cdda != NULL)
+  g_assert (device != NULL);
+
+  cdio = cddrive_cddb_new_cdio (device);
+  if (cdio != NULL)
     {
-      res = cddrive_cddb_cache_read (cddb_disc_get_discid (cdda));
-      
-      if (res == NULL && connection_allowed)
+      cdda = cddrive_cddb_new_cdda (cdio);
+      if (cdda != NULL)
         {
-          /* the CDDB disc id was not found in cache. Try to fetch it on freedb.org */
+          res = cddrive_cddb_cache_read (cddb_disc_get_discid (cdda));
+      
+          if (res == NULL)
+            {
+              res = cddrive_cddb_get_cdtext_title (cdio);
+        
+              if (res == NULL && connection_allowed)
+                {
+                  /* the CDDB disc id was not found in cache. Try to fetch it on freedb.org */
         
 #ifdef HAVE_GTHREAD
-          /* if possible, fetch the title in a thread, so the plugin do not freeze
-             while attempting to connect to the server */          
-          g_thread_create (cddrive_cddb_cache_title_from_server,
-                           cdda,
-                           FALSE,
-                           NULL);
-          /* note: cdda is destroyed in the thread function */
+                  /* if possible, fetch the title in a thread, so the plugin do not freeze
+                     while attempting to connect to the server */          
+                  g_thread_create (cddrive_cddb_cache_title_from_server,
+                                   cdda,
+                                   FALSE,
+                                   NULL);
+                  /* note: cdda is destroyed in the thread function */
         
 #else
-          /* no thread support, plugin freeze will depend on the connection quality */
-          cddrive_cddb_cache_title_from_server (cdda);
-          res = g_strdup (cddb_disc_get_title (cdda));
-          cddb_disc_destroy (cdda);
+                  /* no thread support, plugin freeze will depend on the connection quality */
+                  cddrive_cddb_cache_title_from_server (cdda);
+                  res = g_strdup (cddb_disc_get_title (cdda));
 #endif
+                }
+            }
         }
-      else
-        cddb_disc_destroy (cdda);
+      
+      cdio_destroy (cdio);
     }
 
   return res;
