@@ -427,11 +427,8 @@ cddrive_monitor_unregister_disc (CddriveMonitor *monitor)
   g_free (monitor->udi);
   monitor->udi = NULL;
   
-  if (monitor->audio_title != NULL)
-    {
-      g_free (monitor->audio_title);
-      monitor->audio_title = NULL;
-    }
+  g_free (monitor->audio_title);
+  monitor->audio_title = NULL;
 }
 
 
@@ -756,6 +753,7 @@ cddrive_monitor_free (CddriveMonitor * monitor)
 
   g_free (monitor->mount);
   g_free (monitor->unmount);
+  g_free (monitor->audio_title);
   g_free (monitor);
 }
 
@@ -1109,9 +1107,9 @@ cddrive_monitor_get_audio_disc_title (CddriveMonitor *monitor)
 
   if (monitor->audio_title != NULL)
     /* title has been previously cached */
-      return monitor->audio_title;
+    return monitor->audio_title;
 
-  monitor->audio_title = cddrive_cddb_get_title (monitor->dev, monitor->use_cddb);
+  monitor->audio_title = cddrive_cddb_get_title (monitor->dev, monitor->use_cddb);  
   return monitor->audio_title;
 }
 
