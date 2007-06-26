@@ -705,7 +705,7 @@ cddrive_show_error_message (CddriveError error_group,
 
   /* xfce_err ("%s : %s", cddrive_error_get_label (error_group), error_message); */
   xfce_message_dialog (NULL,
-                       _("Error"),
+                       CDDRIVE_TITLE,
                        GTK_STOCK_DIALOG_ERROR,
                        cddrive_error_get_label (error_group),
                        error_message,
