@@ -41,7 +41,7 @@ typedef struct
   gchar         *udi;                  /* CD-ROM disc's UDI (NULL if none)                 */
   gpointer       dat;                  /* data to use in callbacks                         */
   gchar*         mount;                /* fallback mount command (not empty if not NULL)   */
-  gchar *        unmount;              /* fallback unmount command (not empty if not NULL) */
+  gchar*         unmount;              /* fallback unmount command (not empty if not NULL) */
 
   /* to know if 'mount' and 'unmount' needs to be formatted before execution */
   gboolean       mount_needs_update;   
