@@ -52,8 +52,8 @@ typedef struct
      we don't really expect this property to change, do we ?) */
   gboolean       is_ejectable;
 
-  /* audio disc title cache */
-  gchar         *audio_title;
+  /* disc title cache */
+  gchar         *cd_title;
   
   gboolean       use_cddb; /* are freedb.org connections allowed ? */
 } _CddriveMonitor;
@@ -67,7 +67,6 @@ typedef struct
   gboolean         is_mounted;   /* is there a mounted disc in the drive ?                */
   gboolean         is_blank;     /* is there a blank disc in the drive ?                  */
   gboolean         is_audio;     /* is there an audio disc in the drive ?                 */
-  gchar           *title;        /* title of disc if there is one, NULL otherwise         */
   const gchar     *type;         /* type of disc if there is one, NULL otherwise          */
   const gchar     *icon_name;    /* name of the icon showing the drive status, never NULL */
 
