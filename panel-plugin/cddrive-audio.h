@@ -17,8 +17,8 @@
  *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#ifndef __CDDRIVE_CDDB_H__
-#define __CDDRIVE_CDDB_H__
+#ifndef __CDDRIVE_AUDIO_H__
+#define __CDDRIVE_AUDIO_H__
 
 #include <glib.h>
 

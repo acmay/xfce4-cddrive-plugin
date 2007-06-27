@@ -20,8 +20,8 @@ xfce4_cddrive_plugin_SOURCES =	    \
   os-dependant/cddrive-process.c    \
 	cddrive-error.h                   \
 	cddrive-error.c                   \
-  cddrive-cddb.h                    \
-  cddrive-cddb.c                    \
+  cddrive-audio.h                   \
+  cddrive-audio.c                   \
 	cddrive-monitor.h                 \
   cddrive-monitor-private.h         \
 	cddrive-monitor.c                 \
@@ -31,7 +31,7 @@ xfce4_cddrive_plugin_SOURCES =	    \
 	cddrive.c
 
 xfce4_cddrive_plugin_CFLAGS =	\
-	-Wall						            \
+	-Wall -Werror		            \
 	$(LIBXFCEGUI4_CFLAGS)				\
 	$(LIBXFCE4PANEL_CFLAGS)			\
 	$(EXO_CFLAGS)			          \

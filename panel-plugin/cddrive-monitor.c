@@ -28,7 +28,7 @@
 #include "cddrive-error.h"
 #include "os-dependant/cddrive-process.h"
 #include "os-dependant/cddrive-cdrom.h"
-#include "cddrive-cddb.h"
+#include "cddrive-audio.h"
 
 
 #define _(message) gettext (message)

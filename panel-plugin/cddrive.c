@@ -28,7 +28,7 @@
 #include <exo/exo.h> /* for exo_gdk_pixbuf_lucent() */
 #include "cddrive.h"
 #include "cddrive-error.h"
-#include "cddrive-cddb.h"
+#include "cddrive-audio.h"
 #include "cddrive-dialogs.h"
 
 

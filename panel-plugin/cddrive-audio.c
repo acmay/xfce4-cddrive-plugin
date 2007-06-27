@@ -21,7 +21,7 @@
 #include <config.h>
 #endif
 
-#include "cddrive-cddb.h"
+#include "cddrive-audio.h"
 #include <cdio/cdio.h>
 
 #ifdef HAVE_LIBCDDB
