@@ -22,13 +22,12 @@
 #endif
 
 #include "cddrive-cddb.h"
-
-#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
-
 #include <cdio/cdio.h>
+
+#ifdef HAVE_LIBCDDB
+
 #include <cddb/cddb.h>
 #include <libxfce4util/libxfce4util.h>
-
 
 #ifndef PACKAGE
 #define PACKAGE "xfce4-cddrive-plugin"
@@ -40,9 +39,54 @@
 #define CDDRIVE_CDDB_CACHE_PATH           "xfce4/panel/cddrive"
 #define CDDRIVE_CDDB_CACHE_GROUP          "Cddb"
 #define CDDRIVE_CDDB_CACHE_SIZE           20
-#define cddrive_cddb_get_key_for_id(id)   g_strdup_printf ("%08x", id)
+#define cddrive_audio_get_key_for_id(id)  g_strdup_printf ("%08x", id)
+
+#endif
 
 
+/* Create a read access on the CD */
+static CdIo_t*
+cddrive_audio_new_cdio (const gchar* device)
+{
+  CdIo_t     *res;
+
+  res = cdio_open (device, DRIVER_DEVICE);
+  if (res == NULL)
+    g_warning ("unable to open audio CD in drive '%s'.", device);
+  
+  else
+    {
+      if (cdio_get_discmode (res) == CDIO_DISC_MODE_ERROR ||
+          cdio_get_discmode (res) == CDIO_DISC_MODE_NO_INFO)
+        {
+          cdio_destroy (res);
+          res = NULL;
+        }
+    }
+  
+  return res;
+}
+
+
+
+/* Return the title of the CD from the CD-TEXT info it contains,
+   or NULL if the CD does not contain such CD-TEXT info. */
+static gchar*
+cddrive_audio_get_cdtext_title (CdIo_t *cdio)
+{
+  gchar    *res;
+  cdtext_t *cdtxt;
+
+  cdtxt = cdio_get_cdtext (cdio, 0);
+  res = cdtext_get (CDTEXT_TITLE, cdtxt);
+  cdtext_destroy (cdtxt);
+
+  return res;
+}
+
+
+
+#ifdef HAVE_LIBCDDB /* ---------- CDDB SUPPORT ---------- */
 
 /* Save a pair (CDDB id, CD title) in the cache file only if it is not already
    stored. Do nothing otherwise.
@@ -54,7 +98,7 @@
    and a CD title as the value.
 */
 static void
-cddrive_cddb_cache_save (guint id, const gchar *title)
+cddrive_audio_cache_save (guint id, const gchar *title)
 {
   XfceRc *cache;
   gchar* *keys;
@@ -72,7 +116,7 @@ cddrive_cddb_cache_save (guint id, const gchar *title)
   
   xfce_rc_set_group (cache, CDDRIVE_CDDB_CACHE_GROUP);
   
-  k = cddrive_cddb_get_key_for_id (id);
+  k = cddrive_audio_get_key_for_id (id);
   if (! xfce_rc_has_entry (cache, k))
     {
       /* check if the cache limit is reached. If so, remove the first entry. */
@@ -97,7 +141,7 @@ cddrive_cddb_cache_save (guint id, const gchar *title)
 /* Return the title corresponding to the CDDB id 'id' in the cache, or NULL
    if not found. */
 gchar*
-cddrive_cddb_cache_read (guint id)
+cddrive_audio_cache_read (guint id)
 {
   XfceRc *cache;
   gchar  *k, *res;
@@ -112,7 +156,7 @@ cddrive_cddb_cache_read (guint id)
     }
   
   xfce_rc_set_group (cache, CDDRIVE_CDDB_CACHE_GROUP);
-  k = cddrive_cddb_get_key_for_id (id);
+  k = cddrive_audio_get_key_for_id (id);
   res = g_strdup (xfce_rc_read_entry (cache, k, NULL));
   xfce_rc_close (cache);
   g_free (k);
@@ -122,50 +166,11 @@ cddrive_cddb_cache_read (guint id)
 
 
 
-static CdIo_t*
-cddrive_cddb_new_cdio (const gchar* device)
-{
-  CdIo_t     *res;
-
-  res = cdio_open (device, DRIVER_DEVICE);
-  if (res == NULL)
-    g_warning ("unable to open CDDA in drive '%s'.", device);
-  
-  else
-    {
-      if (cdio_get_discmode (res) == CDIO_DISC_MODE_ERROR ||
-          cdio_get_discmode (res) == CDIO_DISC_MODE_NO_INFO)
-        {
-          cdio_destroy (res);
-          res = NULL;
-        }
-    }
-  
-  return res;
-}
-
-
-
-static gchar*
-cddrive_cddb_get_cdtext_title (CdIo_t *cdio)
-{
-  gchar    *res;
-  cdtext_t *cdtxt;
-
-  cdtxt = cdio_get_cdtext (cdio, 0);
-  res = cdtext_get (CDTEXT_TITLE, cdtxt);
-  cdtext_destroy (cdtxt);
-
-  return res;
-}
-
-
-
 /* Set the cddb id and the length of the audio CD in 'cdda', as well as each
    track and its frame offset.
    Return TRUE on success, FALSE otherwise. */
 static gboolean
-cddrive_cddb_fill_cdda (CdIo_t *cdio, cddb_disc_t *cdda)
+cddrive_audio_fill_cdda (CdIo_t *cdio, cddb_disc_t *cdda)
 {
   track_t       first, last, i; /* first, last and current track numbers */
   lba_t         lba;
@@ -230,7 +235,7 @@ cddrive_cddb_fill_cdda (CdIo_t *cdio, cddb_disc_t *cdda)
 
 
 static cddb_disc_t*
-cddrive_cddb_new_cdda (CdIo_t *cdio)
+cddrive_audio_new_cdda (CdIo_t *cdio)
 {
   cddb_disc_t *res;
 
@@ -239,7 +244,7 @@ cddrive_cddb_new_cdda (CdIo_t *cdio)
     g_warning ("not enough memory to get CDDA title.");
   else
     {
-      if (! cddrive_cddb_fill_cdda (cdio, res))
+      if (! cddrive_audio_fill_cdda (cdio, res))
         {
           cddb_disc_destroy (res);
           res = NULL;
@@ -252,7 +257,7 @@ cddrive_cddb_new_cdda (CdIo_t *cdio)
 
 
 static cddb_conn_t*
-cddrive_cddb_new_connection ()
+cddrive_audio_new_connection ()
 {
   cddb_conn_t *res;
 
@@ -278,7 +283,7 @@ cddrive_cddb_new_connection ()
 
 
 static gpointer
-cddrive_cddb_cache_title_from_server (gpointer data)
+cddrive_audio_cache_title_from_server (gpointer data)
 {
   cddb_disc_t *cdda = (cddb_disc_t*) data;
   cddb_conn_t *conn;
@@ -288,7 +293,7 @@ cddrive_cddb_cache_title_from_server (gpointer data)
      nor we want two thread writing in the cache together; hence the mutex. */
   if (g_static_mutex_trylock (&mutex))
     {
-      conn = cddrive_cddb_new_connection ();
+      conn = cddrive_audio_new_connection ();
       if (conn != NULL)
         {
           if (cddb_query (conn, cdda) == -1)
@@ -298,8 +303,8 @@ cddrive_cddb_cache_title_from_server (gpointer data)
           else
             {
               if (cddb_disc_get_title (cdda) != NULL)
-                cddrive_cddb_cache_save (cddb_disc_get_discid (cdda),
-                                         cddb_disc_get_title (cdda));
+                cddrive_audio_cache_save (cddb_disc_get_discid (cdda),
+                                          cddb_disc_get_title (cdda));
             }
       
           cddb_destroy (conn);
@@ -315,7 +320,7 @@ cddrive_cddb_cache_title_from_server (gpointer data)
 
 
 gchar*
-cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
+cddrive_audio_get_title (const gchar* device, gboolean connection_allowed)
 {
   gchar       *res = NULL;
   cddb_disc_t *cdda;
@@ -323,17 +328,17 @@ cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 
   g_assert (device != NULL);
 
-  cdio = cddrive_cddb_new_cdio (device);
+  cdio = cddrive_audio_new_cdio (device);
   if (cdio != NULL)
     {
-      cdda = cddrive_cddb_new_cdda (cdio);
+      cdda = cddrive_audio_new_cdda (cdio);
       if (cdda != NULL)
         {
-          res = cddrive_cddb_cache_read (cddb_disc_get_discid (cdda));
+          res = cddrive_audio_cache_read (cddb_disc_get_discid (cdda));
       
           if (res == NULL)
             {
-              res = cddrive_cddb_get_cdtext_title (cdio);
+              res = cddrive_audio_get_cdtext_title (cdio);
         
               if (res == NULL && connection_allowed)
                 {
@@ -342,7 +347,7 @@ cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 #ifdef HAVE_GTHREAD
                   /* if possible, fetch the title in a thread, so the plugin do not freeze
                      while attempting to connect to the server */          
-                  g_thread_create (cddrive_cddb_cache_title_from_server,
+                  g_thread_create (cddrive_audio_cache_title_from_server,
                                    cdda,
                                    FALSE,
                                    NULL);
@@ -350,7 +355,7 @@ cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
         
 #else
                   /* no thread support, plugin freeze will depend on the connection quality */
-                  cddrive_cddb_cache_title_from_server (cdda);
+                  cddrive_audio_cache_title_from_server (cdda);
                   res = g_strdup (cddb_disc_get_title (cdda));
 #endif
                 }
@@ -366,7 +371,7 @@ cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
 
 
 void
-cddrive_cddb_init_globals ()
+cddrive_audio_init_globals ()
 {
 #ifdef HAVE_GTHREAD
   if (! g_thread_supported ())
@@ -377,7 +382,7 @@ cddrive_cddb_init_globals ()
 
 
 void
-cddrive_cddb_free_globals ()
+cddrive_audio_free_globals ()
 {
   libcddb_shutdown ();
 }
@@ -387,22 +392,34 @@ cddrive_cddb_free_globals ()
 #else /* ---------- NO CDDB SUPPORT ---------- */
 
 gchar*
-cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed)
+cddrive_audio_get_title (const gchar* device, gboolean connection_allowed)
 {
-  return NULL;
+  gchar       *res = NULL;
+  CdIo_t      *cdio;
+
+  g_assert (device != NULL);
+
+  cdio = cddrive_audio_new_cdio (device);
+  if (cdio != NULL)
+    {
+      res = cddrive_audio_get_cdtext_title (cdio);
+      cdio_destroy (cdio);
+    }
+  
+  return res;
 }
 
 
 
 void
-cddrive_cddb_init_globals ()
+cddrive_audio_init_globals ()
 {
 }
 
 
 
 void
-cddrive_cddb_free_globals ()
+cddrive_audio_free_globals ()
 {
 }
 

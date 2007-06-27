@@ -10,21 +10,34 @@ You can also mount or unmount the disc via the plugin's menu (the action appears
 when a disc is in the drive).
 
 
-Requirements & limitations
-==========================
+Dependencies
+============
 
-- This plugin is based on HAL, and will not work if 'hald' is not running.
+To build the plugin, the following packages are required:
+- libxfcegui4 >= 4.3.99.2
+- libxfce4panel >= 4.3.99.2
+- exo >= 0.3.1.12rc2
+- hal-storage >= 0.5.8.1
+- dbus-glib >= 0.71
+- libcdio >= 0.76
+
+The plugin can query the freedb.org servers for audio CD titles. To compile
+with this feature enabled, you need:
+- libcddb >= 1.2.1
+- gthread >= 2.12.4 (optionnal, prevent the plugin from hanging while waiting
+                     for freedb.org response)
+
+
+Limitations
+===========
 
 - This release only works correctly with Linux.
+
+- This plugin is based on HAL, and will not work if 'hald' is not running.
 
 - The icons used to reports the content of the drive are the one of the theme
   currently in use (it becomes a limitation if your theme does not provide icons
   for cdrom drive and disc).
-  
-- The plugin can query the freedb.org servers for audio CD titles. To compile
-  with this feature enabled, you need libcdio and libcddb. The gthread-2.0
-  library is also recommanded in this case to prevent the plugin from hanging
-  while waiting for freedb.org response, but is not mandatory.
 
 
 Installation
@@ -39,5 +52,5 @@ How to report bugs?
 ===================
 
 Bugs should be reported to the Xfce bug tracking system
-(http://bugzilla.xfce.org, product 'Xfce Panel Plugins', Component
-'cddrive'). You will need to create an account for yourself.
+(http://bugzilla.xfce.org, product 'Xfce Panel Plugins', Component 'cddrive').
+You will need to create an account for yourself.

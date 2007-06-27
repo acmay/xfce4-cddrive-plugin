@@ -593,7 +593,7 @@ cddrive_free (XfcePanelPlugin *plugin,
   if (G_LIKELY (cddrive->monitor != NULL))
     cddrive_monitor_free (cddrive->monitor);
   
-  cddrive_cddb_free_globals ();
+  cddrive_audio_free_globals ();
   cddrive_error_free_globals ();
 
   /* free the plugin structure */
@@ -1056,7 +1056,7 @@ cddrive_new (XfcePanelPlugin *plugin)
   CddrivePlugin *res;
 
   cddrive_error_init_globals ();
-  cddrive_cddb_init_globals ();
+  cddrive_audio_init_globals ();
 
   res = panel_slice_new0 (CddrivePlugin);
 

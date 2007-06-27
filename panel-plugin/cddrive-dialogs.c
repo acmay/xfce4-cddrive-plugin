@@ -293,7 +293,7 @@ cddrive_configure_change_translucency (GtkSpinButton *spin_button,
 
 
 
-#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
+#ifdef HAVE_LIBCDDB
 static void
 cddrive_configure_toggle_cddb (GtkButton     *toggle,
                                CddrivePlugin *cddrive)
@@ -447,13 +447,14 @@ cddrive_configure (XfcePanelPlugin  *plugin,
                     *label, *entry, *button, *spin_button;
   GtkDialog         *dialog;
   GtkBox            *section_vbox, *vbox;
-#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
-  GtkTooltips       *tip;
-#endif
   CddriveDriveInfo* *drv_infos;
   gint               i;
   gchar             *combo_txt;
   GError            *err = NULL;
+
+#ifdef HAVE_LIBCDDB
+  GtkTooltips       *tip;
+#endif
 
   xfce_panel_plugin_block_menu (plugin);
 
@@ -639,7 +640,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
       cddrive_toggle_button_set_widget (GTK_TOGGLE_BUTTON (button), spin_button);
       
 
-#if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
+#ifdef HAVE_LIBCDDB
       /* --- Network section --- */
       section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Network"));
       

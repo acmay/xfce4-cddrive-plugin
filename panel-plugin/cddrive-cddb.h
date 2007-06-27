@@ -30,24 +30,30 @@ G_BEGIN_DECLS
 
 /* To call at program start */
 void
-cddrive_cddb_init_globals ();
+cddrive_audio_init_globals ();
 
 
 
 /* Free cddb global resources.
    To call at program termination. */
 void
-cddrive_cddb_free_globals ();
+cddrive_audio_free_globals ();
 
 
 
 /* Return the title of the audio CD in the drive of device path 'device',
    or NULL if the drive have no audio CD, or if the operation failed.
-   If 'connection_allowed' is FALSE, the function looks for the title in the
-   cache only.
+   
+   If compiled without CDDB support, the function looks for the title using
+   CD-TEXT only.
+   If compiled with CDDB support and 'connection_allowed' is FALSE, the function
+   looks for the title using the cache and CD-TEXT only.
+   Otherwise, the function connects to one of the freedb.org server if cache
+   or CD-TEXT methods failed.
+   
    The result must be freed after use. */
 gchar*
-cddrive_cddb_get_title (const gchar* device, gboolean connection_allowed);
+cddrive_audio_get_title (const gchar* device, gboolean connection_allowed);
 
 G_END_DECLS
 #endif

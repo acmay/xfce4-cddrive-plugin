@@ -19,22 +19,6 @@ dnl You should have received a copy of the GNU General Public License along with
 dnl this program; if not, write to the Free Software Foundation, Inc., 59 Temple
 dnl Place, Suite 330, Boston, MA  02111-1307  USA
 
-dnl SYL_CHECK_PACKAGE(varname, package, version, [action-if], [action-if-not])
-dnl
-dnl Same as XDT_CHECK_PACKAGE, except it store "package" and "version"
-dnl in "syl_pkg_name" and "syl_pkg_required_version" variables respectively,
-dnl so these infos can be used in "action-if-not".
-dnl
-AC_DEFUN([SYL_CHECK_PACKAGE],
-[
-  syl_pkg_name=$2
-  syl_pkg_required_version=$3
-  
-  XDT_CHECK_PACKAGE([$1], [$2], [$3], [$4], [$5])
-  AC_DEFINE([HAVE_$1], [1], [Define if $2 >= $3 present])
-])
-
-
 dnl SYL_DEBUG_SUPPORT()
 dnl
 dnl Modified BM_DEBUG_SUPPORT so that assertions are disabled when building
@@ -42,7 +26,7 @@ dnl final version (with --enable-final configure switch), as their purpose
 dnl is debug only.
 AC_DEFUN([SYL_DEBUG_SUPPORT],
 [
-  AC_ARG_ENABLE([final], AC_HELP_STRING([--enable-final], [Build final version]),
+  AC_ARG_ENABLE([final], AC_HELP_STRING([--enable-final], [Build optimized final version]),
       [enable_final=yes], [])
   AC_MSG_CHECKING([whether to build final version])
   if test x"$enable_final" = x"yes"; then

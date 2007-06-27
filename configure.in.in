@@ -78,38 +78,12 @@ XDT_CHECK_PACKAGE([LIBXFCE4PANEL], [libxfce4panel-1.0], [4.3.99.2])
 XDT_CHECK_PACKAGE([EXO], [exo-0.3], [0.3.1.12rc2])
 XDT_CHECK_PACKAGE([HALSTORAGE], [hal-storage], [0.5.8.1])
 XDT_CHECK_PACKAGE([DBUSGLIB], [dbus-glib-1], [0.71])
+XDT_CHECK_PACKAGE([LIBCDIO], [libcdio], [0.76])
 
 dnl ***********************************
 dnl *** Check for optional packages ***
 dnl ***********************************
 XDT_CHECK_OPTIONAL_PACKAGE([LIBCDDB], [libcddb], [1.2.1], [cddb], [CD Data Base support])
-if test x"$LIBCDDB_FOUND" = x"yes"; then
-  SYL_CHECK_PACKAGE([LIBCDIO], [libcdio], [0.76], ,
-    [
-      if test x"$xdg_cv_version" = x; then
-        echo "*** The package $syl_pkg_name (required for CDDB support) was not found"
-        echo "*** on your system."
-        echo "*** To fix this, you can either:"
-        echo "***   - install $syl_pkg_name (at least version $syl_pkg_required_version)."
-        echo "***   - adjust the PKG_CONFIG_PATH environment variable"
-        echo "***     if you installed the new version of the package"
-        echo "***     in a nonstandard prefix so pkg-config is able to find it."
-        echo "***   - disable the CDDB support (with --disable-cddb switch)."
-        exit 1
-      else
-        echo "*** The package $syl_pkg_name (required for CDDB support)"
-        echo "*** was found on your system, but the installed version ($xdg_cv_version)"
-        echo "*** is too old."
-        echo "*** To fix this, you can either:"
-        echo "***   - upgrade $syl_pkg_name to at least version $syl_pkg_required_version."
-        echo "***   - adjust the PKG_CONFIG_PATH environment variable"
-        echo "***     if you installed the new version of the package"
-        echo "***     in a nonstandard prefix so pkg-config is able to find it."
-        echo "***   - disable the CDDB support (with --disable-cddb switch)."
-        exit 1
-      fi
-    ])
-fi
 XDT_CHECK_OPTIONAL_PACKAGE([GTHREAD], [gthread-2.0], [2.12.4], [thread], [threaded CDDB queries support])
 
 dnl ************************************************

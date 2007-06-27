@@ -1043,7 +1043,7 @@ cddrive_monitor_get_audio_disc_title (CddriveMonitor *monitor)
     /* title has been previously cached */
     return monitor->audio_title;
 
-  monitor->audio_title = cddrive_cddb_get_title (monitor->dev, monitor->use_cddb);  
+  monitor->audio_title = cddrive_audio_get_title (monitor->dev, monitor->use_cddb);  
   return monitor->audio_title;
 }
 
