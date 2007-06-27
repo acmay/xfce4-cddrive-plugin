@@ -33,7 +33,7 @@
 #define CDDRIVE_COPYRIGHT_YEARS  "2007"
 #define CDDRIVE_COPYRIGHT_OWNERS "The Xfce development team. All rights reserved."
 
-#define CDDRIVE_SECTION_PADDING             5
+#define CDDRIVE_SECTION_PADDING             7
 #define CDDRIVE_SECTION_VBOX_SPACING        5
 #define CDDRIVE_SECTION_VBOX_PADDING        5
 #define CDDRIVE_VBOX_SPACING                5
@@ -308,18 +308,13 @@ cddrive_configure_toggle_cddb (GtkButton     *toggle,
 static GtkBox*
 cddrive_create_section_vbox (CddrivePlugin *cddrive,
                              GtkDialog     *dialog,
-                             gchar         *title,
-                             gboolean       add_separator)
+                             gchar         *title)
 {
   GtkWidget *res, *frm;
 
   res = gtk_vbox_new (FALSE, CDDRIVE_SECTION_VBOX_SPACING);
   frm = xfce_create_framebox_with_content (title, res);
 
-  if (add_separator)
-    gtk_box_pack_start (GTK_BOX (dialog->vbox), gtk_hseparator_new (),
-                        FALSE, FALSE, 0);
-    
   gtk_box_pack_start (GTK_BOX (dialog->vbox), frm,
                       FALSE, FALSE, CDDRIVE_SECTION_PADDING);
   return GTK_BOX (res);
@@ -483,7 +478,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
   
 
   /* --- "Drive" section  --- */
-  section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Drive"), FALSE);
+  section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Drive"));
   
   /* get infos (device path and model) for all detected CD-ROM drives */
   drv_infos = cddrive_cdrom_drive_infos_new (&err);
@@ -548,7 +543,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
     
 
       /* --- "Commands" section --- */    
-      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Fallback Commands"), TRUE);
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Fallback Commands"));
       table = gtk_table_new (2, 2, FALSE);
       gtk_box_pack_start (section_vbox, table,
                           FALSE, FALSE, CDDRIVE_SECTION_VBOX_PADDING);
@@ -559,7 +554,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
       /* --- "Display" section --- */
     
       /* -- name config -- */
-      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Display"), TRUE);
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Display"));
     
       hbox = gtk_hbox_new (FALSE, 0);
       gtk_box_pack_start (section_vbox, hbox, FALSE, FALSE, 0);
@@ -646,7 +641,7 @@ cddrive_configure (XfcePanelPlugin  *plugin,
 
 #if defined (HAVE_LIBCDIO) && defined (HAVE_LIBCDDB)
       /* --- Network section --- */
-      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Network"), TRUE);
+      section_vbox = cddrive_create_section_vbox (cddrive, dialog, _("Network"));
       
       /* -- CDDB config -- */
       button = gtk_check_button_new_with_label (_("Allow freedb.org connections"));
