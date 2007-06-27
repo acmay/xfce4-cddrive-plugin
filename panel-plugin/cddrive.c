@@ -921,55 +921,51 @@ cddrive_on_click (GtkButton     *button,
 {
   CddriveStatus *s;
   GError        *err = NULL;
-  gboolean       cb_enabled, update_mon;
 
-  if (G_UNLIKELY (cddrive->monitor == NULL))
-    return;
-  
-  /* We will force the status update. It doesn't need to be done a second time
-     upon a state drive change event, so we deactivate the callbacks. */
-  cb_enabled = cddrive_monitor_callbacks_enabled (cddrive->monitor);
-  update_mon = cddrive_monitor_enable_callbacks (cddrive->monitor, FALSE, NULL);
-  
-  s = cddrive_status_new (cddrive->monitor, &err);
-  if (G_LIKELY (s != NULL ))
+  /* to avoid spurious clicks while waiting the completion of the operation. */
+  gtk_widget_set_sensitive (GTK_WIDGET (button), FALSE);
+
+  if (G_LIKELY (cddrive->monitor != NULL))
     {
-      if (cddrive_status_is_open (s))
-      /* close the tray */
-      cddrive_monitor_close (cddrive->monitor, &err);
-      else
+      s = cddrive_status_new (cddrive->monitor, &err);
+      if (G_LIKELY (s != NULL ))
         {
-          if (cddrive_status_is_mounted (s))
-            /* try to unmount the disc */
-            cddrive_monitor_unmount (cddrive->monitor, &err);        
+          if (cddrive_status_is_open (s))
+            /* close the tray */
+            cddrive_monitor_close (cddrive->monitor, &err);
+          else
+            {
+              if (cddrive_status_is_mounted (s))
+                /* try to unmount the disc */
+                cddrive_monitor_unmount (cddrive->monitor, &err);        
 
+              if (G_LIKELY (err == NULL))
+                /* open the tray */
+                cddrive_monitor_eject (cddrive->monitor, &err);
+            }
+      
+          cddrive_status_free (s);
+      
           if (G_LIKELY (err == NULL))
-            /* open the tray */
-            cddrive_monitor_eject (cddrive->monitor, &err);
+            {
+              /* force update, to keep the button pushed down while waiting for
+                 HAL response. */
+              cddrive_update_monitor (cddrive);
+        
+              /* show the new status after HAL response. */
+              gtk_widget_show_all (cddrive->ebox);
+            }
         }
-      
-      cddrive_status_free (s);
-      
-      if (G_LIKELY (err == NULL && update_mon))
-        {
-          /* update the monitor, to keep the button pushed down
-             while waiting for HAL response. */
-          cddrive_update_monitor (cddrive);
-          gtk_widget_show_all (cddrive->ebox);
+  
+      if (G_UNLIKELY (err != NULL))
+        {    
+          cddrive_show_error (err);
+          cddrive_clear_error (&err);
         }
     }
   
-  if (update_mon)
-    {
-      /* Forced status update done, restore callbacks activation. */
-      cddrive_monitor_enable_callbacks (cddrive->monitor, cb_enabled, NULL);
-    }
-  
-  if (G_UNLIKELY (err != NULL))
-    {    
-      cddrive_show_error (err);
-      cddrive_clear_error (&err);
-    }
+  /* re-enable the button disabled at the beginning. */
+  gtk_widget_set_sensitive (GTK_WIDGET (button), TRUE);
 }
 
 

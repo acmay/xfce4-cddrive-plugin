@@ -84,21 +84,6 @@ cddrive_monitor_free            (CddriveMonitor *monitor);
 
 
 
-/* Enable/disable callbacks on changes of drive state.
-   Return FALSE if the operation failed, TRUE otherwise. */
-gboolean
-cddrive_monitor_enable_callbacks    (CddriveMonitor  *monitor,
-                                     gboolean         enable,
-                                     GError         **error);
-
-
-
-/* Are the callbacks enabled ? */
-gboolean
-cddrive_monitor_callbacks_enabled   (CddriveMonitor *monitor);
-
-
-
 /* Open the tray of the CD-ROM drive */
 void
 cddrive_monitor_eject           (CddriveMonitor *monitor, GError **error);

@@ -492,95 +492,30 @@ cddrive_monitor_hal_callback_device_removed (LibHalContext *ctx, const char *udi
 
 
 
-gboolean
-cddrive_monitor_enable_callbacks (CddriveMonitor *monitor,
-                                  gboolean enable,
-                                  GError **error)
+static gboolean
+cddrive_monitor_enable_callbacks (CddriveMonitor *monitor, GError **error)
 {
-  DBusError derr;
-
   g_assert (monitor != NULL);
 
-  if (monitor->callbacks_enabled == enable)
-    return TRUE;
-  
-  if (enable)
+  if (G_UNLIKELY (! libhal_ctx_set_device_added (monitor->ctx,
+                                                 cddrive_monitor_hal_callback_device_added)))
     {
-      /*enable callbacks */
-    
-      if (G_UNLIKELY (! libhal_ctx_set_device_added (monitor->ctx,
-                                                     cddrive_monitor_hal_callback_device_added)))
-        {
-          cddrive_set_error (error,
-                             CDDRIVE_ERROR_FAILED,
-                             _("Failed to register drive addition callback."));
-          return FALSE;
-        }
-  
-      if (G_UNLIKELY (! libhal_ctx_set_device_removed (monitor->ctx,
-                                                       cddrive_monitor_hal_callback_device_removed)))
-        {
-          cddrive_set_error (error,
-                             CDDRIVE_ERROR_FAILED,
-                             _("Failed to register drive removal callback."));
-          return FALSE;
-        }
-      
-      if (monitor->udi != NULL)
-        {
-          dbus_error_init (&derr);
-          if (! libhal_device_remove_property_watch (monitor->ctx, monitor->udi, &derr))
-            {
-              cddrive_store_dbus_error (error, CDDRIVE_ERROR_FAILED, &derr);
-              dbus_error_free (&derr);
-              return FALSE;
-            }
-        }
-    }
-  else 
-    {
-      /* disable callbacks */
-    
-      if (G_UNLIKELY (! libhal_ctx_set_device_added (monitor->ctx, NULL)))
-        {
-          cddrive_set_error (error,
-                             CDDRIVE_ERROR_FAILED,
-                             _("Failed to unregister drive addition callback."));
-          return FALSE;
-        }
-  
-      if (G_UNLIKELY (! libhal_ctx_set_device_removed (monitor->ctx, NULL)))
-        {
-          cddrive_set_error (error,
-                             CDDRIVE_ERROR_FAILED,
-                             _("Failed to unregister drive removal callback."));
-          return FALSE;
-        }
-      
-      if (monitor->udi != NULL)
-        {
-          dbus_error_init (&derr);
-          if (! libhal_device_remove_property_watch (monitor->ctx, monitor->udi, &derr))
-            {
-              cddrive_store_dbus_error (error, CDDRIVE_ERROR_FAILED, &derr);
-              dbus_error_free (&derr);
-              return FALSE;
-            }
-        }
+      cddrive_set_error (error,
+                         CDDRIVE_ERROR_FAILED,
+                         _("Failed to register drive addition callback."));
+      return FALSE;
     }
   
-  monitor->callbacks_enabled = enable;
+  if (G_UNLIKELY (! libhal_ctx_set_device_removed (monitor->ctx,
+                                                   cddrive_monitor_hal_callback_device_removed)))
+    {
+      cddrive_set_error (error,
+                         CDDRIVE_ERROR_FAILED,
+                         _("Failed to register drive removal callback."));
+      return FALSE;
+    }
+      
   return TRUE;
-}
-
-
-
-gboolean
-cddrive_monitor_callbacks_enabled (CddriveMonitor *monitor)
-{
-  g_assert (monitor != NULL);
-
-  return monitor->callbacks_enabled;
 }
 
 
@@ -665,7 +600,6 @@ cddrive_monitor_new (gchar                  *device,
   res->on_disc_inserted     = on_disc_inserted_callback;
   res->on_disc_removed      = on_disc_removed_callback;
   res->on_disc_modified     = on_disc_modified_callback;
-  res->callbacks_enabled    = FALSE; /* set to FALSE to enable callbacks effectively below */
   res->udi                  = NULL;
   res->is_ejectable         = FALSE;
   res->audio_title          = NULL;
@@ -692,7 +626,7 @@ cddrive_monitor_new (gchar                  *device,
       return NULL;
     }
   
-  if (G_UNLIKELY (! cddrive_monitor_enable_callbacks (res, TRUE, error)))
+  if (G_UNLIKELY (! cddrive_monitor_enable_callbacks (res, error)))
     {
       cddrive_monitor_free (res);
       return NULL;

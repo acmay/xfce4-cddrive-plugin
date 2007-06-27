@@ -35,7 +35,6 @@ typedef struct
   gpointer       on_disc_inserted;
   gpointer       on_disc_removed;
   gpointer       on_disc_modified;
-  gboolean       callbacks_enabled;
 
   gchar         *dev;                  /* CD-ROM drive's device path                       */
   gchar         *udi;                  /* CD-ROM disc's UDI (NULL if none)                 */
