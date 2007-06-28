@@ -5,7 +5,8 @@
     It is now a requirement.
   - add "Network" section with a switch to enable/disable connections to freedb.org.
   - add --enable-cddb/--disable-cddb switches to configure script (bug #3354).
-  - add CD-TEXT support to retrieve audio cd titles.
+  - add CD-TEXT support to retrieve audio cd infos.
+  - add performer name to audio cd label (in addition of the cd title).
   - fix useless expansion of the plugin in the panel (bug #3354).
   - fix bug that disabled the name entry when opening the configuration dialog
     if the "use in tooltip" option was not selected.
