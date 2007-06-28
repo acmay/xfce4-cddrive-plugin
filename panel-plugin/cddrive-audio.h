@@ -25,7 +25,14 @@
 
 G_BEGIN_DECLS
 
-/* freedb.org support (to get the title of an audio CD) */
+/* Access to the informations of an audio CD */
+
+typedef struct
+{
+  gchar *performers;
+  gchar *title;
+} CddriveAudioInfos;
+
 
 
 /* To call at program start */
@@ -41,19 +48,24 @@ cddrive_audio_free_globals ();
 
 
 
-/* Return the title of the audio CD in the drive of device path 'device',
+/* Return informations of the audio CD in the drive of device path 'device',
    or NULL if the drive have no audio CD, or if the operation failed.
    
-   If compiled without CDDB support, the function looks for the title using
+   If compiled without CDDB support, the function looks for the infos using
    CD-TEXT only.
    If compiled with CDDB support and 'connection_allowed' is FALSE, the function
-   looks for the title using the cache and CD-TEXT only.
+   looks for the infos using the cache and CD-TEXT only.
    Otherwise, the function connects to one of the freedb.org server if cache
    or CD-TEXT methods failed.
    
    The result must be freed after use. */
-gchar*
-cddrive_audio_get_title (const gchar* device, gboolean connection_allowed);
+CddriveAudioInfos*
+cddrive_audio_get_infos (const gchar* device, gboolean connection_allowed);
+
+
+
+void
+cddrive_audio_free_infos (CddriveAudioInfos *infos);
 
 G_END_DECLS
 #endif

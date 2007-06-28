@@ -176,7 +176,7 @@ cddrive_update_icon (CddrivePlugin *cddrive)
 static gchar*
 cddrive_get_unnamed_tip_text_from_status (CddriveStatus *status)
 {
-  const gchar *title, *type;
+  const gchar *label, *type;
 
   /* Even if it result in a clumsy code, try to write the messages without using
      concatenation tricks, to preserve their meaning in the po files. */
@@ -203,7 +203,7 @@ cddrive_get_unnamed_tip_text_from_status (CddriveStatus *status)
   /* There is a disc in the drive : use title whenever it is available.
      Otherwise, use disc type. */
   
-  title = cddrive_status_get_title (status);
+  label = cddrive_status_get_label (status);
   type  = cddrive_status_get_type (status);
   
   if (cddrive_status_is_ejectable (status))
@@ -212,9 +212,9 @@ cddrive_get_unnamed_tip_text_from_status (CddriveStatus *status)
         /* translation note: "Eject blank <disc type>" (e.g. "Eject blank cd-rw") */
         return g_strdup_printf (_("Eject blank %s"), type);
       
-      if (title != NULL)
-        /* translation note: "Eject \"<disc title>\"" */
-        return g_strdup_printf (_("Eject \"%s\""), title);
+      if (label != NULL)
+        /* translation note: "Eject \"<disc label>\"" */
+        return g_strdup_printf (_("Eject \"%s\""), label);
 
       if (cddrive_status_is_audio (status))
         /* translation note: "Eject audio <disc type>" */
@@ -230,10 +230,10 @@ cddrive_get_unnamed_tip_text_from_status (CddriveStatus *status)
     /* translation note: "Blank <disc type>" (e.g. "Blank cd-rw") */
     return g_strdup_printf (_("Blank %s"), type);
       
-  if (title != NULL)
-    /* translation note: "\"<disc title>\" (made translatable in case translation
+  if (label != NULL)
+    /* translation note: "\"<disc label>\" (made translatable in case translation
                          do not use the '"' character to enclose the title) */
-    return g_strdup_printf (_("\"%s\""), title);
+    return g_strdup_printf (_("\"%s\""), label);
 
   if (cddrive_status_is_audio (status))
     /* translation note: "Audio <disc type>" */
@@ -249,7 +249,7 @@ static gchar*
 cddrive_get_named_tip_text_from_status (CddriveStatus *status,
                                         const gchar   *drive_name)
 {
-  const gchar *title, *type;
+  const gchar *label, *type;
   
   g_assert (drive_name != NULL);
 
@@ -283,7 +283,7 @@ cddrive_get_named_tip_text_from_status (CddriveStatus *status,
   /* There is a disc in the drive : use title whenever it is available.
      Otherwise, use disc type. */
   
-  title = cddrive_status_get_title (status);
+  label = cddrive_status_get_label (status);
   type  = cddrive_status_get_type (status);
   
   if (cddrive_status_is_ejectable (status))
@@ -292,9 +292,9 @@ cddrive_get_named_tip_text_from_status (CddriveStatus *status,
         /* translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1") */
         return g_strdup_printf (_("Eject blank %s from %s"), type, drive_name);
       
-      if (title != NULL)
-        /* translation note: "Eject \"<disc title>\" from <drive name>" */
-        return g_strdup_printf (_("Eject \"%s\" from %s"), title, drive_name);
+      if (label != NULL)
+        /* translation note: "Eject \"<disc label>\" from <drive name>" */
+        return g_strdup_printf (_("Eject \"%s\" from %s"), label, drive_name);
 
       if (cddrive_status_is_audio (status))
         /* translation note: "Eject audio <disc type> from <drive name>" */
@@ -310,9 +310,9 @@ cddrive_get_named_tip_text_from_status (CddriveStatus *status,
     /* translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1") */
     return g_strdup_printf (_("Blank %s in %s"), type, drive_name);
       
-  if (title != NULL)
-    /* translation note: "\"<disc title>\" in <drive name>" (e.g. ""Backup #36" in cdrom1") */
-    return g_strdup_printf (_("\"%s\" in %s"), title, drive_name);
+  if (label != NULL)
+    /* translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1") */
+    return g_strdup_printf (_("\"%s\" in %s"), label, drive_name);
 
   if (cddrive_status_is_audio (status))
     /* translation note: "Audio <disc type> in <drive name>" */
@@ -417,7 +417,7 @@ cddrive_update_menu_from_status (CddrivePlugin *cddrive, CddriveStatus *status)
   else
     {
       label = GTK_LABEL (gtk_bin_get_child (GTK_BIN (cddrive->menu_item)));
-      title = cddrive_status_get_title (status);
+      title = cddrive_status_get_label (status);
       if (title == NULL)
         {
           if (cddrive_status_is_mounted (status))

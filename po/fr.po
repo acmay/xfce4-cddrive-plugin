@@ -6,10 +6,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.0.1\n"
+"Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-27 10:23+0200\n"
-"PO-Revision-Date: 2007-05-22 14:50+0200\n"
+"POT-Creation-Date: 2007-06-28 18:51+0200\n"
+"PO-Revision-Date: 2007-06-27 23:05+0200\n"
 "Last-Translator: Sylvain Reynal <sreynal@nerim.net>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Aucun disque dans le lecteur"
 msgid "Eject blank %s"
 msgstr "Éjecter le %s vierge"
 
-#. translation note: "Eject \"<disc title>\""
+#. translation note: "Eject \"<disc label>\""
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
@@ -64,7 +64,7 @@ msgstr "Éjecter le %s"
 msgid "Blank %s"
 msgstr "%s vierge"
 
-#. translation note: "\"<disc title>\" (made translatable in case translation
+#. translation note: "\"<disc label>\" (made translatable in case translation
 #. do not use the '"' character to enclose the title)
 #: ../panel-plugin/cddrive.c:236
 #, c-format
@@ -108,7 +108,7 @@ msgstr "Aucun disque dans %s"
 msgid "Eject blank %s from %s"
 msgstr "Éjecter le %s vierge de %s"
 
-#. translation note: "Eject \"<disc title>\" from <drive name>"
+#. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
@@ -132,7 +132,7 @@ msgstr "Éjecter le %s de %s"
 msgid "Blank %s in %s"
 msgstr "%s vierge dans %s"
 
-#. translation note: "\"<disc title>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -246,57 +246,62 @@ msgid "Unmounted disc icon color"
 msgstr "Couleur de l'icône du disque démonté"
 
 #. --- "Drive" section  ---
-#: ../panel-plugin/cddrive-dialogs.c:482
+#: ../panel-plugin/cddrive-dialogs.c:479
 msgid "Drive"
 msgstr "Lecteur"
 
-#: ../panel-plugin/cddrive-dialogs.c:490
+#: ../panel-plugin/cddrive-dialogs.c:487
 msgid "CD-ROM drive detection failed !"
 msgstr "La détection du lecteur CD-ROM a échoué !"
 
-#: ../panel-plugin/cddrive-dialogs.c:497
+#: ../panel-plugin/cddrive-dialogs.c:494
 msgid "No CD-ROM drive detected"
 msgstr "Aucun lecteur de CD-ROM détecté"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
-#: ../panel-plugin/cddrive-dialogs.c:547
+#: ../panel-plugin/cddrive-dialogs.c:544
 msgid "Fallback Commands"
 msgstr "Commandes de rechange"
 
 #. --- "Display" section ---
 #. -- name config --
-#: ../panel-plugin/cddrive-dialogs.c:558
+#: ../panel-plugin/cddrive-dialogs.c:555
 msgid "Display"
 msgstr "Affichage"
 
-#: ../panel-plugin/cddrive-dialogs.c:563
+#: ../panel-plugin/cddrive-dialogs.c:560
 msgid "Name to display"
 msgstr "Nom à afficher"
 
-#: ../panel-plugin/cddrive-dialogs.c:587
+#: ../panel-plugin/cddrive-dialogs.c:575
+msgid "Write here the name of the drive to display in panel or tooltip."
+msgstr ""
+"Écrivez ici le nom du lecteur à afficher dans le panneau ou la bulle d'aide."
+
+#: ../panel-plugin/cddrive-dialogs.c:588
 msgid "display in panel"
 msgstr "afficher dans le panneau"
 
-#: ../panel-plugin/cddrive-dialogs.c:598
+#: ../panel-plugin/cddrive-dialogs.c:599
 msgid "use in tooltip"
 msgstr "utiliser dans la bulle d'aide"
 
-#: ../panel-plugin/cddrive-dialogs.c:620
+#: ../panel-plugin/cddrive-dialogs.c:621
 msgid "Unmounted disc icon opacity"
 msgstr "Opacité de l'icône du disque démonté"
 
 #. --- Network section ---
-#: ../panel-plugin/cddrive-dialogs.c:645
+#: ../panel-plugin/cddrive-dialogs.c:646
 msgid "Network"
 msgstr "Réseau"
 
 #. -- CDDB config --
-#: ../panel-plugin/cddrive-dialogs.c:648
+#: ../panel-plugin/cddrive-dialogs.c:649
 msgid "Allow freedb.org connections"
 msgstr "Autoriser les connections à freedb.org"
 
-#: ../panel-plugin/cddrive-dialogs.c:653
+#: ../panel-plugin/cddrive-dialogs.c:654
 msgid ""
 "Enabling this option allows the plugin to query the freedb.org servers in "
 "order to get the title of an audio CD."
@@ -304,12 +309,12 @@ msgstr ""
 "Activer cette option permet au plugin d'interroger les serveurs freedb.org "
 "de manière à récupérer le titre d'un CD audio."
 
-#: ../panel-plugin/cddrive-dialogs.c:681
+#: ../panel-plugin/cddrive-dialogs.c:682
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
 msgstr "Contrôle du plateau et du contenu d'un lecteur CD."
 
-#: ../panel-plugin/cddrive-dialogs.c:724
+#: ../panel-plugin/cddrive-dialogs.c:725
 msgid "No error description available."
 msgstr "Pas de description d'erreur disponible."
 
@@ -419,11 +424,6 @@ msgstr "Échec de l'enregistrement du callback d'enlèvement du lecteur."
 msgid "Failed to store monitor in HAL context."
 msgstr "Le stockage du moniteur dans le contexte HAL a échoué."
 
-#~ msgid "Error"
-#~ msgstr "Erreur"
-
-#~ msgid "Failed to unregister drive addition callback."
-#~ msgstr "Échec du désenregistrement du callback d'ajout du lecteur."
-
-#~ msgid "Failed to unregister drive removal callback."
-#~ msgstr "Échec du désenregistrement du callback d'enlèvement du lecteur."
+#: ../panel-plugin/cddrive-monitor.c:1042
+msgid "unknown title"
+msgstr "titre inconnu"

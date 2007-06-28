@@ -52,8 +52,8 @@ typedef struct
      we don't really expect this property to change, do we ?) */
   gboolean       is_ejectable;
 
-  /* disc title cache */
-  gchar         *cd_title;
+  /* disc label cache */
+  gchar         *cd_label;
   
   gboolean       use_cddb; /* are freedb.org connections allowed ? */
 } _CddriveMonitor;

@@ -36,12 +36,57 @@
 #define VERSION "unknown"
 #endif
 
-#define CDDRIVE_CDDB_CACHE_PATH           "xfce4/panel/cddrive"
-#define CDDRIVE_CDDB_CACHE_GROUP          "Cddb"
-#define CDDRIVE_CDDB_CACHE_SIZE           20
+#define CDDRIVE_CDDB_CACHE_PATH             "xfce4/panel/cddrive"
+#define CDDRIVE_CDDB_CACHE_INFOS_GROUP_ID   "infos"
+#define CDDRIVE_CDDB_CACHE_VERSION_ID       "version"
+#define CDDRIVE_CDDB_CACHE_VERSION          "1"
+#define CDDRIVE_CDDB_CACHE_SIZE             20
+#define CDDRIVE_CDDB_CACHE_PERFORMERS_ID    "perf"
+#define CDDRIVE_CDDB_CACHE_TITLE_ID         "title"
+
 #define cddrive_audio_get_key_for_id(id)  g_strdup_printf ("%08x", id)
 
 #endif
+
+
+
+/* Return a structure containing the infos passed as parameters.
+   Return NULL if there is not enough memory, or if all the parameters are NULL.
+   The string parameters should not be freed, this is done by calling
+   'cddrive_audio_free_infos'.*/
+static CddriveAudioInfos*
+cddrive_audio_new_infos (gchar *performers, gchar *title)
+{
+  CddriveAudioInfos *res;
+
+  if (performers == NULL && title == NULL)
+    return NULL;
+
+  res = g_try_malloc (sizeof (CddriveAudioInfos));
+  if (res == NULL)
+    {
+      g_warning ("not enough memory to store the audio CD infos.");
+      return NULL;
+    }
+  
+  res->performers = performers;
+  res->title = title;
+
+  return res;
+}
+
+
+
+void
+cddrive_audio_free_infos (CddriveAudioInfos *infos)
+{
+  g_assert (infos != NULL);
+
+  g_free (infos->performers);
+  g_free (infos->title);
+  g_free (infos);
+}
+
 
 
 /* Create a read access on the CD */
@@ -69,16 +114,17 @@ cddrive_audio_new_cdio (const gchar* device)
 
 
 
-/* Return the title of the CD from the CD-TEXT info it contains,
-   or NULL if the CD does not contain such CD-TEXT info. */
-static gchar*
-cddrive_audio_get_cdtext_title (CdIo_t *cdio)
+/* Return the infos of the CD from CD-TEXT, or NULL if the CD does not contain
+   such information. */
+static CddriveAudioInfos*
+cddrive_audio_get_cdtext_infos (CdIo_t *cdio)
 {
-  gchar    *res;
-  cdtext_t *cdtxt;
+  CddriveAudioInfos *res;
+  cdtext_t          *cdtxt;
 
   cdtxt = cdio_get_cdtext (cdio, 0);
-  res = cdtext_get (CDTEXT_TITLE, cdtxt);
+  res = cddrive_audio_new_infos (cdtext_get (CDTEXT_PERFORMER, cdtxt),
+                                 cdtext_get (CDTEXT_TITLE, cdtxt));
   cdtext_destroy (cdtxt);
 
   return res;
@@ -88,6 +134,89 @@ cddrive_audio_get_cdtext_title (CdIo_t *cdio)
 
 #ifdef HAVE_LIBCDDB /* ---------- CDDB SUPPORT ---------- */
 
+/* Open cache without checking version */
+static XfceRc*
+cddrive_audio_open_cache (gboolean readonly)
+{
+  XfceRc *res;
+
+  res = xfce_rc_config_open (XFCE_RESOURCE_CACHE,
+                             CDDRIVE_CDDB_CACHE_PATH,
+                             readonly);
+  if (res == NULL)
+    g_warning ("unable to open CDDB cache file for %s.",
+                 (readonly ? "reading" : "writing"));
+  
+  return res;
+}
+
+
+
+/* Clear cache and set version to 'CDDRIVE_CDDB_CACHE_VERSION' */
+static void
+cddrive_audio_reset_cddb_cache (XfceRc *cache)
+{
+  gchar* *l;
+  gint    i;
+
+  l = xfce_rc_get_groups (cache);
+  for (i = 0; l [i] != NULL; i++)
+    xfce_rc_delete_group (cache, l [i], FALSE);
+  
+  g_strfreev (l);
+  
+  xfce_rc_set_group (cache, CDDRIVE_CDDB_CACHE_INFOS_GROUP_ID);
+  xfce_rc_write_entry (cache,
+                       CDDRIVE_CDDB_CACHE_VERSION_ID,
+                       CDDRIVE_CDDB_CACHE_VERSION);
+}
+
+
+
+/* Open cache, check it, and reset it if necessary */
+static XfceRc*
+cddrive_audio_get_cddb_cache (gboolean readonly)
+{
+  XfceRc      *res;
+  const gchar *v;
+
+  res = cddrive_audio_open_cache (readonly);
+  if (res == NULL)
+    return NULL;
+  
+  xfce_rc_set_group (res, CDDRIVE_CDDB_CACHE_INFOS_GROUP_ID);
+  v = xfce_rc_read_entry (res, CDDRIVE_CDDB_CACHE_VERSION_ID, "not set");
+  
+  if (! g_str_equal (CDDRIVE_CDDB_CACHE_VERSION, v))
+    {
+      g_message ("current CDDB cache version is %s. Reseting cache to version %s",
+                 v, CDDRIVE_CDDB_CACHE_VERSION);
+      
+      if (readonly)
+        {
+          /* reopen cache for writing */
+          xfce_rc_close (res);
+          res = cddrive_audio_open_cache (FALSE);
+          if (res == NULL)
+            return NULL;
+          
+          cddrive_audio_reset_cddb_cache (res);
+          
+          /* reopen cache for reading */
+          xfce_rc_close (res);
+          res = cddrive_audio_open_cache (TRUE);
+          if (res == NULL)
+            return NULL;
+        }
+      else
+        cddrive_audio_reset_cddb_cache (res);      
+    }
+  
+  return res;
+}
+
+
+
 /* Save a pair (CDDB id, CD title) in the cache file only if it is not already
    stored. Do nothing otherwise.
    
@@ -95,41 +224,49 @@ cddrive_audio_get_cdtext_title (CdIo_t *cdio)
    
    The cache file is a Xfce rc file, containing a group called "Cddb" with
    at most CDDRIVE_CDDB_CACHE_SIZE entries, each having a CDDB id as the key,
-   and a CD title as the value.
+   and a list (title, performers) as the value.
 */
 static void
-cddrive_audio_cache_save (guint id, const gchar *title)
+cddrive_audio_cache_save (guint id, CddriveAudioInfos *infos)
 {
-  XfceRc *cache;
+  XfceRc *cache = NULL;
   gchar* *keys;
-  gchar  *k;
-  guint   nb;
+  gchar  *k, *k2;
+  guint   n;
 
-  cache = xfce_rc_config_open (XFCE_RESOURCE_CACHE,
-                               CDDRIVE_CDDB_CACHE_PATH,
-                               FALSE);
+  g_assert (infos != NULL);
+
+  cache = cddrive_audio_get_cddb_cache (FALSE);
   if (cache == NULL)
-    {
-      g_warning ("unable to open CDDB cache file.");
-      return;
-    }
-  
-  xfce_rc_set_group (cache, CDDRIVE_CDDB_CACHE_GROUP);
+    return;
   
   k = cddrive_audio_get_key_for_id (id);
-  if (! xfce_rc_has_entry (cache, k))
+  if (! xfce_rc_has_group (cache, k))
     {
-      /* check if the cache limit is reached. If so, remove the first entry. */
-      keys = xfce_rc_get_entries (cache, CDDRIVE_CDDB_CACHE_GROUP);
-      nb = g_strv_length (keys);
-    
-      if (nb >= CDDRIVE_CDDB_CACHE_SIZE)
-        xfce_rc_delete_entry (cache, keys [0], FALSE);
+      /* check if the cache size is over the limit. If so, remove the first groups
+         until the limit is reached. */
+      keys = xfce_rc_get_groups (cache);
+      for (n = g_strv_length (keys); n > CDDRIVE_CDDB_CACHE_SIZE; n--)
+        {
+          k2 = keys [n - CDDRIVE_CDDB_CACHE_SIZE];
+        
+          /* do not delete the cache internal infos group */
+          if (! g_str_equal (k2, CDDRIVE_CDDB_CACHE_INFOS_GROUP_ID))
+            xfce_rc_delete_entry (cache, k2, FALSE);
+        }
       
       g_strfreev (keys);
       
-      /* write the new entry */
-      xfce_rc_write_entry (cache, k, title);
+      /* write the new group */
+      xfce_rc_set_group (cache, k);
+      if (infos->performers != NULL)
+        xfce_rc_write_entry (cache,
+                             CDDRIVE_CDDB_CACHE_PERFORMERS_ID,
+                             infos->performers);
+      if (infos->performers != NULL)
+        xfce_rc_write_entry (cache,
+                             CDDRIVE_CDDB_CACHE_TITLE_ID,
+                             infos->title);
     }
   
   xfce_rc_close (cache);
@@ -138,26 +275,33 @@ cddrive_audio_cache_save (guint id, const gchar *title)
 
 
 
-/* Return the title corresponding to the CDDB id 'id' in the cache, or NULL
-   if not found. */
-gchar*
+/* Return the infos corresponding to the CDDB id 'id' in the cache, or NULL
+   if not found.
+   If not NULL, free the result with 'cddrive_audio_free_infos'. */
+static CddriveAudioInfos*
 cddrive_audio_cache_read (guint id)
 {
-  XfceRc *cache;
-  gchar  *k, *res;
+  CddriveAudioInfos *res = NULL;
+  XfceRc            *cache;
+  gchar             *k;
 
-  cache = xfce_rc_config_open (XFCE_RESOURCE_CACHE,
-                               CDDRIVE_CDDB_CACHE_PATH,
-                               TRUE);
+  cache = cddrive_audio_get_cddb_cache (TRUE);
   if (cache == NULL)
+    return NULL;
+  
+  k = cddrive_audio_get_key_for_id (id);
+  
+  if (xfce_rc_has_group (cache, k))
     {
-      g_warning ("unable to open CDDB cache file.");
-      return NULL;
+      xfce_rc_set_group (cache, k);
+      res = cddrive_audio_new_infos (g_strdup (xfce_rc_read_entry (cache,
+                                                  CDDRIVE_CDDB_CACHE_PERFORMERS_ID,
+                                                  NULL)),
+                                     g_strdup (xfce_rc_read_entry (cache,
+                                                  CDDRIVE_CDDB_CACHE_TITLE_ID,
+                                                  NULL)));
     }
   
-  xfce_rc_set_group (cache, CDDRIVE_CDDB_CACHE_GROUP);
-  k = cddrive_audio_get_key_for_id (id);
-  res = g_strdup (xfce_rc_read_entry (cache, k, NULL));
   xfce_rc_close (cache);
   g_free (k);
   
@@ -283,10 +427,11 @@ cddrive_audio_new_connection ()
 
 
 static gpointer
-cddrive_audio_cache_title_from_server (gpointer data)
+cddrive_audio_cache_infos_from_server (gpointer data)
 {
-  cddb_disc_t *cdda = (cddb_disc_t*) data;
-  cddb_conn_t *conn;
+  cddb_disc_t       *cdda = (cddb_disc_t*) data;
+  cddb_conn_t       *conn;
+  CddriveAudioInfos *infos;
   static GStaticMutex mutex = G_STATIC_MUTEX_INIT;
 
   /* we don't want two connections at the same time, have mercy for freedb.org,
@@ -296,18 +441,25 @@ cddrive_audio_cache_title_from_server (gpointer data)
       conn = cddrive_audio_new_connection ();
       if (conn != NULL)
         {
+          g_debug ("sending query to freedb.org");
           if (cddb_query (conn, cdda) == -1)
             g_warning ("query on server '%s' failed (%s).",
                        cddb_get_server_name (conn),
                        cddb_error_str (cddb_errno (conn)));
           else
             {
-              if (cddb_disc_get_title (cdda) != NULL)
-                cddrive_audio_cache_save (cddb_disc_get_discid (cdda),
-                                          cddb_disc_get_title (cdda));
+              infos = cddrive_audio_new_infos (g_strdup (cddb_disc_get_artist (cdda)),
+                                               g_strdup (cddb_disc_get_title (cdda)));
+                                               
+              if (infos != NULL)
+                {
+                  cddrive_audio_cache_save (cddb_disc_get_discid (cdda), infos);
+                  cddrive_audio_free_infos (infos);
+                }
             }
       
           cddb_destroy (conn);
+          g_debug ("freedb.org connection closed");
         }
       g_static_mutex_unlock (&mutex);
     }
@@ -319,12 +471,12 @@ cddrive_audio_cache_title_from_server (gpointer data)
 
 
 
-gchar*
-cddrive_audio_get_title (const gchar* device, gboolean connection_allowed)
+CddriveAudioInfos*
+cddrive_audio_get_infos (const gchar* device, gboolean connection_allowed)
 {
-  gchar       *res = NULL;
-  cddb_disc_t *cdda;
-  CdIo_t      *cdio;
+  CddriveAudioInfos *res = NULL;
+  cddb_disc_t       *cdda;
+  CdIo_t            *cdio;
 
   g_assert (device != NULL);
 
@@ -338,26 +490,35 @@ cddrive_audio_get_title (const gchar* device, gboolean connection_allowed)
       
           if (res == NULL)
             {
-              res = cddrive_audio_get_cdtext_title (cdio);
+              res = cddrive_audio_get_cdtext_infos (cdio);
         
-              if (res == NULL && connection_allowed)
+              if (res == NULL)
                 {
-                  /* the CDDB disc id was not found in cache. Try to fetch it on freedb.org */
+                  if (connection_allowed)
+                    {
+                      /* the CDDB disc id was not found in cache. Try to fetch it on freedb.org */
         
 #ifdef HAVE_GTHREAD
-                  /* if possible, fetch the title in a thread, so the plugin do not freeze
-                     while attempting to connect to the server */          
-                  g_thread_create (cddrive_audio_cache_title_from_server,
-                                   cdda,
-                                   FALSE,
-                                   NULL);
-                  /* note: cdda is destroyed in the thread function */
+                      /* if possible, fetch the infos in a thread, so the plugin do not freeze
+                         while attempting to connect to the server */          
+                      g_thread_create (cddrive_audio_cache_infos_from_server,
+                                       cdda,
+                                       FALSE,
+                                       NULL);
+                      /* note: cdda is destroyed in the thread function */
         
 #else
-                  /* no thread support, plugin freeze will depend on the connection quality */
-                  cddrive_audio_cache_title_from_server (cdda);
-                  res = g_strdup (cddb_disc_get_title (cdda));
+                      /* no thread support, plugin freeze will depend on the connection quality */
+                      /* note: cdda is destroyed in this function */
+                      cddrive_audio_cache_infos_from_server (cdda);
+                      res = g_strdup (cddb_disc_get_title (cdda));
 #endif
+                    }
+                }
+              else
+                {
+                  cddrive_audio_cache_save (cddb_disc_get_discid (cdda), res);
+                  cddb_disc_destroy (cdda);
                 }
             }
         }
@@ -391,18 +552,18 @@ cddrive_audio_free_globals ()
 
 #else /* ---------- NO CDDB SUPPORT ---------- */
 
-gchar*
-cddrive_audio_get_title (const gchar* device, gboolean connection_allowed)
+CddriveAudioInfos*
+cddrive_audio_get_infos (const gchar* device, gboolean connection_allowed)
 {
-  gchar       *res = NULL;
-  CdIo_t      *cdio;
+  CddriveAudioInfos *res = NULL;
+  CdIo_t            *cdio;
 
   g_assert (device != NULL);
 
   cdio = cddrive_audio_new_cdio (device);
   if (cdio != NULL)
     {
-      res = cddrive_audio_get_cdtext_title (cdio);
+      res = cddrive_audio_get_cdtext_infos (cdio);
       cdio_destroy (cdio);
     }
   

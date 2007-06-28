@@ -173,10 +173,11 @@ cddrive_status_is_locked     (CddriveStatus *status);
 
 
 
-/* Title of the disc. NULL if there is none or the disc is audio or blank.
+/* Label of the disc. NULL if there is none or the disc is blank, or audio
+   (if the cd infos are not available).
    'status' must not be NULL. */
 const gchar*
-cddrive_status_get_title     (CddriveStatus *status);
+cddrive_status_get_label     (CddriveStatus *status);
 
 
 

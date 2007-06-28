@@ -427,8 +427,8 @@ cddrive_monitor_unregister_disc (CddriveMonitor *monitor)
   g_free (monitor->udi);
   monitor->udi = NULL;
   
-  g_free (monitor->cd_title);
-  monitor->cd_title = NULL;
+  g_free (monitor->cd_label);
+  monitor->cd_label = NULL;
 }
 
 
@@ -602,7 +602,7 @@ cddrive_monitor_new (gchar                  *device,
   res->on_disc_modified     = on_disc_modified_callback;
   res->udi                  = NULL;
   res->is_ejectable         = FALSE;
-  res->cd_title             = NULL;
+  res->cd_label             = NULL;
   res->use_cddb             = use_cddb;
 
   res->mount                = NULL;
@@ -687,7 +687,7 @@ cddrive_monitor_free (CddriveMonitor * monitor)
 
   g_free (monitor->mount);
   g_free (monitor->unmount);
-  g_free (monitor->cd_title);
+  g_free (monitor->cd_label);
   g_free (monitor);
 }
 
@@ -1020,6 +1020,33 @@ cddrive_monitor_unmount (CddriveMonitor *monitor, GError **error)
 
 
 
+static void
+cddrive_monitor_store_audio_disc_label (CddriveMonitor *monitor)
+{
+  CddriveAudioInfos *nfo;
+
+  g_assert (monitor != NULL);
+  g_assert (monitor->dev != NULL);
+  g_assert (monitor->cd_label == NULL);
+
+  nfo = cddrive_audio_get_infos (monitor->dev, monitor->use_cddb);
+  if (nfo != NULL)
+    {
+      g_assert (nfo->performers != NULL || nfo->title != NULL);
+    
+      if (nfo->performers == NULL)
+        monitor->cd_label = g_strdup (nfo->title);
+      else
+        monitor->cd_label = g_strconcat (nfo->performers,
+                                         " - ",
+                                         (nfo->title == NULL) ? _("unknown title") : nfo->title,
+                                         NULL);
+      cddrive_audio_free_infos (nfo);
+    }
+}
+
+
+
 static const gchar*
 cddrive_status_get_disc_icon_name (LibHalVolume *disc)
 {
@@ -1108,17 +1135,17 @@ cddrive_status_new (CddriveMonitor *monitor, GError **error)
         
       res->type  = cddrive_disc_type_name [libhal_volume_get_disc_type (vol) - LIBHAL_VOLUME_DISC_TYPE_CDROM];
     
-      if (monitor->cd_title == NULL)
+      if (monitor->cd_label == NULL)
         {
           /* cache cd title */
           if (res->is_audio)
-            /* launch CDDB query if enabled and threaded, and set cd_title to NULL
-               if the connection is not fast enough. The title will then be stored upon
-               a call of 'cddrive_status_get_title'.
-               Otherwise (CDDB disabled or not threaded) wait and store the title (if any). */
-            monitor->cd_title = cddrive_audio_get_title (monitor->dev, monitor->use_cddb);
+            /* launch CDDB query if enabled and threaded, and let cd_label set to NULL
+               if the connection is not fast enough. The label will then be stored upon
+               a call of 'cddrive_status_get_label'.
+               Otherwise (CDDB disabled or not threaded) wait and store the label (if any). */
+            cddrive_monitor_store_audio_disc_label (monitor);
           else
-            monitor->cd_title = g_strdup (libhal_volume_get_label (vol));
+            monitor->cd_label = g_strdup (libhal_volume_get_label (vol));
         }
       
       libhal_volume_free (vol);
@@ -1202,17 +1229,17 @@ cddrive_status_is_audio (CddriveStatus *status)
 
 
 const gchar*
-cddrive_status_get_title (CddriveStatus *status)
+cddrive_status_get_label (CddriveStatus *status)
 {
   CddriveMonitor *m;
 
   g_assert (status != NULL);
 
   m = status->mon;
-  if (status->is_audio && m->cd_title == NULL)
-    m->cd_title = cddrive_audio_get_title (m->dev, m->use_cddb);
+  if (status->is_audio && m->cd_label == NULL)
+    cddrive_monitor_store_audio_disc_label (m);
   
-  return m->cd_title;  
+  return m->cd_label;  
 }
 
 
