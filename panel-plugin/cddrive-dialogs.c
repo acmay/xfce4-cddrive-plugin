@@ -447,14 +447,11 @@ cddrive_configure (XfcePanelPlugin  *plugin,
                     *label, *entry, *button, *spin_button;
   GtkDialog         *dialog;
   GtkBox            *section_vbox, *vbox;
+  GtkTooltips       *tip;
   CddriveDriveInfo* *drv_infos;
   gint               i;
   gchar             *combo_txt;
   GError            *err = NULL;
-
-#ifdef HAVE_LIBCDDB
-  GtkTooltips       *tip;
-#endif
 
   xfce_panel_plugin_block_menu (plugin);
 
@@ -566,13 +563,17 @@ cddrive_configure (XfcePanelPlugin  *plugin,
       entry = gtk_entry_new ();
       if (cddrive->name != NULL)
         gtk_entry_set_text (GTK_ENTRY (entry), cddrive->name);
-      gtk_entry_set_max_length (GTK_ENTRY (entry), CDDRIVE_NAME_ENTRY_MAX_LEN);
-      
+      gtk_entry_set_max_length (GTK_ENTRY (entry), CDDRIVE_NAME_ENTRY_MAX_LEN);      
       gtk_box_pack_start (GTK_BOX (hbox), entry, FALSE, FALSE, 5);
       g_signal_connect (entry,
                         "changed",
                         G_CALLBACK (cddrive_configure_change_name),
                         cddrive);
+      tip = gtk_tooltips_new ();
+      gtk_tooltips_set_tip (tip,
+                            entry,
+                            _("Write here the name of the drive to display in panel or tooltip."),
+                            NULL);
                        
       align = gtk_alignment_new (0, 0, 0, 0);
       gtk_alignment_set_padding (GTK_ALIGNMENT (align),
