@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-06-28 18:51+0200\n"
+"POT-Creation-Date: 2007-06-29 12:12+0200\n"
 "PO-Revision-Date: 2007-06-27 23:05+0200\n"
 "Last-Translator: Sylvain Reynal <sreynal@nerim.net>\n"
 "Language-Team: \n"
@@ -205,27 +205,27 @@ msgstr "Pas assez de mémoire pour réaliser l'opération"
 msgid "CD Drive Monitor"
 msgstr "Contrôle de lecteur CD"
 
-#: ../panel-plugin/cddrive-dialogs.c:356
+#: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
 msgstr "Montage"
 
-#: ../panel-plugin/cddrive-dialogs.c:357
+#: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
 msgstr ""
 "Entrez une commande à utiliser si le système HAL ne réussit pas à monter le "
 "disque."
 
-#: ../panel-plugin/cddrive-dialogs.c:364
+#: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
 msgstr "Démontage"
 
-#: ../panel-plugin/cddrive-dialogs.c:365
+#: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
 msgstr ""
 "Entrez une commande à utiliser si le système HAL ne réussit pas à démonter "
 "le disque."
 
-#: ../panel-plugin/cddrive-dialogs.c:383
+#: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid ""
 "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
@@ -237,71 +237,71 @@ msgstr ""
 "respectivement par le chemin du périphérique, le point de montage du disque "
 "et l'UDI du disque."
 
-#: ../panel-plugin/cddrive-dialogs.c:407
+#: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
 msgstr "Couleur de l'icône du disque monté"
 
-#: ../panel-plugin/cddrive-dialogs.c:416
+#: ../panel-plugin/cddrive-dialogs.c:415
 msgid "Unmounted disc icon color"
 msgstr "Couleur de l'icône du disque démonté"
 
 #. --- "Drive" section  ---
-#: ../panel-plugin/cddrive-dialogs.c:479
+#: ../panel-plugin/cddrive-dialogs.c:478
 msgid "Drive"
 msgstr "Lecteur"
 
-#: ../panel-plugin/cddrive-dialogs.c:487
+#: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
 msgstr "La détection du lecteur CD-ROM a échoué !"
 
-#: ../panel-plugin/cddrive-dialogs.c:494
+#: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
 msgstr "Aucun lecteur de CD-ROM détecté"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
-#: ../panel-plugin/cddrive-dialogs.c:544
+#: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
 msgstr "Commandes de rechange"
 
 #. --- "Display" section ---
 #. -- name config --
-#: ../panel-plugin/cddrive-dialogs.c:555
+#: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
 msgstr "Affichage"
 
-#: ../panel-plugin/cddrive-dialogs.c:560
+#: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
 msgstr "Nom à afficher"
 
-#: ../panel-plugin/cddrive-dialogs.c:575
+#: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
 msgstr ""
 "Écrivez ici le nom du lecteur à afficher dans le panneau ou la bulle d'aide."
 
-#: ../panel-plugin/cddrive-dialogs.c:588
+#: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
 msgstr "afficher dans le panneau"
 
-#: ../panel-plugin/cddrive-dialogs.c:599
+#: ../panel-plugin/cddrive-dialogs.c:598
 msgid "use in tooltip"
 msgstr "utiliser dans la bulle d'aide"
 
-#: ../panel-plugin/cddrive-dialogs.c:621
+#: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
 msgstr "Opacité de l'icône du disque démonté"
 
 #. --- Network section ---
-#: ../panel-plugin/cddrive-dialogs.c:646
+#: ../panel-plugin/cddrive-dialogs.c:645
 msgid "Network"
 msgstr "Réseau"
 
 #. -- CDDB config --
-#: ../panel-plugin/cddrive-dialogs.c:649
+#: ../panel-plugin/cddrive-dialogs.c:648
 msgid "Allow freedb.org connections"
 msgstr "Autoriser les connections à freedb.org"
 
-#: ../panel-plugin/cddrive-dialogs.c:654
+#: ../panel-plugin/cddrive-dialogs.c:653
 msgid ""
 "Enabling this option allows the plugin to query the freedb.org servers in "
 "order to get the title of an audio CD."
@@ -309,12 +309,12 @@ msgstr ""
 "Activer cette option permet au plugin d'interroger les serveurs freedb.org "
 "de manière à récupérer le titre d'un CD audio."
 
-#: ../panel-plugin/cddrive-dialogs.c:682
+#: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
 msgstr "Contrôle du plateau et du contenu d'un lecteur CD."
 
-#: ../panel-plugin/cddrive-dialogs.c:725
+#: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
 msgstr "Pas de description d'erreur disponible."
 
