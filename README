@@ -24,7 +24,7 @@ To build the plugin, the following packages are required:
 The plugin can query the freedb.org servers for audio CD infos (like title and
 performer's name). To compile with this feature enabled, you need:
 - libcddb >= 1.2.1
-- gthread >= 2.12.4 (optionnal, prevent the plugin from hanging while waiting
+- gthread >= 2.12.4 (optional, prevent the plugin from hanging while waiting
                      for freedb.org response)
 
 
