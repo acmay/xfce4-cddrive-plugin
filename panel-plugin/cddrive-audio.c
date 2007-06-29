@@ -464,7 +464,9 @@ cddrive_audio_cache_infos_from_server (gpointer data)
       g_static_mutex_unlock (&mutex);
     }
   
+#ifdef HAVE_GTHREAD
   cddb_disc_destroy (cdda);
+#endif
   
   return NULL; /* dummy return value */
 }
@@ -509,9 +511,12 @@ cddrive_audio_get_infos (const gchar* device, gboolean connection_allowed)
         
 #else
                       /* no thread support, plugin freeze will depend on the connection quality */
-                      /* note: cdda is destroyed in this function */
+                      /* note: cdda is NOT destroyed in this function (disabled with no thread support) */
                       cddrive_audio_cache_infos_from_server (cdda);
-                      res = g_strdup (cddb_disc_get_title (cdda));
+                    
+                      res = cddrive_audio_new_infos (g_strdup (cddb_disc_get_artist (cdda)),
+                                                     g_strdup (cddb_disc_get_title (cdda)));
+                      cddb_disc_destroy (cdda);
 #endif
                     }
                 }
