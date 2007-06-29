@@ -29,7 +29,6 @@
 
 
 #define CDDRIVE_TITLE            _("CD Drive Monitor")
-#define CDDRIVE_VERSION          "0.0.1"
 #define CDDRIVE_COPYRIGHT_YEARS  "2007"
 #define CDDRIVE_COPYRIGHT_OWNERS "The Xfce development team. All rights reserved."
 
@@ -678,7 +677,7 @@ cddrive_about (XfcePanelPlugin *plugin)
   GtkWidget     *dialog;
 
   nfo = xfce_about_info_new (CDDRIVE_TITLE,
-                             CDDRIVE_VERSION,
+                             VERSION,
                              _("CD-ROM drive tray and content control"),
                              XFCE_COPYRIGHT_TEXT (CDDRIVE_COPYRIGHT_YEARS,
                                                   CDDRIVE_COPYRIGHT_OWNERS),
