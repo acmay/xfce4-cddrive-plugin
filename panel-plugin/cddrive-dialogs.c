@@ -30,7 +30,7 @@
 
 #define CDDRIVE_TITLE            _("CD Drive Monitor")
 #define CDDRIVE_COPYRIGHT_YEARS  "2007"
-#define CDDRIVE_COPYRIGHT_OWNERS "The Xfce development team. All rights reserved."
+#define CDDRIVE_COPYRIGHT_OWNERS "The Xfce development team"
 
 #define CDDRIVE_SECTION_PADDING             7
 #define CDDRIVE_SECTION_VBOX_SPACING        5
