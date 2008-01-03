@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce 4-cddrive-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2007-12-15 22:52+0100\n"
+"PO-Revision-Date: 2008-01-03 21:41+0100\n"
 "Last-Translator: Michal Várady <miko.vaji@gmail.com>\n"
 "Language-Team: Czech\n"
 "MIME-Version: 1.0\n"
@@ -377,9 +377,8 @@ msgid "The disc is locked by the program '%s' (pid: %llu)."
 msgstr "Disk je uzamčen programem '%s' (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
-#, fuzzy
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr "Nepodařilo se nastavit spojení D-BUS v kontextu HAL."
+msgstr "Nastavení spojení D-BUS kontextu HAL se nezdařilo."
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
@@ -392,21 +391,20 @@ msgid "Failed to retrieve disc from UDI '%s'."
 msgstr "Nepodařilo se získat data o disku z identifikátoru zařízení UDI '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:401
-#, fuzzy
 msgid "Failed to set drive's status change callback."
-msgstr "Nepodařilo se získat informace o stavu mechaniky"
+msgstr "Nastavení změny stavu mechaniky se nezdařilo."
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr ""
+msgstr "Registrace přidání mechaniky se nezdařila."
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr ""
+msgstr "Registrace vyjmutí mechaniky se nezdařila."
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "Uložení monitoru v kontextu HAL se nezdařilo."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
