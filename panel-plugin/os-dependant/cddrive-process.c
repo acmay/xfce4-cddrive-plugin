@@ -44,7 +44,7 @@ cddrive_get_process_name (guint64 process_pid)
   g_assert (process_pid > 0);
 
   /* get the program path pointed by the exe link */
-  p1 = g_strdup_printf ("/proc/%llu/exe", process_pid);
+  p1 = g_strdup_printf ("/proc/%llu/exe", (unsigned long long) process_pid);
   p2 = g_file_read_link (p1, NULL);
   g_free (p1);
   p1 = g_filename_to_utf8 (p2, -1, NULL, &w, NULL);
