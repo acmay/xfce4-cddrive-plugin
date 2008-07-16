@@ -216,7 +216,10 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
+msgid ""
+"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
+"your command. These will be replaced respectively with the device path, the "
+"disc mount point and the disc UDI."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:406
@@ -283,7 +286,9 @@ msgid "Allow freedb.org connections"
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
+msgid ""
+"Enabling this option allows the plugin to query the freedb.org servers in "
+"order to get the title of an audio CD."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:681
@@ -404,4 +409,3 @@ msgstr ""
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
 msgstr ""
-
