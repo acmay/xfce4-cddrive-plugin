@@ -1,14 +1,14 @@
 # Portuguese translations for xfce package.
 # Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
-# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007.
+# Fábio Nogueira <deb-user-ba@ubuntu.com>, 2007-2008.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-cddrive-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2007-11-29 17:48-0300\n"
+"PO-Revision-Date: 2008-07-27 01:28-0300\n"
 "Last-Translator: Fábio Nogueira <deb-user-ba@ubuntu.com>\n"
 "Language-Team: Brazilian Portuguese <ldp-br@bazar2.conectiva.com.br>\n"
 "MIME-Version: 1.0\n"
@@ -204,7 +204,7 @@ msgstr "Não há memória para realizar a operação."
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr "Monitor do Drive de CD"
+msgstr "Monitor do drive de CD"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -262,7 +262,7 @@ msgstr "Nenhum drive de CD-ROM detectado"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Comandos Alternativos"
+msgstr "Comandos alternativos"
 
 #. --- "Display" section ---
 #. -- name config --
