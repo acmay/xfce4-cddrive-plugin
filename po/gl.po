@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2008-06-24 19:10+0100\n"
+"PO-Revision-Date: 2009-02-11 14:47+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -25,12 +25,14 @@ msgid "Drive status is unavailable... is HAL installed and hald running ?"
 msgstr ""
 
 #: ../panel-plugin/cddrive.c:194
+#, fuzzy
 msgid "Close tray"
-msgstr ""
+msgstr "Pechar o ficheiro"
 
 #: ../panel-plugin/cddrive.c:196
+#, fuzzy
 msgid "Open tray"
-msgstr ""
+msgstr "Abrir _Recente"
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
@@ -41,31 +43,31 @@ msgstr "Non hai ningún disco na unidade"
 #: ../panel-plugin/cddrive.c:213
 #, c-format
 msgid "Eject blank %s"
-msgstr ""
+msgstr "Expulsar %s baleiro"
 
 #. translation note: "Eject \"<disc label>\""
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
-msgstr ""
+msgstr "Expulsar \"%s\""
 
 #. translation note: "Eject audio <disc type>"
 #: ../panel-plugin/cddrive.c:221
 #, c-format
 msgid "Eject audio %s"
-msgstr ""
+msgstr "Expulsar %s de audio"
 
 #. translation note: "Eject <disc type>" (e.g. "Eject dvd")
 #: ../panel-plugin/cddrive.c:224
 #, c-format
 msgid "Eject %s"
-msgstr ""
+msgstr "Expulsar %s"
 
 #. translation note: "Blank <disc type>" (e.g. "Blank cd-rw")
 #: ../panel-plugin/cddrive.c:231
 #, c-format
 msgid "Blank %s"
-msgstr ""
+msgstr "%s baleiro"
 
 #. translation note: "\"<disc label>\" (made translatable in case translation
 #. do not use the '"' character to enclose the title)
@@ -78,7 +80,7 @@ msgstr "\"%s\""
 #: ../panel-plugin/cddrive.c:240
 #, c-format
 msgid "Audio %s"
-msgstr ""
+msgstr "%s de audio"
 
 #: ../panel-plugin/cddrive.c:260
 #, c-format
@@ -102,37 +104,37 @@ msgstr "Abrir %s"
 #: ../panel-plugin/cddrive.c:280
 #, c-format
 msgid "No disc in %s"
-msgstr ""
+msgstr "Non hai ningún disco en %s"
 
 #. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr ""
+msgstr "Expulsar %s baleiro de %s"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr ""
+msgstr "Expulsar \"%s\" de %s"
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr ""
+msgstr "Expulsar %s de audio de %s"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr ""
+msgstr "Expulsar %s de %s"
 
 #. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
-msgstr ""
+msgstr "%s baleiro en %s"
 
 #. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
 #: ../panel-plugin/cddrive.c:315
@@ -144,7 +146,7 @@ msgstr "\"%s\" en %s"
 #: ../panel-plugin/cddrive.c:319
 #, c-format
 msgid "Audio %s in %s"
-msgstr ""
+msgstr "%s de audio en %s"
 
 #. translation note: "<disc type> in <drive name>" (e.g. "dvd in cdrom1")
 #: ../panel-plugin/cddrive.c:322
@@ -184,28 +186,30 @@ msgstr "Fallou a expulsión"
 
 #: ../panel-plugin/cddrive-error.c:44
 msgid "Close failed"
-msgstr ""
+msgstr "Fallo ó pechar"
 
 #: ../panel-plugin/cddrive-error.c:45
 msgid "Mount failed"
-msgstr ""
+msgstr "Fallo ó montar"
 
 #: ../panel-plugin/cddrive-error.c:46
 msgid "Unmount failed"
-msgstr ""
+msgstr "Fallo ó desmontar"
 
 #: ../panel-plugin/cddrive-error.c:47
+#, fuzzy
 msgid "Busy disc"
-msgstr ""
+msgstr "Disco ocupado"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
-msgstr ""
+msgstr "Non hai memoria dabondo para realizar a operación."
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
+#, fuzzy
 msgid "CD Drive Monitor"
-msgstr ""
+msgstr "Calibrar a resolución do monitor"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -243,39 +247,44 @@ msgstr "Unidade"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr ""
+msgstr "Produciuse un erro ó detectar a unidade de CD-ROM!"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr ""
+msgstr "Non se detectou ningunha unidade de CD-ROM"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
+#, fuzzy
 msgid "Fallback Commands"
-msgstr ""
+msgstr "Barra de Comandos"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
+#, fuzzy
 msgid "Display"
-msgstr ""
+msgstr "Pantalla"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
+#, fuzzy
 msgid "Name to display"
-msgstr ""
+msgstr "Conectar con outra pantalla"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:587
+#, fuzzy
 msgid "display in panel"
-msgstr ""
+msgstr "Exportando"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
+#, fuzzy
 msgid "use in tooltip"
-msgstr ""
+msgstr "Exportando"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
@@ -293,7 +302,7 @@ msgstr "Permitir as conexións a freedb.org"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
 msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
-msgstr ""
+msgstr "Activar esta opción permítelle ó engadido consultar os servidores de freedb.org para poder obter o título dun CD de audio."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
@@ -302,7 +311,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
-msgstr ""
+msgstr "Non hai dispoñible ningunha descrición do erro."
 
 #: ../panel-plugin/cddrive-monitor.c:71
 msgid "cd-rom"
@@ -343,7 +352,7 @@ msgstr "dvd+rw"
 
 #: ../panel-plugin/cddrive-monitor.c:80
 msgid "dvd+r dl"
-msgstr ""
+msgstr "dvd+r dl"
 
 #: ../panel-plugin/cddrive-monitor.c:81
 msgid "bd-rom"
@@ -355,7 +364,7 @@ msgstr "bd-r"
 
 #: ../panel-plugin/cddrive-monitor.c:83
 msgid "bd-re"
-msgstr ""
+msgstr "bd-re"
 
 #: ../panel-plugin/cddrive-monitor.c:84
 msgid "hddvd"
@@ -373,7 +382,7 @@ msgstr "hddvd-rw"
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr ""
+msgstr "O disco está bloqueado por un proceso (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
