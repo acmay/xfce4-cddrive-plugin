@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2009-01-14 17:15+0100\n"
+"PO-Revision-Date: 2009-03-04 09:07+0100\n"
 "Last-Translator: Walter Comunello <masterz3d@gmail.com>\n"
 "Language-Team: Darkforge Team <www.darkforge.it>\n"
 "MIME-Version: 1.0\n"
@@ -21,11 +21,11 @@ msgstr "Lo stato della periferica non è disponibile... HAL è installato ed in 
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
-msgstr "Chiudi tray"
+msgstr "Chiudi carrello"
 
 #: ../panel-plugin/cddrive.c:196
 msgid "Open tray"
-msgstr "Apri tray"
+msgstr "Apri carrello"
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
@@ -78,7 +78,7 @@ msgstr "%s audio"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "Lo stato del %s non è disponibile... HAL è installato ed in esecuzione?"
+msgstr "Lo stato di %s non è disponibile... HAL è installato ed in esecuzione?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
