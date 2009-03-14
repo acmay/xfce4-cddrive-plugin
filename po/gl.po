@@ -1,8 +1,8 @@
 # Galician translation of xfce4-cddrive-plugin
-# Copyright (C) 2008 Leandro Regueiro
+# Copyright (C) 2008-2009 Leandro Regueiro
 # This file is distributed under the same license as the xfce package.
 #
-# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008.
+# Leandro Regueiro <leandro.regueiro@gmail.com>, 2008, 2009.
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en <http://trasno.net>
@@ -10,9 +10,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2009-02-11 14:47+0100\n"
+"PO-Revision-Date: 2009-03-07 12:33+0100\n"
 "Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "O estado da unidade non está dispoñible... está HAL instalado e hald executándose?"
 
 #: ../panel-plugin/cddrive.c:194
 #, fuzzy
 msgid "Close tray"
-msgstr "Pechar o ficheiro"
+msgstr "A orientación da área de notificación."
 
 #: ../panel-plugin/cddrive.c:196
 #, fuzzy
 msgid "Open tray"
-msgstr "Abrir _Recente"
+msgstr "A orientación da área de notificación."
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
@@ -85,7 +85,7 @@ msgstr "%s de audio"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "O estado de %s non está dispoñible... está HAL instalado e hald executándose?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -197,7 +197,6 @@ msgid "Unmount failed"
 msgstr "Fallo ó desmontar"
 
 #: ../panel-plugin/cddrive-error.c:47
-#, fuzzy
 msgid "Busy disc"
 msgstr "Disco ocupado"
 
@@ -207,9 +206,8 @@ msgstr "Non hai memoria dabondo para realizar a operación."
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
-#, fuzzy
 msgid "CD Drive Monitor"
-msgstr "Calibrar a resolución do monitor"
+msgstr "Monitor da unidade de CD"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -217,7 +215,7 @@ msgstr "Montando"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr ""
+msgstr "Introduza o comando que se usará se o sistema HAL non consegue montar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
@@ -225,7 +223,7 @@ msgstr "Desmontando"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr ""
+msgstr "Introduza o comando que se usará se o sistema HAL non consegue desmontar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
@@ -234,11 +232,11 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
-msgstr ""
+msgstr "Cor da icona de disco montado"
 
 #: ../panel-plugin/cddrive-dialogs.c:415
 msgid "Unmounted disc icon color"
-msgstr ""
+msgstr "Cor da icona de disco desmontado"
 
 #. --- "Drive" section  ---
 #: ../panel-plugin/cddrive-dialogs.c:478
@@ -268,27 +266,26 @@ msgid "Display"
 msgstr "Pantalla"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
-#, fuzzy
 msgid "Name to display"
-msgstr "Conectar con outra pantalla"
+msgstr "Nome para mostrar"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
+#, fuzzy
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr ""
+msgstr "Escriba aquí o nome da unidade que se mostrará no panel ou                 ."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
-#, fuzzy
 msgid "display in panel"
-msgstr "Exportando"
+msgstr "Mostrar no panel"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
 #, fuzzy
 msgid "use in tooltip"
-msgstr "Exportando"
+msgstr "Nome en uso"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr ""
+msgstr "Opacidade da icona de disco desmontado"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
@@ -387,7 +384,7 @@ msgstr "O disco está bloqueado por un proceso (pid: %llu)."
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr ""
+msgstr "O disco está bloqueado polo programa '%s' (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
