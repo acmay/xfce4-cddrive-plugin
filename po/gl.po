@@ -10,10 +10,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: xfce-i18n@xfce.org\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2009-03-07 12:33+0100\n"
-"Last-Translator: Leandro Regueiro <leandro DOT regueiro AT gmail DOT com>\n"
+"PO-Revision-Date: 2009-04-14 21:57+0100\n"
+"Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,14 +25,12 @@ msgid "Drive status is unavailable... is HAL installed and hald running ?"
 msgstr "O estado da unidade non está dispoñible... está HAL instalado e hald executándose?"
 
 #: ../panel-plugin/cddrive.c:194
-#, fuzzy
 msgid "Close tray"
-msgstr "A orientación da área de notificación."
+msgstr "Pechar a bandexa"
 
 #: ../panel-plugin/cddrive.c:196
-#, fuzzy
 msgid "Open tray"
-msgstr "A orientación da área de notificación."
+msgstr "Abrir a bandexa"
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
@@ -254,34 +252,30 @@ msgstr "Non se detectou ningunha unidade de CD-ROM"
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
-#, fuzzy
 msgid "Fallback Commands"
-msgstr "Barra de Comandos"
+msgstr ""
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
-#, fuzzy
 msgid "Display"
-msgstr "Pantalla"
+msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
 msgstr "Nome para mostrar"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
-#, fuzzy
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "Escriba aquí o nome da unidade que se mostrará no panel ou                 ."
+msgstr "Escriba aquí o nome da unidade que se mostrará no panel ou na notificación."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
 msgstr "Mostrar no panel"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
-#, fuzzy
 msgid "use in tooltip"
-msgstr "Nome en uso"
+msgstr "usar na notificación"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
