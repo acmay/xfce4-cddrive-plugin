@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2009-04-14 21:57+0100\n"
+"PO-Revision-Date: 2009-04-17 21:09+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -252,14 +252,16 @@ msgstr "Non se detectou ningunha unidade de CD-ROM"
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
+#, fuzzy
 msgid "Fallback Commands"
-msgstr ""
+msgstr "Comandos de construción"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
+#, fuzzy
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
@@ -390,9 +392,9 @@ msgid "Failed to retrieve drive from device path '%s'."
 msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:344
-#, c-format
+#, fuzzy, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr ""
+msgstr "Fallou ao recuperar a lista de compartidos do servidor"
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
