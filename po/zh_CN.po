@@ -1,14 +1,14 @@
 # Chinese translations for xfce package.
 # Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
-# Hunt Xu <huntxu@live.cn>", 2008.
+# Hunt Xu <huntxu@live.cn>, 2008, 2009.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-cddrive-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2008-12-04 18:40+0800\n"
+"PO-Revision-Date: 2009-05-09 03:00+0800\n"
 "Last-Translator: Hunt Xu <huntxu@live.cn>\n"
 "Language-Team: Chinese (simplified)\n"
 "MIME-Version: 1.0\n"
@@ -36,25 +36,25 @@ msgstr "驱动器中无光盘"
 #: ../panel-plugin/cddrive.c:213
 #, c-format
 msgid "Eject blank %s"
-msgstr ""
+msgstr "弹出空白 %s"
 
 #. translation note: "Eject \"<disc label>\""
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
-msgstr ""
+msgstr "弹出 \"%s\""
 
 #. translation note: "Eject audio <disc type>"
 #: ../panel-plugin/cddrive.c:221
 #, c-format
 msgid "Eject audio %s"
-msgstr ""
+msgstr "弹出音频 %s"
 
 #. translation note: "Eject <disc type>" (e.g. "Eject dvd")
 #: ../panel-plugin/cddrive.c:224
 #, c-format
 msgid "Eject %s"
-msgstr ""
+msgstr "弹出 %s"
 
 #. translation note: "Blank <disc type>" (e.g. "Blank cd-rw")
 #: ../panel-plugin/cddrive.c:231
@@ -73,7 +73,7 @@ msgstr "\"%s\""
 #: ../panel-plugin/cddrive.c:240
 #, c-format
 msgid "Audio %s"
-msgstr "音频光盘 %s"
+msgstr "音频 %s"
 
 #: ../panel-plugin/cddrive.c:260
 #, c-format
@@ -103,49 +103,49 @@ msgstr "%s 中无光盘"
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr ""
+msgstr "从 %2$s 中弹出空白 %1$s"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr ""
+msgstr "从 %2$s 中弹出 \"%1$s\""
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr ""
+msgstr "从 %2$s 中弹出音频 %1$s"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr ""
+msgstr "从 %2$s 中弹出 %1$s"
 
 #. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
-msgstr ""
+msgstr "擦除 %2$s 中的 %1$s"
 
 #. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
-msgstr ""
+msgstr "%2$s 中的 \"%1$s\""
 
 #. translation note: "Audio <disc type> in <drive name>"
 #: ../panel-plugin/cddrive.c:319
 #, c-format
 msgid "Audio %s in %s"
-msgstr ""
+msgstr "%2$s 中的音频 %1$s"
 
 #. translation note: "<disc type> in <drive name>" (e.g. "dvd in cdrom1")
 #: ../panel-plugin/cddrive.c:322
 #, c-format
 msgid "%s in %s"
-msgstr ""
+msgstr "%2$s 中的 %1$s"
 
 #: ../panel-plugin/cddrive.c:424
 msgid "Unmount disc"
@@ -222,6 +222,8 @@ msgstr "输入当 HAL 系统失败时用于卸载光盘的命令"
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
 msgstr ""
+"您可以在命令中使用 \"%d\", \"%m\" and \"%u\" 作为参数分别代表"
+"设备路径，光盘挂载点及光盘UDI。"
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -248,7 +250,7 @@ msgstr "未检测到 CD-ROM 驱动器"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr ""
+msgstr "备用命令"
 
 #. --- "Display" section ---
 #. -- name config --
@@ -293,7 +295,7 @@ msgstr "选中此选项将允许此插件从 freedb.org 的服务器上查询音
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr ""
+msgstr "CD-ROM 托盘和内容控制"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
@@ -377,17 +379,17 @@ msgstr "光盘被程序 '%s' 所独占 (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr ""
+msgstr "设置HAL与DBUS连接失败。"
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr ""
+msgstr "从设备路径 '%s' 恢复驱动器失败。"
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr ""
+msgstr "从UDI '%s' 恢复光盘失败。"
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
