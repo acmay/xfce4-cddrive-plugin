@@ -1,20 +1,26 @@
+# Hungarian translation of xfce4-cddrive-plugin 
+# Copyright 2009. Free Software Foundation, Inc.
+# This file is distributed under the same license as the xfce4-cddrive-plugin package.
+#
+# Gabor Kelemen <kelemeng at gnome dot hu>, 2009.
+# SZERVÁC Attila <sas@321.hu>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2007-10-20 09:53+0100\n"
-"Last-Translator: SZERVÁC Attila <sas@321.hu>\n"
-"Language-Team: Hungarian <debian-l10n-hungarian@lists.d.o>\n"
+"Project-Id-Version: xfce4-cddrive-plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-23 12:18+0200\n"
+"PO-Revision-Date: 2009-07-23 18:12+0200\n"
+"Last-Translator: Gabor Kelemen <kelemeng at gnome dot hu>\n"
+"Language-Team: Hungarian <gnome at gnome dot hu>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural>1;\n"
-"X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "A meghajtó állapota ismeretlen... a HAL telepítve van és a hald fut?"
+msgstr "A meghajtó állapota nem érhető el. A HAL telepítve van és fut a hald?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -39,7 +45,7 @@ msgstr "Üres %s kiadása"
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
-msgstr "\"%s\" kiadása"
+msgstr "„%s” kiadása"
 
 #. translation note: "Eject audio <disc type>"
 #: ../panel-plugin/cddrive.c:221
@@ -64,7 +70,7 @@ msgstr "Üres %s"
 #: ../panel-plugin/cddrive.c:236
 #, c-format
 msgid "\"%s\""
-msgstr "\"%s\""
+msgstr "„%s”"
 
 #. translation note: "Audio <disc type>"
 #: ../panel-plugin/cddrive.c:240
@@ -75,7 +81,7 @@ msgstr "Hang %s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "%s állapota ismeretlen... a HAL telepítve van és a hald fut?"
+msgstr "%s állapota nem érhető el. A HAL telepítve van és fut a hald?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -94,59 +100,59 @@ msgstr "%s kinyitása"
 #: ../panel-plugin/cddrive.c:280
 #, c-format
 msgid "No disc in %s"
-msgstr "Nincs lemez itt: %s"
+msgstr "Nincs lemez ebben: %s"
 
 #. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr "Üres %s kiadása innen: %s"
+msgstr "Üres %s kiadása ebből: %s"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr "\"%s\" kiadása innen: %s"
+msgstr "„%s” kiadása ebből: %s"
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr "Hang %s kiadása innen %s"
+msgstr "Hang %s kiadása ebből: %s"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr "%s kiadása innen: %s"
+msgstr "%s kiadása ebből: %s"
 
 #. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
-msgstr "Üres %s itt: %s"
+msgstr "Üres %s ebben: %s"
 
 #. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
-msgstr "\"%s\" itt: %s"
+msgstr "„%s” ebben: %s"
 
 #. translation note: "Audio <disc type> in <drive name>"
 #: ../panel-plugin/cddrive.c:319
 #, c-format
 msgid "Audio %s in %s"
-msgstr "Hang %s itt: %s"
+msgstr "Hang %s ebben: %s"
 
 #. translation note: "<disc type> in <drive name>" (e.g. "dvd in cdrom1")
 #: ../panel-plugin/cddrive.c:322
 #, c-format
 msgid "%s in %s"
-msgstr "%s itt: %s"
+msgstr "%s ebben: %s"
 
 #: ../panel-plugin/cddrive.c:424
 msgid "Unmount disc"
-msgstr "Lemez lecsatolása"
+msgstr "Lemez leválasztása"
 
 #: ../panel-plugin/cddrive.c:426
 msgid "Mount disc"
@@ -155,12 +161,12 @@ msgstr "Lemez csatolása"
 #: ../panel-plugin/cddrive.c:431
 #, c-format
 msgid "Unmount \"%s\""
-msgstr "\"%s\" lecsatolása"
+msgstr "„%s” leválasztása"
 
 #: ../panel-plugin/cddrive.c:433
 #, c-format
 msgid "Mount \"%s\""
-msgstr "\"%s\" csatolása"
+msgstr "„%s” csatolása"
 
 #: ../panel-plugin/cddrive-error.c:41
 msgid "Configuration error"
@@ -168,7 +174,7 @@ msgstr "Beállítási hiba"
 
 #: ../panel-plugin/cddrive-error.c:42
 msgid "System error"
-msgstr "Rendszer hiba"
+msgstr "Rendszerhiba"
 
 #: ../panel-plugin/cddrive-error.c:43
 msgid "Eject failed"
@@ -184,20 +190,21 @@ msgstr "A csatolás meghiúsult"
 
 #: ../panel-plugin/cddrive-error.c:46
 msgid "Unmount failed"
-msgstr "A lecsatolás meghiúsult"
+msgstr "A leválasztás meghiúsult"
 
 #: ../panel-plugin/cddrive-error.c:47
 msgid "Busy disc"
-msgstr "Elfoglalt lemez"
+msgstr "Foglalt lemez"
 
 #: ../panel-plugin/cddrive-error.c:57
+#, c-format
 msgid "Not enough memory to perform the operation."
-msgstr "Nincs elég memória a művelethez"
+msgstr "Nincs elég memória a művelet végrehajtásához."
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr "CD meghajtó figyelő"
+msgstr "CD-meghajtó figyelése"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -205,28 +212,31 @@ msgstr "Csatolás"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "Adj meg egy parancsot, ha a HAL nem tudja csatolni a lemezt"
+msgstr "Adjon meg parancsot arra az esetre, ha a HAL rendszer nem tudja csatolni a lemezt."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "Lecsatolás"
+msgstr "Leválasztás"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "Adj meg egy parancsot, ha a HAL nem tudja lecsatolni a lemezt"
+msgstr "Adjon meg parancsot arra az esetre, ha a HAL rendszer nem tudja leválasztani a lemezt."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr "Haználhatod a \"%d\", \"%m\" és \"%u\" karakter-sorozatokat parancsod argumentumaiként. Ezek: az eszköz útvonala, a lemez csatolási pontja és a lemez UDI."
+msgid ""
+"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
+"your command. These will be replaced respectively with the device path, the "
+"disc mount point and the disc UDI."
+msgstr "A parancs paraméterezéséhez a „%d”, „%m” és „%u” karaktersorozatokat használhatja. Ezek sorrendben az eszköz útvonalával, a lemez csatolási pontjával és a lemez UDI-vel lesznek helyettesítve."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
-msgstr "Csatolt lemez ikon-színe"
+msgstr "Csatolt lemez ikonjának színe"
 
 #: ../panel-plugin/cddrive-dialogs.c:415
 msgid "Unmounted disc icon color"
-msgstr "Lecsatolt lemez ikon-színe"
+msgstr "Leválasztott lemez ikonjának színe"
 
 #. --- "Drive" section  ---
 #: ../panel-plugin/cddrive-dialogs.c:478
@@ -235,43 +245,43 @@ msgstr "Meghajtó"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr "Nem lelte, CD-ROM meghajtót!"
+msgstr "A CD-ROM meghajtó felismerése meghiúsult"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr "Nem leltem CD-ROM meghajtót"
+msgstr "Nem található CD-ROM meghajtó"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Helyettesítő parancsok"
+msgstr "Tartalék parancsok"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
-msgstr "Kijelző"
+msgstr "Megjelenítés"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
-msgstr "Kiírandó név"
+msgstr "Megjelenítendő név"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "Add meg a meghajtó panelon vagy eszköz-tippen megjelenő nevét"
+msgstr "A meghajtó a panelen vagy a buboréksúgóban megjelenítendő neve"
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
-msgstr "panelon látszik"
+msgstr "Megjelenítés a panelen"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
 msgid "use in tooltip"
-msgstr "eszköz-tippen használt"
+msgstr "Használat buboréksúgóban"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr "Lecsatolt lemez ikon telítettség"
+msgstr "Leválasztott lemez ikonjának átlátszatlansága"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
@@ -281,32 +291,34 @@ msgstr "Hálózat"
 #. -- CDDB config --
 #: ../panel-plugin/cddrive-dialogs.c:648
 msgid "Allow freedb.org connections"
-msgstr "freedb.org kapcsolat engedélyezése"
+msgstr "freedb.org kapcsolatok engedélyezése"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
-msgstr "E lehetőség bekapcsolásával lekérdezhetők a freedb.org kiszolgálók egy hang CD címéhez"
+msgid ""
+"Enabling this option allows the plugin to query the freedb.org servers in "
+"order to get the title of an audio CD."
+msgstr "A bővítmény lekérdezheti a freedb.org kiszolgálóit a hang CD címének lekéréséhez"
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr "CD-ROM meghajtó tálca- és tartalom-vezérlés"
+msgstr "A CD-ROM meghajtó tálcájának és tartalmának felügyelete"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
-msgstr "Nincs elérhető hiba-leírás"
+msgstr "Nem érhető el hibaleírás."
 
 #: ../panel-plugin/cddrive-monitor.c:71
 msgid "cd-rom"
-msgstr "CD-rom"
+msgstr "CD-ROM"
 
 #: ../panel-plugin/cddrive-monitor.c:72
 msgid "cd-r"
-msgstr "CD-r"
+msgstr "CD-R"
 
 #: ../panel-plugin/cddrive-monitor.c:73
 msgid "cd-rw"
-msgstr "CD-rw"
+msgstr "CD-RW"
 
 #: ../panel-plugin/cddrive-monitor.c:74
 msgid "dvd"
@@ -315,92 +327,92 @@ msgstr "DVD"
 #. dvd-rom
 #: ../panel-plugin/cddrive-monitor.c:75
 msgid "dvd-ram"
-msgstr "DVD-ram"
+msgstr "DVD-RAM"
 
 #: ../panel-plugin/cddrive-monitor.c:76
 msgid "dvd-r"
-msgstr "DVD-r"
+msgstr "DVD-R"
 
 #: ../panel-plugin/cddrive-monitor.c:77
 msgid "dvd-rw"
-msgstr "DVD-rw"
+msgstr "DVD-RW"
 
 #: ../panel-plugin/cddrive-monitor.c:78
 msgid "dvd+r"
-msgstr "DVD+r"
+msgstr "DVD+R"
 
 #: ../panel-plugin/cddrive-monitor.c:79
 msgid "dvd+rw"
-msgstr "DVD+rw"
+msgstr "DVD+RW"
 
 #: ../panel-plugin/cddrive-monitor.c:80
 msgid "dvd+r dl"
-msgstr "DVD+r dl"
+msgstr "DVD+RW dl"
 
 #: ../panel-plugin/cddrive-monitor.c:81
 msgid "bd-rom"
-msgstr "bd-rom"
+msgstr "BD-ROM"
 
 #: ../panel-plugin/cddrive-monitor.c:82
 msgid "bd-r"
-msgstr "bd-r"
+msgstr "BD-R"
 
 #: ../panel-plugin/cddrive-monitor.c:83
 msgid "bd-re"
-msgstr "bd-re"
+msgstr "BD-RE"
 
 #: ../panel-plugin/cddrive-monitor.c:84
 msgid "hddvd"
-msgstr "hddvd"
+msgstr "HDDVD"
 
 #. hddvd-rom
 #: ../panel-plugin/cddrive-monitor.c:85
 msgid "hddvd-r"
-msgstr "hddvd-r"
+msgstr "HDDVD-R"
 
 #: ../panel-plugin/cddrive-monitor.c:86
 msgid "hddvd-rw"
-msgstr "hddvd-rw"
+msgstr "HDDVD-RW"
 
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr "A lemezt egy program zárolja (pid: %llu)"
+msgstr "A lemezt egy folyamat zárolta (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr "A lemezt '%s' program zárolja (pid: %llu)"
+msgstr "A lemezt a(z) „%s” program zárolta (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr ""
+msgstr "A HAL kontextus D-Bus kapcsolatának beállítása meghiúsult."
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr ""
+msgstr "A meghajtó lekérése meghiúsult az eszközútvonalról („%s”)."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr ""
+msgstr "A lemez lekérése meghiúsult az UDI-ről („%s”)."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr ""
+msgstr "A meghajtó állapotváltozási visszahívásának beállítása meghiúsult."
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr ""
+msgstr "A meghajtó hozzáadási visszahívásának regisztrálása meghiúsult."
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr ""
+msgstr "A meghajtó eltávolítási visszahívásának regisztrálása meghiúsult."
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "A figyelő tárolása a HAL kontextusban meghiúsult."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
