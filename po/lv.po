@@ -1,23 +1,28 @@
 # Latvian translation of xfce4-cddrive-plugin
 # Copyright (C) 2007 The Xfce development team. All rights reserved.
 # This file is distributed under the same license as the xfce4-cddrive-plugin package.
-# Rihards Prieditis <RPrieditis@inbox.lv>, 2007.
 #
+# Rihards Prieditis <RPrieditis@inbox.lv>, 2007.
+# Rihards Prieditis <rprieditis@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2007-11-16 19:53+0300\n"
-"Last-Translator: Rihards Priedītis <rprieditis@inbox.lv>\n"
-"Language-Team: Latvian <RPrieditis@inbox.lv>\n"
+"PO-Revision-Date: 2009-09-18 21:33+0100\n"
+"Last-Translator: Rihards Prieditis <rprieditis@gmail.com>\n"
+"Language-Team: Latvian <translation-team-lv@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "Dziņa status nac pieejams... HAL ir instalēts, vai 'hald' skrien ?"
+msgstr ""
+"Dziņa status nav pieejams... vai HAL ir instalēts, vai 'hald' skrien ?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -78,7 +83,8 @@ msgstr "Audio %s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "%s stāvoklis nav pieejams... HAL ir instalēts, vau 'hald' skrien ?"
+msgstr ""
+"%s stāvoklis nav pieejams... vai HAL ir instalēts, vai 'hald' skrien ?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -200,28 +206,38 @@ msgstr "Nav pietiekami atmiņas operācijas veikšanai."
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr "CD Dziņā Novērošana"
+msgstr "CD Dziņā novērošana"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
-msgstr "Montēju"
+msgstr "Montēšana"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "Ievadiet komandu, kuru izmantot, gadījumā, ja HAL sistēma nevar nomontēt disku."
+msgstr ""
+"Ievadiet komandu, kuru izmantot, gadījumā, ja HAL sistēma nevar nomontēt "
+"disku."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "Atmontēju"
+msgstr "Atmontēšana"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "Ievadiet komandu, kuru izmantot, gadījumā, ja HAL sistēma nevar atmontēt disku."
+msgstr ""
+"Ievadiet komandu, kuru izmantot, gadījumā, ja HAL sistēma nevar atmontēt "
+"disku."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr "Jūs varat izmantot \"%d\", \"%m\" un \"%u\" rakstzīmes, kā argumentus komandai. Raksztzīmes tiks aizvietotas ar ierīces ceļu, ierīces montēšanas punktu un ierīces UDI."
+msgid ""
+"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
+"your command. These will be replaced respectively with the device path, the "
+"disc mount point and the disc UDI."
+msgstr ""
+"Jūs varat izmantot \"%d\", \"%m\" un \"%u\" rakstzīmes, kā argumentus "
+"komandai. Rakstzīmes tiks aizvietotas ar ierīces ceļu, ierīces montēšanas "
+"punktu un ierīces UDI."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -248,7 +264,7 @@ msgstr "Netika noteikta neviena CD-ROM ierīce"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Atkāpsistēmas Komanda"
+msgstr "Atkāpsistēmas komanda"
 
 #. --- "Display" section ---
 #. -- name config --
@@ -287,8 +303,12 @@ msgid "Allow freedb.org connections"
 msgstr "Atļaut freedb.org savienojumus"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
-msgstr "Iespējojot šo opciju, spraudnim tiks atļauts veikt vaicājumus audio CD celiņu nosaukumu iegūšanai no freedb.org serveriem."
+msgid ""
+"Enabling this option allows the plugin to query the freedb.org servers in "
+"order to get the title of an audio CD."
+msgstr ""
+"Ieslēgt šo opciju, spraudnim tiks atļauts veikt vaicājumus audio CD "
+"celiņu nosaukumu iegūšanai no freedb.org serveriem."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
