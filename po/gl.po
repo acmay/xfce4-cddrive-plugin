@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2009-04-17 21:09+0100\n"
+"PO-Revision-Date: 2009-08-19 15:56+0100\n"
 "Last-Translator: Leandro Regueiro <leandro.regueiro@gmail.com>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgstr "Introduza o comando que se usará se o sistema HAL non consegue desmonta
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr ""
+msgstr "Pode usar as secuencias de caracteres \"%d\", \"%m\" e \"%u\" como argumentos do comando. Ditas secuencias hanse substituír respectivamente ca ruta do dispositivo, o punto de montaxe do disco e a UDI do disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -252,16 +252,14 @@ msgstr "Non se detectou ningunha unidade de CD-ROM"
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
-#, fuzzy
 msgid "Fallback Commands"
-msgstr "Comandos de construción"
+msgstr "Comandos de recuperación"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
-#, fuzzy
 msgid "Display"
-msgstr "Mostrar"
+msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
@@ -300,7 +298,7 @@ msgstr "Activar esta opción permítelle ó engadido consultar os servidores de 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr ""
+msgstr "Control do contido e da bandexa da unidade de CD-ROM"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
@@ -384,17 +382,17 @@ msgstr "O disco está bloqueado polo programa '%s' (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr ""
+msgstr "Produciuse un erro ao definir a conexión a D-BUS do contexto de HAL."
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr ""
+msgstr "Produciuse un erro ao obter a unidade da ruta de dispositivo '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:344
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr "Fallou ao recuperar a lista de compartidos do servidor"
+msgstr "Produciuse un erro ao obter o disco a partir da UDI '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
@@ -410,7 +408,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "Produciuse un erro ao almacenar o monitor no contexto de HAL."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
