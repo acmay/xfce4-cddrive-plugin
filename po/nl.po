@@ -228,7 +228,7 @@ msgid "Enter a command to use if the HAL system fails to unmount the disc."
 msgstr "Voer een commando in te gebruiken als HAL-systeem niet de disc kan ontkoppelen."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
-#, c-format
+#, c-format, fuzzy
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
 msgstr "U kunt \"%d\",\"%m\" en \"%u\" karakter sequenties als argumenten voor uw opdracht. Deze zullen respectievelijk worden vervangen door het apparaat weg, de schijf mount point en de schijf UDI."
 
@@ -279,7 +279,6 @@ msgid "Write here the name of the drive to display in panel or tooltip."
 msgstr "Typ hier de naam van het station weer te geven in het paneel of tooltip."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
-#, fuzzy
 msgid "display in panel"
 msgstr "Weergeven in het paneel"
 
@@ -289,18 +288,19 @@ msgid "use in tooltip"
 msgstr "gebruik in tooltip"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
+#, fuzzy
 msgid "Unmounted disc icon opacity"
-msgstr "Unmounted disc icon opacity"
+msgstr "Ontkoppelde schijfsymbool opaciteit"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
 msgid "Network"
-msgstr "Network"
+msgstr "Netwerk"
 
 #. -- CDDB config --
 #: ../panel-plugin/cddrive-dialogs.c:648
 msgid "Allow freedb.org connections"
-msgstr "Allow freedb.org connections"
+msgstr "Laat freedb.org verbindingen toe"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
 msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
@@ -308,12 +308,13 @@ msgstr "Enabling this option allows the plugin to query the freedb.org servers i
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
+#, fuzzy
 msgid "CD-ROM drive tray and content control"
-msgstr "CD-ROM drive tray and content control"
+msgstr "CD-ROM drive lade en inhoud controle"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
-msgstr "No error description available."
+msgstr "Geen fout beschrijving beschikbaar."
 
 #: ../panel-plugin/cddrive-monitor.c:71
 msgid "cd-rom"
@@ -384,43 +385,44 @@ msgstr "hddvd-rw"
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr "The disc is locked by a process (pid: %llu)."
+msgstr "De disc is vergrendeld door een proces (pid:%llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr "The disc is locked by the program '%s' (pid: %llu)."
+msgstr "De disc is vergrendeld door the programma '%s' (pid:% llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
+#, fuzzy
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr "Failed to set the D-BUS connection of HAL context."
+msgstr "Mislukt om de D-BUS aansluiting van HAL context te bepalen"
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr "Failed to retrieve drive from device path '%s'."
+msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:344
-#, c-format
+#, c-format, fuzzy
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr "Failed to retrieve disc from UDI '%s'."
+msgstr "Mislukt schijf op te halen van UDI '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr "Failed to set drive's status change callback."
+msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr "Failed to register drive addition callback."
+msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr "Failed to register drive removal callback."
+msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr "Failed to store monitor in HAL context."
+msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
-msgstr "unknown title"
+msgstr "onbekende titel"
