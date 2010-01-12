@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin\n"
@@ -15,55 +15,56 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: English\n"
-"X-Poedit-Country: UNITED KINGDOM\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: UNITED KINGDOM\n"
 
 #: ../panel-plugin/cddrive.c:185
+#, fuzzy
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "Drive status is unavailable... is HAL installed and hald running ?"
+msgstr "Drive-status is niet beschikbaar ... is HAL geïnstalleerd en draait hald?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
-msgstr "Close tray"
+msgstr "Sluit cd lade"
 
 #: ../panel-plugin/cddrive.c:196
 msgid "Open tray"
-msgstr "Open tray"
+msgstr "Open cd lade"
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
 msgid "No disc in the drive"
-msgstr "No disc in the drive"
+msgstr "Geen schijf in het station"
 
 #. translation note: "Eject blank <disc type>" (e.g. "Eject blank cd-rw")
 #: ../panel-plugin/cddrive.c:213
 #, c-format
 msgid "Eject blank %s"
-msgstr "Eject blank %s"
+msgstr "Blanco %s uitwerpen"
 
 #. translation note: "Eject \"<disc label>\""
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
-msgstr "Eject \"%s\""
+msgstr "Werp \"%s\" uit"
 
 #. translation note: "Eject audio <disc type>"
 #: ../panel-plugin/cddrive.c:221
 #, c-format
 msgid "Eject audio %s"
-msgstr "Eject audio %s"
+msgstr "Werp audio %s uit"
 
 #. translation note: "Eject <disc type>" (e.g. "Eject dvd")
 #: ../panel-plugin/cddrive.c:224
 #, c-format
 msgid "Eject %s"
-msgstr "Eject %s"
+msgstr "Werp %s uit"
 
 #. translation note: "Blank <disc type>" (e.g. "Blank cd-rw")
 #: ../panel-plugin/cddrive.c:231
 #, c-format
 msgid "Blank %s"
-msgstr "Blank %s"
+msgstr "Blanke %s"
 
 #. translation note: "\"<disc label>\" (made translatable in case translation
 #. do not use the '"' character to enclose the title)
@@ -79,15 +80,15 @@ msgid "Audio %s"
 msgstr "Audio %s"
 
 #: ../panel-plugin/cddrive.c:260
-#, c-format
+#, c-format, fuzzy
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "%s status is unavailable... is HAL installed and hald running ?"
+msgstr "%s status is niet beschikbaar ... HAL is geïnstalleerd en draait hald?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
 #, c-format
 msgid "Close %s"
-msgstr "Close %s"
+msgstr "Sluit %s"
 
 #. translation note: "Open <drive name>"
 #: ../panel-plugin/cddrive.c:274
@@ -100,39 +101,43 @@ msgstr "Open %s"
 #: ../panel-plugin/cddrive.c:280
 #, c-format
 msgid "No disc in %s"
-msgstr "No disc in %s"
+msgstr "Geen schijf in %s"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr "Eject blank %s from %s"
+msgstr "Werp de blanco %s van %s uit"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr "Eject \"%s\" from %s"
+msgstr "Werp \"%s\" van %s ujit"
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr "Eject audio %s from %s"
+msgstr "Werp audio %s van %s uit"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr "Eject %s from %s"
+msgstr "Werp %svan %s uit"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
-msgstr "Blank %s in %s"
+msgstr "Blanke %s in %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -152,53 +157,54 @@ msgstr "%s in %s"
 
 #: ../panel-plugin/cddrive.c:424
 msgid "Unmount disc"
-msgstr "Unmount disc"
+msgstr "Ontkoppel schijf"
 
 #: ../panel-plugin/cddrive.c:426
 msgid "Mount disc"
-msgstr "Mount disc"
+msgstr "Koppel schijf"
 
 #: ../panel-plugin/cddrive.c:431
 #, c-format
 msgid "Unmount \"%s\""
-msgstr "Unmount \"%s\""
+msgstr "Ontkoppel \"%s\""
 
 #: ../panel-plugin/cddrive.c:433
 #, c-format
 msgid "Mount \"%s\""
-msgstr "Mount \"%s\""
+msgstr "Koppel \"%s\""
 
 #: ../panel-plugin/cddrive-error.c:41
 msgid "Configuration error"
-msgstr "Configuration error"
+msgstr "Configuratie fout"
 
 #: ../panel-plugin/cddrive-error.c:42
 msgid "System error"
-msgstr "System error"
+msgstr "Systeemfout"
 
 #: ../panel-plugin/cddrive-error.c:43
+#, fuzzy
 msgid "Eject failed"
-msgstr "Eject failed"
+msgstr "Ejectie mislukt"
 
 #: ../panel-plugin/cddrive-error.c:44
 msgid "Close failed"
-msgstr "Close failed"
+msgstr "Sluiten mislukt"
 
 #: ../panel-plugin/cddrive-error.c:45
 msgid "Mount failed"
-msgstr "Mount failed"
+msgstr "Koppeling mislukt"
 
 #: ../panel-plugin/cddrive-error.c:46
 msgid "Unmount failed"
-msgstr "Unmount failed"
+msgstr "Ontkoppeling mislukt"
 
 #: ../panel-plugin/cddrive-error.c:47
 msgid "Busy disc"
-msgstr "Busy disc"
+msgstr "Schijf is bezig"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
-msgstr "Not enough memory to perform the operation."
+msgstr "Niet genoeg geheugen voor uitvoeren van de operatie."
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
@@ -207,79 +213,80 @@ msgstr "CD Drive Monitor"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
-msgstr "Mounting"
+msgstr "Koppelen"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "Enter a command to use if HAL system fails to mount the disc."
+msgstr "Voer een commando in te gebruiken als HAL-systeem niet de disc kan koppelen."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "Unmounting"
+msgstr "Ontkoppelen"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "Enter a command to use if the HAL system fails to unmount the disc."
+msgstr "Voer een commando in te gebruiken als HAL-systeem niet de disc kan ontkoppelen."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid ""
-"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
-"your command. These will be replaced respectively with the device path, the "
-"disc mount point and the disc UDI."
-msgstr ""
-"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
-"your command. These will be replaced respectively with the device path, the "
-"disc mount point and the disc UDI."
+msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
+msgstr "U kunt \"%d\",\"%m\" en \"%u\" karakter sequenties als argumenten voor uw opdracht. Deze zullen respectievelijk worden vervangen door het apparaat weg, de schijf mount point en de schijf UDI."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
+#, fuzzy
 msgid "Mounted disc icon color"
-msgstr "Mounted disc icon colour"
+msgstr "Gekoppelde disc icoon kleur"
 
 #: ../panel-plugin/cddrive-dialogs.c:415
 msgid "Unmounted disc icon color"
-msgstr "Unmounted disc icon colour"
+msgstr "Ontkoppelde disc icoon kleur"
 
 #. --- "Drive" section  ---
 #: ../panel-plugin/cddrive-dialogs.c:478
 msgid "Drive"
-msgstr "Drive"
+msgstr "Schijf"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr "CD-ROM drive detection failed !"
+msgstr "CD-ROM drive detectie mislukt !"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr "No CD-ROM drive detected"
+msgstr "Geen CD-ROM drive gedetecteerd"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
+#, fuzzy
 msgid "Fallback Commands"
-msgstr "Fallback Commands"
+msgstr "Terugval Commando"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
+#, fuzzy
 msgid "Display"
-msgstr "Display"
+msgstr "Tonen"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
+#, fuzzy
 msgid "Name to display"
-msgstr "Name to display"
+msgstr "Naam om te weergeven"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
+#, fuzzy
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "Write here the name of the drive to display in panel or tooltip."
+msgstr "Typ hier de naam van het station weer te geven in het paneel of tooltip."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
+#, fuzzy
 msgid "display in panel"
-msgstr "display in panel"
+msgstr "Weergeven in het paneel"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
+#, fuzzy
 msgid "use in tooltip"
-msgstr "use in tooltip"
+msgstr "gebruik in tooltip"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
@@ -296,12 +303,8 @@ msgid "Allow freedb.org connections"
 msgstr "Allow freedb.org connections"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid ""
-"Enabling this option allows the plugin to query the freedb.org servers in "
-"order to get the title of an audio CD."
-msgstr ""
-"Enabling this option allows the plugin to query the freedb.org servers in "
-"order to get the title of an audio CD."
+msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
+msgstr "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
