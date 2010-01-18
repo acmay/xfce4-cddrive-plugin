@@ -1,12 +1,12 @@
 # Galician translation of xfce4-cddrive-plugin
 # Copyright (C) 2008-2009 Leandro Regueiro
 # This file is distributed under the same license as the xfce package.
-#
+# 
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2008, 2009.
-#
+# 
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en <http://trasno.net>
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -104,7 +104,8 @@ msgstr "Abrir %s"
 msgid "No disc in %s"
 msgstr "Non hai ningún disco en %s"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -122,19 +123,22 @@ msgstr "Expulsar \"%s\" de %s"
 msgid "Eject audio %s from %s"
 msgstr "Expulsar %s de audio de %s"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "Expulsar %s de %s"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "%s baleiro en %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -259,7 +263,7 @@ msgstr "Comandos de recuperación"
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
-msgstr ""
+msgstr "Mostrar"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
@@ -413,4 +417,3 @@ msgstr "Produciuse un erro ao almacenar o monitor no contexto de HAL."
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
 msgstr "título descoñecido"
-
