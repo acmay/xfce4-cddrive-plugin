@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "Диск недоступен... проверьте установку HAL и запущен ли hald?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -78,7 +78,7 @@ msgstr "Аудио %s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "%s недоступен... проверьте установку HAL и запущен ли hald?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -99,7 +99,8 @@ msgstr "Открыть %s"
 msgid "No disc in %s"
 msgstr "Нет диска в %s"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -117,19 +118,22 @@ msgstr "Выдвинуть \"%s\" из %s"
 msgid "Eject audio %s from %s"
 msgstr "Выдвинуть аудио %s из %s"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "Выдвинуть %s из %s"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "Пустой %s в %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -174,7 +178,6 @@ msgid "System error"
 msgstr "Системная ошибка"
 
 #: ../panel-plugin/cddrive-error.c:43
-#, fuzzy
 msgid "Eject failed"
 msgstr "Ошибка открытия"
 
@@ -192,7 +195,6 @@ msgid "Unmount failed"
 msgstr "Ошибка размонтирования"
 
 #: ../panel-plugin/cddrive-error.c:47
-#, fuzzy
 msgid "Busy disc"
 msgstr "Диск занят"
 
@@ -224,7 +226,7 @@ msgstr ""
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr ""
+msgstr "Вы можете использовать \"%d\", \"%m\" and \"%u\" как аргументы команды. Они будут заменены соответственно путем к устройству, точкой монтирования диска и UDI диска."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -266,7 +268,7 @@ msgstr "Отображать имя"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr ""
+msgstr "Напишите сюда название устройства. Оно будет показано на панели и в подсказке."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
@@ -278,7 +280,7 @@ msgstr "использовать в подсказке"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr ""
+msgstr "Прозрачность значка отмонтированного диска"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
@@ -412,4 +414,3 @@ msgstr ""
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
 msgstr "неизвестный заголовок"
-
