@@ -299,7 +299,7 @@ msgstr ""
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr ""
+msgstr "Управление треем CD-ROM и его содержимым"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
