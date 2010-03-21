@@ -212,16 +212,18 @@ msgid "Mounting"
 msgstr "Монтирование"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
+#, fuzzy
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr ""
+msgstr "Введите команду которая будет выполняться, если  HAL не сможет примонтировать диск "
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
 msgstr "Размонтирование"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
+#, fuzzy
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr ""
+msgstr "Введите команду которая будет выполняться, если HAL не сможет отмонтировать диск "
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
