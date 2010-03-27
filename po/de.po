@@ -201,7 +201,7 @@ msgstr "Gerät beschäftigt"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
-msgstr "Speicher reicht nicht aus, um die Aktion durchzuführen"
+msgstr "Speicher reicht nicht aus, die Aktion durchzuführen"
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
@@ -210,7 +210,7 @@ msgstr "CD-Laufwerksmonitor"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
-msgstr "Zum Einhängen"
+msgstr "Einhängen."
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
@@ -218,7 +218,7 @@ msgstr "Geben Sie einen Befehl ein, der ausgeführt werden soll, wenn HAL die Di
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "Zum Aushängen"
+msgstr "Aushängen:"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
@@ -264,7 +264,7 @@ msgstr "Anzeige"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
-msgstr "Anzuzeigender Name"
+msgstr "Anzuzeigender Name:"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
