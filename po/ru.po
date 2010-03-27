@@ -254,8 +254,9 @@ msgstr "Не обнаружено CD-ROM"
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
+#, fuzzy
 msgid "Fallback Commands"
-msgstr ""
+msgstr "Альтернативные команды"
 
 #. --- "Display" section ---
 #. -- name config --
@@ -296,7 +297,7 @@ msgstr "Разрешить соединения с freedb.org"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
 msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
-msgstr ""
+msgstr "Включение этой опции позволяет модулю подключиться к серверу freedb.org для получения названия аудиодиска."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
