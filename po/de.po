@@ -3,7 +3,7 @@
 # Copyright (C) 2009 THE xfce4-cddrive-plugin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce4-cddrive-plugin package.
 # Simon Schneider <simon@schneiderimtal.de>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin 4-cddrive-plugin\n"
@@ -15,11 +15,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "Konnte den Gerätestatus nicht auslesen - ist HAL installiert und läuft hald?"
+msgstr "Konnte den Gerätestatus nicht auslesen. Überprüfen Sie, ob HAL installiert ist und der zugehörige Daemon läuft."
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -80,7 +80,7 @@ msgstr "Audio-%s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "Konnte den Status von %s nicht auslesen - ist HAL installiert und läuft hald?"
+msgstr "Konnte den Status von %s nicht auslesen. Überprüfen Sie, ob HAL installiert ist und der zugehörige Daemon läuft"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -101,7 +101,8 @@ msgstr "%s öffnen"
 msgid "No disc in %s"
 msgstr "%s ist leer."
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -119,19 +120,22 @@ msgstr "»%s« aus %s auswerfen"
 msgid "Eject audio %s from %s"
 msgstr "Audio-%s aus %s auswerfen"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "%s aus %s auswerfen"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "Leere %s in %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -206,7 +210,7 @@ msgstr "CD-Laufwerksmonitor"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
-msgstr "beim Einhängen"
+msgstr "Zum Einhängen"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
@@ -214,7 +218,7 @@ msgstr "Geben Sie einen Befehl ein, der ausgeführt werden soll, wenn HAL die Di
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "beim Aushängen"
+msgstr "Zum Aushängen"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
@@ -222,11 +226,8 @@ msgstr "Geben Sie einen Befehl ein, der ausgeführt werden soll, wenn HAL die Di
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid ""
-"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
-"your command. These will be replaced respectively with the device path, the "
-"disc mount point and the disc UDI."
-msgstr "Sie können die Zeichenfolgen »%d«, »%m« und »%u« als Argumente für Ihren Befehl verwenden. Sie werden durchden Gerätepfad (d), den Einhängepunkt (m) und die UDI der Disc (u) ersetzt."
+msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
+msgstr "Sie können die Zeichenfolgen »%d«, »%m« und »%u« als Argumente für Ihren Befehl verwenden. Sie werden durch den Gerätepfad (d), den Einhängepunkt (m) und die UDI der Disc (u) ersetzt."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -263,7 +264,7 @@ msgstr "Anzeige"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
-msgstr "anzuzeigender Name"
+msgstr "Anzuzeigender Name"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
@@ -271,15 +272,15 @@ msgstr "Geben Sie hier das Laufwerk an, das in der Leiste oder in der Kurzhilfe 
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
-msgstr "in der Leiste anzeigen"
+msgstr "In der Leiste anzeigen"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
 msgid "use in tooltip"
-msgstr "in der Kurzhilfe verwenden"
+msgstr "In der Kurzhilfe verwenden"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr "Durchsichtigkeit des Symbols"
+msgstr "Deckkraft des Symbols (in %%)"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
@@ -292,9 +293,7 @@ msgid "Allow freedb.org connections"
 msgstr "Verbindungen zu freedb.org erlauben"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid ""
-"Enabling this option allows the plugin to query the freedb.org servers in "
-"order to get the title of an audio CD."
+msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
 msgstr "Wenn Sie dies auswählen, wird die Datenbank von freedb.org abgefragt, um den Titel einer Audio-CD herauszufinden."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
@@ -375,21 +374,21 @@ msgstr "HD-DVD-RW"
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr "Ein Prozess (pid: %llu) verhindert, dass auf das Laufwerk zugegriffen werden kann."
+msgstr "Ein Prozess (pid: %llu) verhindert den Zugriff auf das Laufwerk."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr "Das Programm »%s« (pid: %llu) verhindert, dass auf das Laufwerk zugegriffen werden kann."
+msgstr "Das Programm »%s« (pid: %llu) verhindert, den Zugriff auf das Laufwerk."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr "Konnte die D-BUS-Verbindung im HAL-Kontext nicht setzen"
+msgstr "Konnte die D-Bus-Verbindung im HAL-Kontext nicht setzen"
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr "Ich konnte das Laufwerk aus »%s« nicht erkenntn."
+msgstr "Konnte das Laufwerk aus »%s« nicht erkennen."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
@@ -414,5 +413,4 @@ msgstr "Konnte den Monitor nicht im HAL-Kontext speichern."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
-msgstr "unbekannter Titel"
-
+msgstr "Unbekannter Titel"
