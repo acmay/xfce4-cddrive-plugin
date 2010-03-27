@@ -280,7 +280,7 @@ msgstr "In der Kurzhilfe verwenden"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr "Deckkraft des Symbols (in %%)"
+msgstr "Deckkraft des Symbols (in %)"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
