@@ -116,7 +116,7 @@ msgstr "Выдвинуть \"%s\" из %s"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr "Выдвинуть аудио %s из %s"
+msgstr "Выдвинуть аудиодиск %s из %s"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
 #. from my-dvd-drive")
@@ -252,7 +252,7 @@ msgstr "Не обнаружено CD-ROM"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Запасные команды"
+msgstr "Альтернативные команды"
 
 #. --- "Display" section ---
 #. -- name config --
@@ -266,7 +266,7 @@ msgstr "Отображать имя"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "Напишите сюда название устройства. Оно будет показано на панели и в подсказке."
+msgstr "Впишите сюда название устройства. Оно будет показано на панели и в подсказке."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
@@ -297,7 +297,7 @@ msgstr "Включение этой опции позволяет модулю �
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr "Управление треем CD-ROM и его содержимым"
+msgstr "Управление CD-ROM и его содержимым"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
@@ -386,7 +386,7 @@ msgstr "Невозможно установить D-BUS соединение с 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr "Ошибка определения устройства по его пути '%s'."
+msgstr "Ошибка определения привода по его пути '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
@@ -395,15 +395,15 @@ msgstr "Ошибка определения диска по идентифика
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr "Невозможно установить статус устройства"
+msgstr "Невозможно установить статус привода"
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr "Ошибка регистрации подключения устройства"
+msgstr "Ошибка регистрации подключения привода"
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr "Ошибка регистрации отключения устройства"
+msgstr "Ошибка регистрации отключения привода"
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
