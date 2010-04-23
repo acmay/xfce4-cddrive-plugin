@@ -182,7 +182,6 @@ msgid "Eject failed"
 msgstr "Ошибка открытия"
 
 #: ../panel-plugin/cddrive-error.c:44
-#, fuzzy
 msgid "Close failed"
 msgstr "Ошибка закрытия"
 
@@ -212,7 +211,6 @@ msgid "Mounting"
 msgstr "Монтирование"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
-#, fuzzy
 msgid "Enter a command to use if HAL system fails to mount the disc."
 msgstr "Введите команду которая будет выполняться, если  HAL не сможет примонтировать диск "
 
@@ -221,7 +219,6 @@ msgid "Unmounting"
 msgstr "Размонтирование"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
-#, fuzzy
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
 msgstr "Введите команду которая будет выполняться, если HAL не сможет отмонтировать диск "
 
@@ -254,14 +251,12 @@ msgstr "Не обнаружено CD-ROM"
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
-#, fuzzy
 msgid "Fallback Commands"
-msgstr "Альтернативные команды"
+msgstr "Запасные команды"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
-#, fuzzy
 msgid "Display"
 msgstr "Показать"
 
@@ -386,17 +381,17 @@ msgstr "Диск заблокирован программой '%s' (pid: %llu).
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr ""
+msgstr "Невозможно установить D-BUS соединение с HAL"
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr ""
+msgstr "Ошибка определения устройства по его пути '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr ""
+msgstr "Ошибка определения диска по идентификатору '%s'."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
@@ -412,7 +407,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "Ошибка запоминания состояния монитора HAL"
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
