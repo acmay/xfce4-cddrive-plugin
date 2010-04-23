@@ -395,15 +395,15 @@ msgstr "Ошибка определения диска по идентифика
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr ""
+msgstr "Невозможно установить статус устройства"
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr ""
+msgstr "Ошибка регистрации подключения устройства"
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr ""
+msgstr "Ошибка регистрации отключения устройства"
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
