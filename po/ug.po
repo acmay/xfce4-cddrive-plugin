@@ -18,111 +18,111 @@ msgstr ""
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "ئۈسكىنە ھالىتى ئېنىق ئەمەس... HAL ئورنىتىلىپ ئىجرا قىلىنغانمۇ؟"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
-msgstr ""
+msgstr "tray ياپ"
 
 #: ../panel-plugin/cddrive.c:196
 msgid "Open tray"
-msgstr ""
+msgstr "tray ئاچ"
 
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
 msgid "No disc in the drive"
-msgstr ""
+msgstr "قوزغاتقۇچتا دىسكا يوق"
 
 #. translation note: "Eject blank <disc type>" (e.g. "Eject blank cd-rw")
 #: ../panel-plugin/cddrive.c:213
 #, c-format
 msgid "Eject blank %s"
-msgstr ""
+msgstr "قۇرۇق %s نى چاقار"
 
 #. translation note: "Eject \"<disc label>\""
 #: ../panel-plugin/cddrive.c:217
 #, c-format
 msgid "Eject \"%s\""
-msgstr ""
+msgstr "\"%s\" نى چىقار"
 
 #. translation note: "Eject audio <disc type>"
 #: ../panel-plugin/cddrive.c:221
 #, c-format
 msgid "Eject audio %s"
-msgstr ""
+msgstr "ئۈن %s نى چىقار"
 
 #. translation note: "Eject <disc type>" (e.g. "Eject dvd")
 #: ../panel-plugin/cddrive.c:224
 #, c-format
 msgid "Eject %s"
-msgstr ""
+msgstr "%s نى چىقار"
 
 #. translation note: "Blank <disc type>" (e.g. "Blank cd-rw")
 #: ../panel-plugin/cddrive.c:231
 #, c-format
 msgid "Blank %s"
-msgstr ""
+msgstr "%s نى بىكارلا"
 
 #. translation note: "\"<disc label>\" (made translatable in case translation
 #. do not use the '"' character to enclose the title)
 #: ../panel-plugin/cddrive.c:236
 #, c-format
 msgid "\"%s\""
-msgstr ""
+msgstr "\"%s\""
 
 #. translation note: "Audio <disc type>"
 #: ../panel-plugin/cddrive.c:240
 #, c-format
 msgid "Audio %s"
-msgstr ""
+msgstr "ئۈن %s"
 
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr ""
+msgstr "%s نىڭ ھالىتى ئېنىق ئەمەس... HAL ئورنىتىلىپ ئىجرا قىلىنغانمۇ؟"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
 #, c-format
 msgid "Close %s"
-msgstr ""
+msgstr "%s نى ياپ"
 
 #. translation note: "Open <drive name>"
 #: ../panel-plugin/cddrive.c:274
 #, c-format
 msgid "Open %s"
-msgstr ""
+msgstr "%s نى ئاچ"
 
 #. drive is not ejectable
 #. translation note: "No disc in <drive name>"
 #: ../panel-plugin/cddrive.c:280
 #, c-format
 msgid "No disc in %s"
-msgstr ""
+msgstr "%s دا دىسكا يوق"
 
 #. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr ""
+msgstr "قۇرۇق %s نى %s دىن چىقار"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr ""
+msgstr "\"%s\" نى %s دىن چىقار"
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr ""
+msgstr "ئۈن %s نى %s دىن چىقار"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr ""
+msgstr "%s نى %s دىن چىقار"
 
 #. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
 #: ../panel-plugin/cddrive.c:311
@@ -134,61 +134,61 @@ msgstr ""
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
-msgstr ""
+msgstr "\"%s\" %s نىڭ ئىچىدە"
 
 #. translation note: "Audio <disc type> in <drive name>"
 #: ../panel-plugin/cddrive.c:319
 #, c-format
 msgid "Audio %s in %s"
-msgstr ""
+msgstr "ئۈن %s  %s نىڭ ئىچىدە"
 
 #. translation note: "<disc type> in <drive name>" (e.g. "dvd in cdrom1")
 #: ../panel-plugin/cddrive.c:322
 #, c-format
 msgid "%s in %s"
-msgstr ""
+msgstr "%s  %s نىڭ ئىچىدە"
 
 #: ../panel-plugin/cddrive.c:424
 msgid "Unmount disc"
-msgstr ""
+msgstr "دىسكىنى Unmount قىل"
 
 #: ../panel-plugin/cddrive.c:426
 msgid "Mount disc"
-msgstr ""
+msgstr "دىسكىنى mount قىل"
 
 #: ../panel-plugin/cddrive.c:431
 #, c-format
 msgid "Unmount \"%s\""
-msgstr ""
+msgstr "\"%s\" نى Unmount قىل"
 
 #: ../panel-plugin/cddrive.c:433
 #, c-format
 msgid "Mount \"%s\""
-msgstr ""
+msgstr "\"%s\" نى Mount قىل"
 
 #: ../panel-plugin/cddrive-error.c:41
 msgid "Configuration error"
-msgstr ""
+msgstr "سەپلىمە خاتالىقى"
 
 #: ../panel-plugin/cddrive-error.c:42
 msgid "System error"
-msgstr ""
+msgstr "سىستېما خاتالىقى"
 
 #: ../panel-plugin/cddrive-error.c:43
 msgid "Eject failed"
-msgstr ""
+msgstr "چىقىرىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-error.c:44
 msgid "Close failed"
-msgstr ""
+msgstr "يېپىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-error.c:45
 msgid "Mount failed"
-msgstr ""
+msgstr "Mount قىلىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-error.c:46
 msgid "Unmount failed"
-msgstr ""
+msgstr "Unmount قىلىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-error.c:47
 msgid "Busy disc"
@@ -196,28 +196,28 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
-msgstr ""
+msgstr "مەشغۇلاتنى داۋام قىلىش ئۈچۈن يېتەرلىك ئەسلەك يوق."
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr ""
+msgstr "CD قوزغاتقۇچ كۆزەتكۈ"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
-msgstr ""
+msgstr "Mount قىلىۋاتىدۇ"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr ""
+msgstr "HAL دىسكىنى mount قىلىشتا مەغلۇپ بولسا ئىشلىتىدىغان بۇيرۇقنى كىرگۈزۈڭ."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr ""
+msgstr "Unmount قىلىۋاتىدۇ"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr ""
+msgstr "HAL دىسكىنى Unmount قىلىشتا مەغلۇپ بولسا ئىشلىتىدىغان بۇيرۇقنى كىرگۈزۈڭ."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
@@ -229,24 +229,24 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
-msgstr ""
+msgstr "Mount قىلىنغان دىسكىنىڭ سىنبەلگە رەڭگى"
 
 #: ../panel-plugin/cddrive-dialogs.c:415
 msgid "Unmounted disc icon color"
-msgstr ""
+msgstr "Unmount قىلىنغان دىسكىنىڭ سىنبەلگە رەڭگى"
 
 #. --- "Drive" section  ---
 #: ../panel-plugin/cddrive-dialogs.c:478
 msgid "Drive"
-msgstr ""
+msgstr "قوزغاتقۇچ"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr ""
+msgstr "CD-ROM قوزغاتقۇچىنى بايقاش مەغلۇپ بولدى!"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr ""
+msgstr "CD-ROM قوزغاتقۇچى بايقالمىدى"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
@@ -258,43 +258,43 @@ msgstr ""
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
-msgstr ""
+msgstr "كۆرسەت"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
-msgstr ""
+msgstr "كۆرسىتىش ئاتى"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr ""
+msgstr "قوزغاتقۇچنىڭ panel ياكى tooltip تا كۆرسىتىلىدىغان ئاتىنى بۇ يەرگە يېزىڭ."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
-msgstr ""
+msgstr "panel دا كۆرسەت"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
 msgid "use in tooltip"
-msgstr ""
+msgstr "tooltip تا ئىشلەت"
 
 #: ../panel-plugin/cddrive-dialogs.c:620
 msgid "Unmounted disc icon opacity"
-msgstr ""
+msgstr "Unmount قىلىنغان دىسكىنىڭ سىنبەلگە سۈزۈكلۈكى"
 
 #. --- Network section ---
 #: ../panel-plugin/cddrive-dialogs.c:645
 msgid "Network"
-msgstr ""
+msgstr "تور"
 
 #. -- CDDB config --
 #: ../panel-plugin/cddrive-dialogs.c:648
 msgid "Allow freedb.org connections"
-msgstr ""
+msgstr "freedb.org غا باشلىنىشقا رۇخسەت قىل"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
 msgid ""
 "Enabling this option allows the plugin to query the freedb.org servers in "
 "order to get the title of an audio CD."
-msgstr ""
+msgstr "بۇ تاللانما رۇخسەت قىلىنسا freedb.org مۇلازىمېتىرىغا باغلىنىپ ئۈن CD سىنىڭ ماۋزۇسىنى سۈرۈشتۈرگىلى بولىدۇ."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
@@ -303,83 +303,83 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
-msgstr ""
+msgstr "خاتالىق ھەققىدە چۈشەندۈرۈش يوق."
 
 #: ../panel-plugin/cddrive-monitor.c:71
 msgid "cd-rom"
-msgstr ""
+msgstr "cd-rom"
 
 #: ../panel-plugin/cddrive-monitor.c:72
 msgid "cd-r"
-msgstr ""
+msgstr "cd-r"
 
 #: ../panel-plugin/cddrive-monitor.c:73
 msgid "cd-rw"
-msgstr ""
+msgstr "cd-rw"
 
 #: ../panel-plugin/cddrive-monitor.c:74
 msgid "dvd"
-msgstr ""
+msgstr "dvd"
 
 #. dvd-rom
 #: ../panel-plugin/cddrive-monitor.c:75
 msgid "dvd-ram"
-msgstr ""
+msgstr "dvd-ram"
 
 #: ../panel-plugin/cddrive-monitor.c:76
 msgid "dvd-r"
-msgstr ""
+msgstr "dvd-r"
 
 #: ../panel-plugin/cddrive-monitor.c:77
 msgid "dvd-rw"
-msgstr ""
+msgstr "dvd-rw"
 
 #: ../panel-plugin/cddrive-monitor.c:78
 msgid "dvd+r"
-msgstr ""
+msgstr "dvd+r"
 
 #: ../panel-plugin/cddrive-monitor.c:79
 msgid "dvd+rw"
-msgstr ""
+msgstr "dvd+rw"
 
 #: ../panel-plugin/cddrive-monitor.c:80
 msgid "dvd+r dl"
-msgstr ""
+msgstr "dvd+r dl"
 
 #: ../panel-plugin/cddrive-monitor.c:81
 msgid "bd-rom"
-msgstr ""
+msgstr "bd-rom"
 
 #: ../panel-plugin/cddrive-monitor.c:82
 msgid "bd-r"
-msgstr ""
+msgstr "bd-r"
 
 #: ../panel-plugin/cddrive-monitor.c:83
 msgid "bd-re"
-msgstr ""
+msgstr "bd-re"
 
 #: ../panel-plugin/cddrive-monitor.c:84
 msgid "hddvd"
-msgstr ""
+msgstr "hddvd"
 
 #. hddvd-rom
 #: ../panel-plugin/cddrive-monitor.c:85
 msgid "hddvd-r"
-msgstr ""
+msgstr "hddvd-r"
 
 #: ../panel-plugin/cddrive-monitor.c:86
 msgid "hddvd-rw"
-msgstr ""
+msgstr "hddvd-rw"
 
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr ""
+msgstr "بۇ دىسكىنى پروگرامما قۇلۇپلاپ قويۇپتۇ(pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr ""
+msgstr "بۇ دىسكىنى '%s' پروگراممىسى قۇلۇپلاپ قويۇپتۇ (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
@@ -388,12 +388,12 @@ msgstr ""
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr ""
+msgstr "ئۈسكىنە يولى '%s' دىن قوزغاتقۇچنى تېپىش مەغلۇپ بولدى."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr ""
+msgstr "UDI '%s' دىن دىسكىنى تېپىش مەغلۇپ بولدى."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
@@ -413,4 +413,4 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
-msgstr ""
+msgstr "نامەلۇم ماۋزۇ"
