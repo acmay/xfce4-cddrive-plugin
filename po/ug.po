@@ -128,7 +128,7 @@ msgstr "%s نى %s دىن چىقار"
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
-msgstr ""
+msgstr "قۇرۇق %s  %s نىڭ ئىچىدە"
 
 #. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
 #: ../panel-plugin/cddrive.c:315
@@ -192,7 +192,7 @@ msgstr "Unmount قىلىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-error.c:47
 msgid "Busy disc"
-msgstr ""
+msgstr "ئالدىراش دىسكا"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
@@ -252,7 +252,7 @@ msgstr "CD-ROM قوزغاتقۇچى بايقالمىدى"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr ""
+msgstr "Fallback بۇيرۇقلىرى"
 
 #. --- "Display" section ---
 #. -- name config --
@@ -299,7 +299,7 @@ msgstr "بۇ تاللانما رۇخسەت قىلىنسا freedb.org مۇلاز�
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr ""
+msgstr "CD-ROM قوزغاتقۇچ tray ۋە مەزمۇن باشقۇرۇش"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
@@ -383,7 +383,7 @@ msgstr "بۇ دىسكىنى '%s' پروگراممىسى قۇلۇپلاپ قوي�
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr ""
+msgstr "HAL مەزمۇنىنىڭ D-BUS باغلىنىشىنى تەڭشەش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
@@ -397,19 +397,19 @@ msgstr "UDI '%s' دىن دىسكىنى تېپىش مەغلۇپ بولدى."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr ""
+msgstr "قوزغاتقۇچنىڭ ھالەت ئۆزگىرىش callback نى تەڭشەش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr ""
+msgstr "قوزغاتقۇچ قوشۇش callback نى خەتلىتىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr ""
+msgstr "قوزغاتقۇچ ئۆچۈرۈش callback نى خەتلىتىش مەغلۇپ بولدى"
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "HAL مەزمۇنىغا ئېكراننى ساقلاش مەغلۇپ بولدى."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
