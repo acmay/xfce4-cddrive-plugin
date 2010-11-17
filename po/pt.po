@@ -2,7 +2,7 @@
 # Copyright (C) 2007 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 # Nuno Miguel <nunis@netcabo.pt>, 2008.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-cddrive-plugin\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "O estado da drive não está disponível... o HAL está instalado e o hald em execução ?"
+msgstr "O estado da unidade não está disponível... o HAL está instalado e o serviço em execução ?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -30,7 +30,7 @@ msgstr "Abrir bandeja"
 #. drive is not ejectable
 #: ../panel-plugin/cddrive.c:200
 msgid "No disc in the drive"
-msgstr "Não há disco na drive"
+msgstr "Nenhum disco na unidade"
 
 #. translation note: "Eject blank <disc type>" (e.g. "Eject blank cd-rw")
 #: ../panel-plugin/cddrive.c:213
@@ -78,7 +78,7 @@ msgstr "%s de áudio"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "estado do %s não está disponível... o HAL está instalado e o hald em execução ?"
+msgstr "O estado do %s está indisponível... o HAL está instalado e o serviço em execução?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -97,9 +97,10 @@ msgstr "Abrir %s"
 #: ../panel-plugin/cddrive.c:280
 #, c-format
 msgid "No disc in %s"
-msgstr "Não há disco em %s"
+msgstr "nenhum disco em %s"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -117,19 +118,22 @@ msgstr "Ejectar \"%s\" de %s"
 msgid "Eject audio %s from %s"
 msgstr "Ejectar %s de áudio de %s"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "Ejectar %s de %s"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "%s vazio em %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -200,7 +204,7 @@ msgstr "Não há memória para realizar a operação."
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr "Monitor do Drive de CD"
+msgstr "Monitor da unidade de CD"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -208,7 +212,7 @@ msgstr "Montando"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "Digite o comando para ser utilizado se o sistema HAL falhar ao montar o disco."
+msgstr "Digite o comando a utilizar se o sistema HAL falhar ao montar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
@@ -216,12 +220,12 @@ msgstr "Desmontando"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "Digite o comando para ser utilizado se o sistema HAL falhar ao desmontar o disco."
+msgstr "Digite o comando a utilizar se o sistema HAL falhar ao desmontar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr "Pode utilizar as sequências de caracteres \"%d\", \"%m\" e \"%u\" como argumento para o seu comando. Estes serão substituídos respectivamente pelo caminho do dispositivo, o ponto de montagem do disco e UDI do disco."
+msgstr "Pode utilizar as sequências de caracteres \"%d\", \"%m\" e \"%u\" como argumentos para o seu comando. Estes serão substituídos respectivamente pelo caminho do dispositivo, o ponto de montagem do disco e UDI do disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -234,39 +238,39 @@ msgstr "Cor do ícone do disco desmontado"
 #. --- "Drive" section  ---
 #: ../panel-plugin/cddrive-dialogs.c:478
 msgid "Drive"
-msgstr "Drive"
+msgstr "Unidade"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr "Falha na detecção da drive de CD-ROM !"
+msgstr "Falha ao detectar a unidade de CD-ROM!"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr "Nenhuma drive de CD-ROM detectada"
+msgstr "Nenhuma unidade de CD-ROM detectada"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Comandos Alternativos"
+msgstr "Comandos de recurso"
 
 #. --- "Display" section ---
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
-msgstr "Mostrar"
+msgstr "Exibir"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
-msgstr "Nome a mostrar"
+msgstr "Nome a exibir"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "Digite aqui o nome da drive a ser mostrada no painel ou na dica de ferramenta."
+msgstr "Escreva aqui o nome a exibir no painel ou nas dicas da ferramenta."
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
-msgstr "mostrar no painel"
+msgstr "exibir no painel"
 
 #: ../panel-plugin/cddrive-dialogs.c:598
 msgid "use in tooltip"
@@ -284,16 +288,16 @@ msgstr "Rede"
 #. -- CDDB config --
 #: ../panel-plugin/cddrive-dialogs.c:648
 msgid "Allow freedb.org connections"
-msgstr "Permitir conexões freedb.org"
+msgstr "Permitir ligações freedb.org"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
 msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
-msgstr "Ao activar esta opção permitirá que o plug-in consulte os servidores freedb.org a fim de obter o título de um CD de áudio."
+msgstr "Ao activar esta opção, permitirá que o \"plug-in\" consulte os servidores freedb.org para obter o título de um CD de áudio."
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
 msgid "CD-ROM drive tray and content control"
-msgstr "Bandeja da drive de CD-ROM e controle de conteúdo"
+msgstr "Bandeja da unidade de CD-ROM e controle de conteúdo"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
@@ -377,29 +381,29 @@ msgstr "O disco está bloqueado pelo programa \"%s\" (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr "Falha ao configurar a conexão D-BUS do contexto HAL."
+msgstr "Falha ao configurar a ligação D-BUS do contexto HAL."
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr "Falha ao recuperar drive do caminho do dispositivo \"%s\"."
+msgstr "Falha ao obter a unidade no caminho do dispositivo \"%s\"."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr "Falha ao recuperar disco pelo UDI \"%s\"."
+msgstr "Falha ao obter o disco pelo UDI \"%s\"."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr "Falha ao configurar o estado de mudança de resposta da drive."
+msgstr "Falha ao configurar o estado de mudança de resposta da unidade."
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr "Falha ao registar reposta de adição da drive."
+msgstr "Falha ao registar a resposta de adição da unidade."
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr "Falha ao registar reposta de remoção da drive."
+msgstr "Falha ao registar a resposta de remoção da unidade."
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
@@ -408,4 +412,3 @@ msgstr "Falha ao armazenar o monitor no contexto HAL."
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
 msgstr "título desconhecido"
-
