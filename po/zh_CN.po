@@ -2,7 +2,7 @@
 # Copyright (C) 2008 THE xfce'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the xfce package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce 4-cddrive-plugin\n"
@@ -99,7 +99,8 @@ msgstr "打开 %s"
 msgid "No disc in %s"
 msgstr "%s 中无光盘"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -117,19 +118,22 @@ msgstr "从 %2$s 中弹出 \"%1$s\""
 msgid "Eject audio %s from %s"
 msgstr "从 %2$s 中弹出音频 %1$s"
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "从 %2$s 中弹出 %1$s"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "擦除 %2$s 中的 %1$s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -221,9 +225,7 @@ msgstr "输入当 HAL 系统失败时用于卸载光盘的命令"
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr ""
-"您可以在命令中使用 \"%d\", \"%m\" and \"%u\" 作为参数分别代表"
-"设备路径，光盘挂载点及光盘UDI。"
+msgstr "您可以在命令中使用 \"%d\", \"%m\" and \"%u\" 作为参数分别代表设备路径，光盘挂载点及光盘UDI。"
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -393,21 +395,21 @@ msgstr "从UDI '%s' 恢复光盘失败。"
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr ""
+msgstr "设置驱动器状态改变回呼程序失败"
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr ""
+msgstr "注册驱动器添加回呼程序失败"
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr ""
+msgstr "注册驱动器移除回呼程序失败"
 
 #: ../panel-plugin/cddrive-monitor.c:624
+#, fuzzy
 msgid "Failed to store monitor in HAL context."
-msgstr ""
+msgstr "在 HAL 上下文中存入监视器失败"
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
 msgstr "未知标题"
-
