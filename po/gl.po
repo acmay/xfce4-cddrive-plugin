@@ -217,7 +217,7 @@ msgstr "Montando"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "Introduza o comando que se usará se o sistema HAL non consegue montar o disco."
+msgstr "Introduza a orde que se usará se o sistema HAL non consegue montar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
@@ -225,12 +225,12 @@ msgstr "Desmontando"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "Introduza o comando que se usará se o sistema HAL non consegue desmontar o disco."
+msgstr "Introduza a orde que se usará se o sistema HAL non consegue desmontar o disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
 msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
-msgstr "Pode usar as secuencias de caracteres \"%d\", \"%m\" e \"%u\" como argumentos do comando. Ditas secuencias hanse substituír respectivamente ca ruta do dispositivo, o punto de montaxe do disco e a UDI do disco."
+msgstr "Pode usar as secuencias de caracteres \"%d\", \"%m\" e \"%u\" como argumentos da orde. Ditas secuencias hanse substituír respectivamente ca ruta do dispositivo, o punto de montaxe do disco e a UDI do disco."
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -257,7 +257,7 @@ msgstr "Non se detectou ningunha unidade de CD-ROM"
 #. --- "Commands" section ---
 #: ../panel-plugin/cddrive-dialogs.c:543
 msgid "Fallback Commands"
-msgstr "Comandos de recuperación"
+msgstr "Ordes de recuperación"
 
 #. --- "Display" section ---
 #. -- name config --
