@@ -1,6 +1,7 @@
-# Dutch translation of xfce4-cdddrive-plugin
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Dutch translation of the xfce4-cddrive-plugin package.
+# Copyright (C) The Xfce development team.
+# This file is distributed under the same license as the 
+# xfce4-cddrive-plugin package.
 # Pjotr, 2011.
 # 
 msgid ""
