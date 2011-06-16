@@ -9,15 +9,14 @@ msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2011-05-24 17:49+0200\n"
+"PO-Revision-Date: 2011-06-15 17:49+0200\n"
 "Last-Translator: Pjotr\n"
 "Language-Team: Dutch (Flemish)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Dutch\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-Country: Netherlands\n"
+"Language: nl (Dutch)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
@@ -397,7 +396,7 @@ msgstr "De schijf is vergrendeld door het programma '%s' (pid:% llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
-msgstr "Kon de D-BUS-aansluiting niet instellen van HAL-contekst."
+msgstr "Kon de D-BUS-aansluiting niet instellen van HAL-context."
 
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
@@ -423,7 +422,7 @@ msgstr "Kon de melding niet registreren voor stationverwijdering."
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr "Kon scherm niet opslaan in HAL-contekst."
+msgstr "Kon scherm niet opslaan in HAL-context."
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
