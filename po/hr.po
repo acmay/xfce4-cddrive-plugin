@@ -1,6 +1,5 @@
-#
 # Ivica Kolić <ikoli@yahoo.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: xfce4-cddrive-plugin\n"
@@ -12,10 +11,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Croatian\n"
 "X-Poedit-Country: CROATIA\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Croatian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: ../panel-plugin/cddrive.c:185
@@ -102,7 +100,8 @@ msgstr "Otvori %s"
 msgid "No disc in %s"
 msgstr "Nema diska u %s"
 
-#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject blank cd-rw from cdrom1")
+#. translation note: "Eject blank <disc type> from <drive name>" (e.g. "Eject
+#. blank cd-rw from cdrom1")
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
@@ -120,19 +119,22 @@ msgstr "Izbaci \"%s\" iz %s"
 msgid "Eject audio %s from %s"
 msgstr "Izbaci audio%s iz%s "
 
-#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
+#. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd
+#. from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
 msgstr "Izbaci %s iz %s"
 
-#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
+#. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:311
 #, c-format
 msgid "Blank %s in %s"
 msgstr "Prazan %s u %s"
 
-#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in cdrom1")
+#. translation note: "\"<disc label>\" in <drive name>" (e.g. ""Backup #36" in
+#. cdrom1")
 #: ../panel-plugin/cddrive.c:315
 #, c-format
 msgid "\"%s\" in %s"
@@ -203,7 +205,7 @@ msgstr "Nema dovoljno memorije za izvođenje operacije"
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr ""
+msgstr "Monitor CD pogona"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
@@ -211,7 +213,7 @@ msgstr "Montiram"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr ""
+msgstr "Unesite naredbu ta uporabu ako HAL sustav ne uspije montirati disk."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
@@ -219,14 +221,11 @@ msgstr "Odmontiram"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr ""
+msgstr "Unesite naredbu ta uporabu ako HAL sustav ne uspije odmontirati disk."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid ""
-"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
-"your command. These will be replaced respectively with the device path, the "
-"disc mount point and the disc UDI."
+msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:406
@@ -244,11 +243,11 @@ msgstr "Pogon"
 
 #: ../panel-plugin/cddrive-dialogs.c:486
 msgid "CD-ROM drive detection failed !"
-msgstr ""
+msgstr "Ttkrivanje CD pogona nije uspjelo!"
 
 #: ../panel-plugin/cddrive-dialogs.c:493
 msgid "No CD-ROM drive detected"
-msgstr ""
+msgstr "Nijeda CD-ROM pogon nije otkriven"
 
 #. if some drives have been detected...
 #. --- "Commands" section ---
@@ -293,9 +292,7 @@ msgid "Allow freedb.org connections"
 msgstr "Dozvoli freedb.org povezivanja"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid ""
-"Enabling this option allows the plugin to query the freedb.org servers in "
-"order to get the title of an audio CD."
+msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:681
@@ -415,4 +412,4 @@ msgstr ""
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
-msgstr ""
+msgstr "nepoznati naslov"
