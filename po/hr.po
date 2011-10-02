@@ -11,10 +11,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Country: CROATIA\n"
+"Language: hr\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Croatian\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: CROATIA\n"
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
@@ -196,7 +197,7 @@ msgstr "Neuspjelo odmontiranje"
 
 #: ../panel-plugin/cddrive-error.c:47
 msgid "Busy disc"
-msgstr ""
+msgstr "Zauzeti disk"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
@@ -225,7 +226,10 @@ msgstr "Unesite naredbu ta uporabu ako HAL sustav ne uspije odmontirati disk."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
-msgid "You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for your command. These will be replaced respectively with the device path, the disc mount point and the disc UDI."
+msgid ""
+"You can use \"%d\", \"%m\" and \"%u\" character sequences as arguments for "
+"your command. These will be replaced respectively with the device path, the "
+"disc mount point and the disc UDI."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:406
@@ -292,7 +296,9 @@ msgid "Allow freedb.org connections"
 msgstr "Dozvoli freedb.org povezivanja"
 
 #: ../panel-plugin/cddrive-dialogs.c:653
-msgid "Enabling this option allows the plugin to query the freedb.org servers in order to get the title of an audio CD."
+msgid ""
+"Enabling this option allows the plugin to query the freedb.org servers in "
+"order to get the title of an audio CD."
 msgstr ""
 
 #: ../panel-plugin/cddrive-dialogs.c:681
@@ -373,12 +379,12 @@ msgstr "hddvd-rw"
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr ""
+msgstr "Disk je zaključan od strane procesa (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
 msgid "The disc is locked by the program '%s' (pid: %llu)."
-msgstr ""
+msgstr "Disk je zaključan od strane programa '%s' (pid: %llu)."
 
 #: ../panel-plugin/cddrive-monitor.c:211
 msgid "Failed to set the D-BUS connection of HAL context."
