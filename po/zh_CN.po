@@ -3,7 +3,7 @@
 # This file is distributed under the same license as
 # the xfce4-cddrive-plugin package.
 # Hunt Xu <huntxu@live.cn>, 2008, 2009.
-# Chipong Luo <chipong_l@yahoo.com>, 2011.
+# Chipong Luo <chipong_l@yahoo.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
@@ -81,7 +81,8 @@ msgstr "音频 %s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "%s 状态不可用...HAL 已安装且 hald 正在运行中？"
+msgstr ""
+"%s 状态不可用...HAL 已安装且 hald 正在运行？"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
@@ -178,7 +179,7 @@ msgstr "系统错误"
 
 #: ../panel-plugin/cddrive-error.c:43
 msgid "Eject failed"
-msgstr "无法探出"
+msgstr "无法弹出"
 
 #: ../panel-plugin/cddrive-error.c:44
 msgid "Close failed"
@@ -198,7 +199,7 @@ msgstr "光盘正忙"
 
 #: ../panel-plugin/cddrive-error.c:57
 msgid "Not enough memory to perform the operation."
-msgstr "不是执行此操作的足够内存。"
+msgstr "没有执行此操作的足够内存。"
 
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
@@ -211,15 +212,15 @@ msgstr "挂载中"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "输入 HAL 系统无法挂载光盘时要使用的命令"
+msgstr "输入 HAL 系统无法挂载光盘时要使用的命令。"
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
-msgstr "卸载中"
+msgstr "正在卸载"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "输入 HAL 系统无法卸载光盘时要使用的命令"
+msgstr "输入 HAL 系统无法卸载光盘时要使用的命令。"
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
@@ -228,8 +229,9 @@ msgid ""
 "your command. These will be replaced respectively with the device path, the "
 "disc mount point and the disc UDI."
 msgstr ""
-"您可以使用 “%d”、 “%m” 和 “%u” 字符序列作为命令的参数。这些会分别用"
-"设备路径、光盘挂载点和光盘 UDI 替换。"
+"您可以使用 “%d”、“%m” 和 “%u” 字符序列"
+"作为命令的参数。这些会分别用设备路径、光盘"
+"挂载点和光盘 UDI 替换。"
 
 #: ../panel-plugin/cddrive-dialogs.c:406
 msgid "Mounted disc icon color"
@@ -270,7 +272,9 @@ msgstr "要显示的名称"
 
 #: ../panel-plugin/cddrive-dialogs.c:574
 msgid "Write here the name of the drive to display in panel or tooltip."
-msgstr "在这里写入在面板或工具提示中要显示的驱动器名称"
+msgstr ""
+"在这里写入在面板或工具提示中要显示的驱动器"
+"名称。"
 
 #: ../panel-plugin/cddrive-dialogs.c:587
 msgid "display in panel"
@@ -299,7 +303,8 @@ msgid ""
 "Enabling this option allows the plugin to query the freedb.org servers in "
 "order to get the title of an audio CD."
 msgstr ""
-"启用此项让此插件从 freedb.org 的服务器上查询以便获取音频 CD 的标题"
+"启用此项让此插件从 freedb.org 的服务器上"
+"查询以便获取音频 CD 的标题。"
 
 #: ../panel-plugin/cddrive-dialogs.c:681
 #: ../panel-plugin/cddrive.desktop.in.in.h:2
@@ -308,7 +313,7 @@ msgstr "CD-ROM 托盘和内容控制"
 
 #: ../panel-plugin/cddrive-dialogs.c:724
 msgid "No error description available."
-msgstr "没有可用的错误描述。"
+msgstr "无可用的错误描述。"
 
 #: ../panel-plugin/cddrive-monitor.c:71
 msgid "cd-rom"
@@ -379,7 +384,7 @@ msgstr "hddvd-rw"
 #: ../panel-plugin/cddrive-monitor.c:161
 #, c-format
 msgid "The disc is locked by a process (pid: %llu)."
-msgstr "光盘被进程锁定(pid：%llu)。"
+msgstr "光盘被某一进程锁定(pid：%llu)。"
 
 #: ../panel-plugin/cddrive-monitor.c:167
 #, c-format
@@ -402,19 +407,19 @@ msgstr "无法从 UDI ‘%s’ 恢复光盘。"
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
-msgstr "无法设置驱动器状态更改回呼"
+msgstr "无法设置驱动器状态更改回呼。"
 
 #: ../panel-plugin/cddrive-monitor.c:505
 msgid "Failed to register drive addition callback."
-msgstr "无法注册驱动器补充回呼"
+msgstr "无法注册驱动器补充回呼。"
 
 #: ../panel-plugin/cddrive-monitor.c:514
 msgid "Failed to register drive removal callback."
-msgstr "无法注册驱动器移除回呼"
+msgstr "无法注册驱动器移除回呼。"
 
 #: ../panel-plugin/cddrive-monitor.c:624
 msgid "Failed to store monitor in HAL context."
-msgstr "无法在 HAL 交互菜单中储存监视器"
+msgstr "无法在 HAL 交互菜单中储存监视器。"
 
 #: ../panel-plugin/cddrive-monitor.c:1042
 msgid "unknown title"
