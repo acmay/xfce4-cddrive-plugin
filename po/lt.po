@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: cd drive\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-06-29 12:12+0200\n"
-"PO-Revision-Date: 2012-01-24 15:54+0200\n"
+"PO-Revision-Date: 2012-01-30 16:55+0200\n"
 "Last-Translator: Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
 "Language-Team: Lietuvių <>\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgstr "„%s“ įrenginyje %s"
 #: ../panel-plugin/cddrive.c:319
 #, c-format
 msgid "Audio %s in %s"
-msgstr "Garso %s įrenginyje %s"
+msgstr "Audio %s įrenginyje %s"
 
 #. translation note: "<disc type> in <drive name>" (e.g. "dvd in cdrom1")
 #: ../panel-plugin/cddrive.c:322
@@ -152,7 +152,7 @@ msgstr "%s įrenginyje %s"
 
 #: ../panel-plugin/cddrive.c:424
 msgid "Unmount disc"
-msgstr "Atjungti laikmeną"
+msgstr "Atjungti diską"
 
 #: ../panel-plugin/cddrive.c:426
 msgid "Mount disc"
@@ -265,7 +265,7 @@ msgstr "Atsarginės komandos"
 #. -- name config --
 #: ../panel-plugin/cddrive-dialogs.c:554
 msgid "Display"
-msgstr "Rodoma"
+msgstr "Ekranas"
 
 #: ../panel-plugin/cddrive-dialogs.c:559
 msgid "Name to display"
