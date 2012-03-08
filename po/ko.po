@@ -212,7 +212,7 @@ msgstr "마운트 중"
 
 #: ../panel-plugin/cddrive-dialogs.c:356
 msgid "Enter a command to use if HAL system fails to mount the disc."
-msgstr "HAL 시스템이 디스크 마운트에 실패했을때 사용할 명령어를 입력합니다."
+msgstr "HAL 시스템이 디스크 마운트에 실패했을 때 사용할 명령어를 입력합니다."
 
 #: ../panel-plugin/cddrive-dialogs.c:363
 msgid "Unmounting"
@@ -220,7 +220,7 @@ msgstr "마운트 해제중"
 
 #: ../panel-plugin/cddrive-dialogs.c:364
 msgid "Enter a command to use if the HAL system fails to unmount the disc."
-msgstr "HAL 시스템이 디스크 마운트 해제에 실패했을때 사용할 명령어를 입력합니다."
+msgstr "HAL 시스템이 디스크 마운트 해제에 실패했을 때 사용할 명령어를 입력합니다."
 
 #: ../panel-plugin/cddrive-dialogs.c:382
 #, c-format
