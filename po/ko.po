@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../panel-plugin/cddrive.c:185
 msgid "Drive status is unavailable... is HAL installed and hald running ?"
-msgstr "드라이브가 사용할 수 없는 상태입니다... HAL이 설치되어 있고 hald가 실행중입니까 ?"
+msgstr "드라이브가 사용할 수 없는 상태입니다... HAL을 설치했고 hald가 실행중입니까 ?"
 
 #: ../panel-plugin/cddrive.c:194
 msgid "Close tray"
@@ -82,7 +82,7 @@ msgstr "음악 %s"
 #: ../panel-plugin/cddrive.c:260
 #, c-format
 msgid "%s status is unavailable... is HAL installed and hald running ?"
-msgstr "%s이(가) 사용할 수 없는 상태입니다... HAL이 설치되었고 hald가 실행중입니까 ?"
+msgstr "%s을(를) 사용할 수 없는 상태입니다... HAL을 설치했고 hald가 실행중입니까 ?"
 
 #. translation note: "Close <drive name>"
 #: ../panel-plugin/cddrive.c:271
