@@ -204,7 +204,7 @@ msgstr "동작을 수행하기 위한 메모리가 부족합니다."
 #: ../panel-plugin/cddrive-dialogs.c:31
 #: ../panel-plugin/cddrive.desktop.in.in.h:1
 msgid "CD Drive Monitor"
-msgstr "CD 드라이브 감시자"
+msgstr "CD 드라이브 감시기"
 
 #: ../panel-plugin/cddrive-dialogs.c:355
 msgid "Mounting"
