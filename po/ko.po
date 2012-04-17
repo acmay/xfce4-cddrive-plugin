@@ -107,25 +107,25 @@ msgstr "%s에 디스크 없음"
 #: ../panel-plugin/cddrive.c:293
 #, c-format
 msgid "Eject blank %s from %s"
-msgstr "빈 %s을(를) %s(으)로부터 꺼내기"
+msgstr "빈 %s을(를) %s에서 꺼내기"
 
 #. translation note: "Eject \"<disc label>\" from <drive name>"
 #: ../panel-plugin/cddrive.c:297
 #, c-format
 msgid "Eject \"%s\" from %s"
-msgstr "\"%s\"을(를) %s(으)로부터 꺼내기"
+msgstr "\"%s\"을(를) %s에서 꺼내기"
 
 #. translation note: "Eject audio <disc type> from <drive name>"
 #: ../panel-plugin/cddrive.c:301
 #, c-format
 msgid "Eject audio %s from %s"
-msgstr "음악 %s을(를) %s(으)로부터 꺼내기"
+msgstr "음악 %s을(를) %s에서 꺼내기"
 
 #. translation note: "Eject <disc type> from <drive name>" (e.g. "Eject dvd from my-dvd-drive")
 #: ../panel-plugin/cddrive.c:304
 #, c-format
 msgid "Eject %s from %s"
-msgstr "%s을(를) %s(으)로부터 꺼내기"
+msgstr "%s을(를) %s에서 꺼내기"
 
 #. translation note: "Blank <disc type> in <drive name>" (e.g. "Blank cd-rw in cdrom1")
 #: ../panel-plugin/cddrive.c:311
@@ -386,12 +386,12 @@ msgstr "HAL 컨텍스트의 D-BUS 연결을 설정하는데 실패했습니다."
 #: ../panel-plugin/cddrive-monitor.c:318
 #, c-format
 msgid "Failed to retrieve drive from device path '%s'."
-msgstr "장치 경로 '%s'(으)로부터 드라이브를 찾는데 실패했습니다."
+msgstr "장치 경로 '%s'에서 드라이브를 찾는데 실패했습니다."
 
 #: ../panel-plugin/cddrive-monitor.c:344
 #, c-format
 msgid "Failed to retrieve disc from UDI '%s'."
-msgstr "UDI '%s'(으)로부터 디스크를 찾는데 실패했습니다."
+msgstr "UDI '%s'에서 디스크를 찾는데 실패했습니다."
 
 #: ../panel-plugin/cddrive-monitor.c:401
 msgid "Failed to set drive's status change callback."
